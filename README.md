@@ -2,7 +2,7 @@
 
 Based on https://github.com/monkins1010/ccminer/tree/ARM
 
-Git and Build Process:
+Userland Git and Build Process:
 ```
 sudo apt-get update
 sudo apt-get install libcurl4-openssl-dev libssl-dev libjansson-dev automake autotools-dev build-essential -y
@@ -13,6 +13,16 @@ chmod +x build.sh
 chmod +x configure.sh
 chmod +x autogen.sh
 CXX=clang++ CC=clang build.sh
+```
+Termux Git and Build Process:
+```
+pkg update -y
+pkg upgrade -y
+pkg install openssl libjansson automake build-essential clang lld curl git
+chmod +x build.sh
+chmod +x configure.sh
+chmod +x autogen.sh
+./build.sh
 ```
 
 For specific details on installing clang-16 on your current OS, check: https://apt.llvm.org/
