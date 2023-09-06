@@ -18,8 +18,9 @@ Termux Git and Build Process:
 ```
 pkg update -y
 pkg upgrade -y
-pkg install openssl libjansson automake build-essential clang lld curl git
+pkg install openssl libjansson automake build-essential clang lld curl git binutils
 git clone https://github.com/uncharted9898/CCminer-ARM-optimized.git
+cp /data/data/com.termux/files/usr/include/linux/sysctl.h /data/data/com.termux/files/usr/include/sys
 cd CCminer-ARM-optimized
 chmod +x build.sh
 chmod +x configure.sh
