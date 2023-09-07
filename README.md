@@ -10,12 +10,9 @@ pkg install openssl libjansson automake build-essential clang lld curl git binut
 git clone https://github.com/Darktron/ccminer.git
 cp /data/data/com.termux/files/usr/include/linux/sysctl.h /data/data/com.termux/files/usr/include/sys
 cd ccminer
-chmod +x build.sh
-chmod +x configure.sh
-chmod +x autogen.sh
-chmod +x start.sh
+chmod +x build.sh configure.sh autogen.sh start.sh
 CXX=clang++ CC=clang ./build.sh
 ```
-Change your pools, address, and miner name with `nano config.json`
+Change your pools, address, and miner name with: `nano config.json`
 
-Run the miner with `~/ccminer/start.sh`
+Run the miner with: `~/ccminer/start.sh`
