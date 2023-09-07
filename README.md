@@ -1,6 +1,6 @@
 # CCminer for Termux
 
-Based on https://github.com/monkins1010/ccminer/tree/ARM
+Based on https://github.com/Oink70/CCminer-ARM-optimized
 
 Termux Git and Build Process:
 ```
