@@ -17,4 +17,5 @@ chmod +x start.sh
 CXX=clang++ CC=clang ./build.sh
 ```
 Change your pools, address, and miner name with `nano config.json`
+
 Run the miner with `~/ccminer/start.sh`
