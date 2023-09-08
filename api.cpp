@@ -228,7 +228,7 @@ static char *getpoolnfo(char *params)
 	*s = '\0';
 
 	if (stratum.job.job_id)
-		strncpy(jobid, stratum.job.job_id, sizeof(stratum.job.job_id));
+		strncpy(jobid, stratum.job.job_id, sizeof(stratum.job.job_id) - 1);
 	if (stratum.job.xnonce2) {
 		/* used temporary to be sure all is ok */
 		sprintf(extra, "0x");
