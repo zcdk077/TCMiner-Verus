@@ -15,6 +15,7 @@
 //# include <winsock2.h>
 #endif
 
+#include <pthread.h>
 #include <stdio.h>
 #include <ctype.h>
 #include <stdlib.h>
