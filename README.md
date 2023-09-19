@@ -2,7 +2,7 @@
 
 Based on: https://github.com/Oink70/CCminer-ARM-optimized
 
-Install latest arm64-v8a Termux: https://github.com/termux/termux-app/releases/tag/v0.118.0
+Install latest arm64-v8a Termux: https://github.com/termux/termux-app/releases
 
 Proceed with installation and compilation:
 
