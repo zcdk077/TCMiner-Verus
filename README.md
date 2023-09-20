@@ -7,9 +7,8 @@ Install latest arm64-v8a Termux: https://github.com/termux/termux-app/releases
 Proceed with installation and compilation:
 
 ```
-pkg update -y
-pkg upgrade -y
-pkg install openssl libjansson libgmp automake build-essential clang lld curl git binutils -y
+pkg update -y && pkg upgrade -y
+pkg install libjansson build-essential clang binutils git -y
 cp /data/data/com.termux/files/usr/include/linux/sysctl.h /data/data/com.termux/files/usr/include/sys
 git clone https://github.com/Darktron/ccminer.git
 cd ccminer
