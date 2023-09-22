@@ -31,7 +31,7 @@
             "disabled": 1
         },
         {
-            "name": "VPOLL-LOW",
+            "name": "VPOOL-LOW",
             "url": "stratum+tcp://pool.verus.io:9998",
             "timeout": 180,
             "disabled": 1
