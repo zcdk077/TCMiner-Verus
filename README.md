@@ -12,7 +12,7 @@ pkg update -y && pkg upgrade -y
 pkg install libjansson build-essential clang binutils git -y
 ```
 
-2. Fix environment,change files & clone repo:
+2. Fix environment & clone repo:
 ```
 cp /data/data/com.termux/files/usr/include/linux/sysctl.h /data/data/com.termux/files/usr/include/sys
 git clone https://github.com/Darktron/ccminer.git
