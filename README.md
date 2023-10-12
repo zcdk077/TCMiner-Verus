@@ -25,7 +25,7 @@ chmod +x build.sh configure.sh autogen.sh start.sh
 nano configure.sh
 ```
 
-4. Finally compile ccminer:
+4. Compile ccminer:
 ```
 CXX=clang++ CC=clang ./build.sh
 ```
@@ -35,7 +35,7 @@ CXX=clang++ CC=clang ./build.sh
 nano config.json
 ```
 
-6. Run the miner with:
+6. Finally run the miner with:
 ```
 ~/ccminer/start.sh
 ```
