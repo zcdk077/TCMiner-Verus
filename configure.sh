@@ -1,7 +1,7 @@
 #!/bin/bash
 
-ARCH="-march=armv8.3-a+crypto"
-CORE="-mtune=cortex-a76 -mtune=cortex-a55"
+ARCH="-march=armv8-a+crypto"
+CORE="-mtune=cortex-a73 -mtune=cortex-a53"
 OPTI="-Ofast -pthread -flto -fstrict-aliasing -ftree-vectorize -funroll-loops -ffinite-loops -finline-functions -fno-stack-protector -fomit-frame-pointer -fpic -falign-functions=64 -D_REENTRANT -mllvm -enable-loop-distribute"
 
 ./configure CXXFLAGS="$ARCH $CORE $OPTI" CFLAGS="$ARCH $CORE $OPTI" \
