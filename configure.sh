@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ARCH="-march=armv8-a+crypto"
+ARCH="-march=armv8-a+crypto+sha2+crc"
 CORE="-mtune=cortex-a73 -mtune=cortex-a53"
 OPTI="-Ofast -pthread -flto -fstrict-aliasing -ftree-vectorize -funroll-loops -ffinite-loops -finline-functions -fno-stack-protector -fomit-frame-pointer -fpic -falign-functions=64 -D_REENTRANT -mllvm -enable-loop-distribute"
 
