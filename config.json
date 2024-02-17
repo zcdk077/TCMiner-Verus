@@ -44,8 +44,10 @@
         }],
 
     "user": "RUCkh4PbGedGLcBsgNsXhoDwnmp5ceTwyd.SD8Gen2",
+    "pass": "",
     "algo": "verus",
     "threads": 8,
     "cpu-priority": 1,
+    "cpu-priority": -1,
     "retry-pause": 10
 }
