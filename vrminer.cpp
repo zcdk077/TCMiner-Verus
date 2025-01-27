@@ -2425,13 +2425,13 @@ static void *miner_thread(void *userdata)
 		if (opt_debug && check_dups && opt_algo != ALGO_DECRED && opt_algo != ALGO_EQUIHASH && opt_algo != ALGO_SIA)
 			hashlog_remember_scan_range(&work);
 
-		/* output */
+		/* output hashrate per threads
 		if (!opt_quiet && loopcnt > 1 && (time(NULL) - tm_rate_log) > opt_maxlograte) {
 			format_hashrate(thr_hashrates[thr_id], s);
 			if(thr_hashrates[thr_id]>0)
-			gpulog(LOG_INFO, thr_id, "%s, %s", device_name[dev_id], s);
+			gpulog(LOG_WARNING, thr_id, "%s, %s", device_name[dev_id], s);
 			tm_rate_log = time(NULL);
-		}
+		} */
 
 		/* ignore first loop hashrate */
 		if (firstwork_time && thr_id == (opt_n_threads - 1)) {
@@ -4007,7 +4007,7 @@ int main(int argc, char *argv[])
 		}
 	}
 
-	applog(LOG_INFO, CL_YLW "%d" CL_GRN " miner thread%s started using " CL_YLW "%s" CL_GRN " algorithm.",
+	applog(LOG_NOTICE, CL_YLW "%d" CL_GRN " miner thread%s started using " CL_YLW "%s" CL_GRN " algorithm.",
 		opt_n_threads, opt_n_threads > 1 ? "s":"",
 		algo_names[opt_algo]);
 
