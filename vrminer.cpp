@@ -3692,15 +3692,15 @@ int main(int argc, char *argv[])
 	// get opt_quiet early
 	parse_single_opt('q', argc, argv);
 
-	printf(CL_LCY "   ###########   #####   ##      ##  ###  ##      #  #####   #### \n");
-    printf(CL_LCY "        #       #       # #    # #   #   # #     #  #      #    #\n");
-    printf(CL_LCY "       #       #       #  #  #  #   #   #  #    #  #      #    #\n");
-    printf(CL_LCY "      #       #       #   ##   #   #   #   #   #  #####  #####\n");
-    printf(CL_LCY "     #       #       #        #   #   #    #  #  #      # #\n");
-    printf(CL_LCY "    #       #       #        #   #   #     # #  #      #  #\n");
-    printf(CL_LCY "   #        #####  #        #  ###  #      ##  ###### #   ##\n");
+	printf(CL_LCY "   #       #    #####    ##      ##  ###  ##      #  #####   ####\n");
+    printf(CL_LCY "   #      #   #     #   # #    # #   #   # #     #  #      #    #\n");
+    printf(CL_LCY "   #     #   #     #   #  #  #  #   #   #  #    #  #      #    #\n");
+    printf(CL_LCY "   #    #   ######    #   ##   #   #   #   #   #  #####  #####\n");
+    printf(CL_LCY "   #   #   # #       #        #   #   #    #  #  #      # #\n");
+    printf(CL_LCY "   #  #   #  #      #        #   #   #     # #  #      #  #\n");
+    printf(CL_LCY "   ###   #   ##    #        #  ###  #      ##  ###### #   ##\n");
     printf(CL_N "######################################################################\n\n");
-    printf(CL_RED "                           ** VERUSHASH **\n");
+    printf(CL_GRN "                           ** VERUSHASH **\n");
     printf("\n");
     printf(CL_LCY "                     ** " PACKAGE_NAME " " CL_YLW "" PACKAGE_VERSION "" CL_LCY " by zcdk077 **\n");
     printf(CL_YLW "                 Based Originaly by tpruvot and Darktron\n");
@@ -3715,7 +3715,6 @@ int main(int argc, char *argv[])
     printf(CL_LCY "   VRSC donation addr" CL_LGR "  : " CL_YLW "RGdgdAU7xB3vEwSfhPYGJJY9R85iAvhVtS\n\n");
     printf(CL_N "############################## " CL_LCY "Donation" CL_N " ##############################\n");
     printf(CL_LCY "  BTC donation addr " CL_LGR " : " CL_YLW "1FhDPLPpw18X4srecguG3MxJYe4a1JsZnd ( tpruvot )\n");
-    // printf(CL_LCY "  BTC donation addr " CL_LGR " : " CL_YLW "12tdvfF7KmAsihBXQXynT6E6th2c2pByTT ( JayDDee )\n");
     printf(CL_N "######################################################################\n");
 
 	rpc_user = strdup("");
