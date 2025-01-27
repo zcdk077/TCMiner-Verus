@@ -21,7 +21,7 @@
 #include <sys/time.h>
 #include <time.h>
 #include <signal.h>
-
+#include <jansson.h>
 #include <curl/curl.h>
 #include <openssl/sha.h>
 
