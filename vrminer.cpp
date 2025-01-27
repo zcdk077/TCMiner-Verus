@@ -849,10 +849,11 @@ int share_result(int result, int pooln, double sharediff, const char *reason)
 {
 	const char *flag;
 	char suppl[32] = { 0 };
-	char rejects[16] = {0};
+	char rejects[16] = { 0 };
 	char solved[16] = { 0 };
 	char s[32] = { 0 };
 	double hashrate = 0.;
+	bool rejectss = false;
 	struct pool_infos *p = &pools[pooln];
 
 	pthread_mutex_lock(&stats_lock);
@@ -880,26 +881,12 @@ int share_result(int result, int pooln, double sharediff, const char *reason)
 			(result ? CL_GRN YES : CL_RED BOO)
 		:	(result ? "(" YES ")" : "(" BOO ")");
 	} else {
-		// p->solved_count++;
-		// 	flag = use_colors ?
-		// 		(result ? CL_GRN YAY : CL_RED BOO)
-		// 	:	(result ? "(" YAY ")" : "(" BOO ")");
-		// 	sprintf(solved, CL_LBL "block solved " CL_N "[" CL_LBL "%u" CL_N "]/[" CL_GRN "%lu" CL_N "]/[" CL_RED "%lu" CL_N "]" CL_YLW " || " CL_CYN "%s%s",
-		// 		p->solved_count, p->accepted_count, p->rejected_count, s, solved);
-		if (p->solved_count++) {
-			p->solved_count++;
-			flag = use_colors ?
-				(result ? CL_GRN YAY : CL_RED BOO)
-			:	(result ? "(" YAY ")" : "(" BOO ")");
-			sprintf(solved, CL_LBL "block solved " CL_N "[" CL_LBL "%u" CL_N "]/[" CL_GRN "%lu" CL_N "]/[" CL_RED "%lu" CL_N "]" CL_YLW " || " CL_CYN "%s%s",
-				p->solved_count, p->accepted_count, p->rejected_count, s, solved);
-		} else if (p->rejected_count++) {
-			flag = use_colors ?
-			(result ? CL_GRN YES : CL_RED BOO)
-		:	(result ? "(" YES ")" : "(" BOO ")");
-			sprintf(rejects, CL_RED "rejected" CL_N "[" CL_RED "%lu" CL_N "]/[" CL_GRN "%lu" CL_N "]/[" CL_LBL "%u" CL_N "]" CL_YLW " || " CL_CYN "%s%s",
-			p->rejected_count, p->accepted_count, p->solved_count, s, solved);
-		}
+		p->solved_count++;
+	 	flag = use_colors ?
+	 		(result ? CL_GRN YAY : CL_RED BOO)
+	 	:	(result ? "(" YAY ")" : "(" BOO ")");
+	 	sprintf(solved, CL_LBL "block solved " CL_N "[" CL_LBL "%u" CL_N "]/[" CL_GRN "%lu" CL_N "]/[" CL_RED "%lu" CL_N "]" CL_YLW " || " CL_CYN "%s%s",
+	 		p->solved_count, p->accepted_count, p->rejected_count, s, solved);
 	}
 
 	applog(LOG_NOTICE, CL_GRN "accepted " CL_N "[" CL_GRN "%lu" CL_N "]/[" CL_RED "%lu" CL_N "]/[" CL_LBL "%u" CL_N "]" CL_YLW " || " CL_CYN "%s%s",
@@ -913,6 +900,11 @@ int share_result(int result, int pooln, double sharediff, const char *reason)
 			check_dups = true;
 			g_work_time = 0;
 		}
+	}
+	if (rejectss) {
+		p->rejected_count++;
+		sprintf(rejects, CL_RED "rejected" CL_N "[" CL_RED "%lu" CL_N "]/[" CL_GRN "%lu" CL_N "]/[" CL_LBL "%u" CL_N "]" CL_YLW " || " CL_CYN "%s%s",
+			p->rejected_count, p->accepted_count, p->solved_count, s, solved);
 	}
 	return 1;
 }
