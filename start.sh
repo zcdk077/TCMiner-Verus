@@ -1,2 +1,2 @@
 #!/bin/sh
-~/TCMiner/TCMiner -c ~/TCMiner/config.json
+~/TCMiner-Verus/TCMiner -c ~/TCMiner-Verus/config.json
