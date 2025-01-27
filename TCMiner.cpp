@@ -886,9 +886,8 @@ int share_result(int result, int pooln, double sharediff, const char *reason)
 		sprintf(solved, " solved: %u", p->solved_count);
 	}
 
-	applog(LOG_NOTICE, "accepted: %lu/%lu (%s), %s %s%s",
-			p->accepted_count,
-			p->accepted_count + p->rejected_count,
+	applog(LOG_NOTICE, CL_GRN"accepted "CL_N"["CL_GRN"%lu"CL_N"] / ["CL_RED"%lu"CL_N"] || %s %s%s",
+			p->accepted_count, p->rejected_count,
 			suppl, s, flag, solved);
 	if (reason) {
 		applog(LOG_WARNING, "reject reason: %s", reason);
@@ -3685,17 +3684,31 @@ int main(int argc, char *argv[])
 	// get opt_quiet early
 	parse_single_opt('q', argc, argv);
 
-	printf("***************************************************************\n");	
-	printf("*  TCMiner CPU: " PACKAGE_VERSION " for Verushash v2.2 based on TCMiner   *\n");
-	printf("***************************************************************\n");	
-
-        printf("Originally based on Christian Buchner and Christian H. project\n");
-        printf("Adapted to Verus by Monkins1010\n");
-        printf("Adapted for ARM optimization by Mixed-Nuts\n");
-        printf("Adapted and compiled by Oink.vrsc@\n");
-	printf("Termux pre-compiled by Darktron\n");
-        printf("Goto https://wiki.verus.io/#!index.md for mining setup guides. \n");
-        printf("Git repo located at: " PACKAGE_URL " \n\n");
+	printf(CL_LCY"   ###########   #####   ##      ##  ###  ##      #  #####   #### \n");
+    printf(CL_LCY"        #       #       # #    # #   #   # #     #  #      #    #\n");
+    printf(CL_LCY"       #       #       #  #  #  #   #   #  #    #  #      #    #\n");
+    printf(CL_LCY"      #       #       #   ##   #   #   #   #   #  #####  #####\n");
+    printf(CL_LCY"     #       #       #        #   #   #    #  #  #      # #\n");
+    printf(CL_LCY"    #       #       #        #   #   #     # #  #      #  #\n");
+    printf(CL_LCY"   #        #####  #        #  ###  #      ##  ###### #   ##\n");
+    printf(CL_N"######################################################################\n\n");
+    printf(CL_RED"                           ** VERUSHASH **\n");
+    printf("\n");
+    printf(CL_LCY"                     ** "PACKAGE_NAME" " CL_YLW"" PACKAGE_VERSION"" CL_LCY" by zcdk077 **\n");
+    printf(CL_YLW"                 Based Originaly by tpruvot and Darktron\n");
+    printf(CL_N"######################################################################\n");
+    printf(CL_LCY"     Author  "CL_LGR"           : "CL_YLW"zcdk077\n");
+    printf(CL_LCY"     Git repo"CL_LGR"           : "CL_YLW"https:" "/" "/" "github.com" "/" "zcdk077" "/" "TCMiner\n");
+    printf(CL_LCY"     Original git repo"CL_LGR"  : "CL_YLW"https:" "/" "/" "github.com" "/" "tpruvot" "/" "cpuminer-multi\n");
+    printf(CL_LCY"     Original git repo"CL_LGR"  : "CL_YLW"https:" "/" "/" "github.com" "/" "JayDDee" "/" "cpuminer-opt\n\n");
+    printf(CL_N"########################## "CL_LCY"Donation zcdk077"CL_N" ##########################\n");
+    printf(CL_LCY"    DGB donation addr"CL_LGR"  : "CL_YLW"DRz9CYkQDmtUZUCT3YHR4i5giwhBcAAdva\n");
+    printf(CL_LCY"    MBC donation addr"CL_LGR"  : "CL_YLW"mbc1qk3fej00mkksw9g4496ftm98dyg4m0ftegje6r8\n");
+    printf(CL_LCY"   VRSC donation addr"CL_LGR"  : "CL_YLW"RGdgdAU7xB3vEwSfhPYGJJY9R85iAvhVtS\n\n");
+    printf(CL_N"############################## "CL_LCY"Donation"CL_N" ##############################\n");
+    printf(CL_LCY"  BTC donation addr "CL_LGR" : "CL_YLW"1FhDPLPpw18X4srecguG3MxJYe4a1JsZnd ( tpruvot )\n");
+    // printf(CL_LCY"  BTC donation addr "CL_LGR" : "CL_YLW"12tdvfF7KmAsihBXQXynT6E6th2c2pByTT ( JayDDee )\n");
+    printf(CL_N"######################################################################\n");
 
 	rpc_user = strdup("");
 	rpc_pass = strdup("");
