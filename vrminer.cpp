@@ -876,26 +876,45 @@ int share_result(int result, int pooln, double sharediff, const char *reason)
 	else // accepted percent
 		sprintf(suppl, "%.2f%%", 100. * p->accepted_count / (p->accepted_count + p->rejected_count));
 
+	// if (!net_diff || sharediff < net_diff) {
+	// 	flag = use_colors ?
+	// 		(result ? CL_GRN YES : CL_RED BOO)
+	// 	:	(result ? "(" YES ")" : "(" BOO ")");
+	// } else {
+	// 	p->solved_count++;
+	//  	flag = use_colors ?
+	//  		(result ? CL_GRN YAY : CL_RED BOO)
+	//  	:	(result ? "(" YAY ")" : "(" BOO ")");
+	//  	sprintf(solved, CL_LBL "block solved " CL_N "[" CL_LBL "%u" CL_N "]/[" CL_GRN "%lu" CL_N "]/[" CL_RED "%lu" CL_N "]" CL_YLW " || " CL_CYN "%s%s",
+	//  		p->solved_count, p->accepted_count, p->rejected_count, s, solved);
+	// }
+
+	// applog(LOG_NOTICE, CL_GRN "accepted " CL_N "[" CL_GRN "%lu" CL_N "]/[" CL_RED "%lu" CL_N "]/[" CL_LBL "%u" CL_N "]" CL_YLW " || " CL_CYN "%s%s",
+	// 		p->accepted_count, p->rejected_count, p->solved_count,
+	// 		s, solved);
+
 	if (!net_diff || sharediff < net_diff) {
-		flag = use_colors ?
+		flag = use_color ?
 			(result ? CL_GRN YES : CL_RED BOO)
 		:	(result ? "(" YES ")" : "(" BOO ")");
-	} else {
+	} else if (solved) {
 		p->solved_count++;
 	 	flag = use_colors ?
 	 		(result ? CL_GRN YAY : CL_RED BOO)
 	 	:	(result ? "(" YAY ")" : "(" BOO ")");
 	 	sprintf(solved, CL_LBL "block solved " CL_N "[" CL_LBL "%u" CL_N "]/[" CL_GRN "%lu" CL_N "]/[" CL_RED "%lu" CL_N "]" CL_YLW " || " CL_CYN "%s%s",
-	 		p->solved_count, p->accepted_count, p->rejected_count, s, solved);
-		// if (rejects)
-		// 	p->reject_count++;
-		// 	sprintf(rejects, CL_RED "rejected" CL_N "[" CL_RED "%lu" CL_N "]/[" CL_GRN "%lu" CL_N "]/[" CL_LBL "%u" CL_N "]" CL_YLW " || " CL_CYN "%s%s",
-		// 	p->rejected_count, p->accepted_count, p->solved_count, s, solved);
+	 		p->solved_count, p->accepted_count, p->rejected_count, flag, s, solved);
+	} else if (rejectss) {
+		p->rejected_count++;
+		flag = use_color ?
+			(result ? CL_GRN YES : CL_RED BOO)
+		:	(result ? "(" YES ")" : "(" BOO ")");
+		sprintf(rejects, CL_RED "rejected" CL_N "[" CL_RED "%lu" CL_N "]/[" CL_GRN "%lu" CL_N "]/[" CL_LBL "%u" CL_N "]" CL_YLW " || " CL_CYN "%s%s",
+			p->rejected_count, p->accepted_count, p->solved_count, flag, s, solved);
+	} else {
+		applog(LOG_NOTICE, CL_GRN "accepted " CL_N "[" CL_GRN "%lu" CL_N "]/[" CL_RED "%lu" CL_N "]/[" CL_LBL "%u" CL_N "]" CL_YLW " || " CL_CYN "%s%s",
+			p->accepted_count, p->rejected_count, p->solved_count, flag, s, solved);
 	}
-
-	applog(LOG_NOTICE, CL_GRN "accepted " CL_N "[" CL_GRN "%lu" CL_N "]/[" CL_RED "%lu" CL_N "]/[" CL_LBL "%u" CL_N "]" CL_YLW " || " CL_CYN "%s%s",
-			p->accepted_count, p->rejected_count, p->solved_count,
-			s, solved);
 
 	if (reason) {
 		applog(LOG_WARNING, "reject reason: %s", reason);
@@ -904,11 +923,6 @@ int share_result(int result, int pooln, double sharediff, const char *reason)
 			check_dups = true;
 			g_work_time = 0;
 		}
-	}
-	if (rejectss) {
-		p->rejected_count++;
-		sprintf(rejects, CL_RED "rejected" CL_N "[" CL_RED "%lu" CL_N "]/[" CL_GRN "%lu" CL_N "]/[" CL_LBL "%u" CL_N "]" CL_YLW " || " CL_CYN "%s%s",
-			p->rejected_count, p->accepted_count, p->solved_count, s, solved);
 	}
 	return 1;
 }
