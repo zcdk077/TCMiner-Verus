@@ -841,32 +841,17 @@ static bool work_decode(const json_t *val, struct work *work)
 	return true;
 }
 
-struct share_stats_t
-{
-    int share_count;
-    struct timeval submit_time;
-    double net_diff;
-    double share_diff;
-    double stratum_diff;
-    double target_diff;
-    uint32_t height;
-    char   job_id[32];
-};
-
-#define YES "yes!"
-#define YAY "yay!!!"
-#define BOO "booooo"
+#define YES "accepted"
+#define YAY "block solved"
+#define BOO "rejected"
 
 int share_result(int result, int pooln, double sharediff, const char *reason)
 {
 	const char *flag;
 	char suppl[32] = { 0 };
-	char rejects[32] = { 0 };
 	char solved[16] = { 0 };
 	char s[32] = { 0 };
 	double hashrate = 0.;
-	bool rejectss = false;
-	struct share_stats_t my_stats = {0};
 	struct pool_infos *p = &pools[pooln];
 
 	pthread_mutex_lock(&stats_lock);
@@ -889,66 +874,28 @@ int share_result(int result, int pooln, double sharediff, const char *reason)
 	else // accepted percent
 		sprintf(suppl, "%.2f%%", 100. * p->accepted_count / (p->accepted_count + p->rejected_count));
 
-	// if (!net_diff || sharediff < net_diff) {
-	// 	flag = use_colors ?
-	// 		(result ? CL_GRN YES : CL_RED BOO)
-	// 	:	(result ? "(" YES ")" : "(" BOO ")");
-	// } else {
-	// 	p->solved_count++;
-	//   	flag = use_colors ?
-	//   		(result ? CL_GRN YAY : CL_RED BOO)
-	//   	:	(result ? "(" YAY ")" : "(" BOO ")");
-	//  	sprintf(solved, CL_LBL "block solved " CL_N "[" CL_LBL "%u" CL_N "]/[" CL_GRN "%lu" CL_N "]/[" CL_RED "%lu" CL_N "]" CL_YLW " || " CL_CYN "%s%s",
-	//  		p->solved_count, p->accepted_count, p->rejected_count, s, solved);
-	// }
-	
-	// applog(LOG_NOTICE, CL_GRN "accepted " CL_N "[" CL_GRN "%lu" CL_N "]/[" CL_RED "%lu" CL_N "]/[" CL_LBL "%u" CL_N "]" CL_YLW " || " CL_CYN "%s%s",
-	// 		p->accepted_count, p->rejected_count, p->solved_count, s, solved);
-
-	// if (reason) {
-	// 	applog(LOG_WARNING, "reject reason: %s", reason);
-	// 	if (!check_dups && strncasecmp(reason, "duplicate", 9) == 0) {
-	// 		applog(LOG_WARNING, "enabling duplicates check feature");
-	// 		check_dups = true;
-	// 		g_work_time = 0;
-	// 	}
-	// }
-	// if (rejectss) {
-	// 	p->rejected_count++;
-	// 	sprintf(rejects, CL_RED "rejected" CL_N "[" CL_RED "%lu" CL_N "]/[" CL_GRN "%lu" CL_N "]/[" CL_LBL "%u" CL_N "]" CL_YLW " || " CL_CYN "%s%s",
-	// 		p->rejected_count, p->accepted_count, p->solved_count, s, solved);
-	// }
-
-	if ( likely(result))
-	{
-		p->accepted_count++;
-		if unlikely( ( my_stats.net_diff > 0. ) && ( my_stats.share_diff >= my_stats.net_diff ) )
-		{
-			solved = true;
-			p->solved_count++;
-			sprintf(solved, CL_LBL "block solved " CL_N "[" CL_LBL "%u" CL_N "]/[" CL_GRN "%lu" CL_N "]/[" CL_RED "%lu" CL_N "]" CL_YLW " || " CL_CYN "%s%s",
+	if (!net_diff || sharediff < net_diff) {
+		flag = use_colors ?
+			(result ? CL_GRN YES : CL_RED BOO)
+		:	(result ? "(" YES ")" : "(" BOO ")");
+	} else {
+		p->solved_count++;
+	  	flag = use_colors ?
+	  		(result ? CL_LBL YAY : CL_RED BOO)
+	  	:	(result ? "(" YAY ")" : "(" BOO ")");
+	 	sprintf(solved, CL_LBL "block solved " CL_N "[" CL_LBL "%u" CL_N "]/[" CL_GRN "%lu" CL_N "]/[" CL_RED "%lu" CL_N "]" CL_YLW " | " CL_CYN "%s%s",
 	 		p->solved_count, p->accepted_count, p->rejected_count, s, solved);
-		}
-		else
-		{
-			applog(LOG_NOTICE, CL_GRN "accepted " CL_N "[" CL_GRN "%lu" CL_N "]/[" CL_RED "%lu" CL_N "]/[" CL_LBL "%u" CL_N "]" CL_YLW " || " CL_CYN "%s%s",
-			p->accepted_count, p->rejected_count, p->solved_count, s, solved);
-		}
 	}
-	else
-	{
-		if (reason) {
-			applog(LOG_WARNING, "reject reason: %s", reason);
-			if (!check_dups && strncasecmp(reason, "duplicate", 9) == 0) {
-				applog(LOG_WARNING, "enabling duplicates check feature");
-				check_dups = true;
-				g_work_time = 0;
-			}
-		}
-		if (rejectss) {
-			p->rejected_count++;
-			sprintf(rejects, CL_RED "rejected" CL_N "[" CL_RED "%lu" CL_N "]/[" CL_GRN "%lu" CL_N "]/[" CL_LBL "%u" CL_N "]" CL_YLW " || " CL_CYN "%s%s",
-				p->rejected_count, p->accepted_count, p->solved_count, s, solved);
+	
+	applog(LOG_NOTICE, CL_GRN "%s" CL_YLW " | " CL_N "[" CL_GRN "%lu" CL_N "]/[" CL_RED "%lu" CL_N "]/[" CL_LBL "%u" CL_N "]" CL_YLW " | " CL_CYN "%s%s",
+			flag, p->accepted_count, p->rejected_count, p->solved_count, s, solved);
+
+	if (reason) {
+		applog(LOG_WARNING, "reject reason: %s", reason);
+		if (!check_dups && strncasecmp(reason, "duplicate", 9) == 0) {
+			applog(LOG_WARNING, "enabling duplicates check feature");
+			check_dups = true;
+			g_work_time = 0;
 		}
 	}
 	return 1;
