@@ -1,35 +1,37 @@
 {
     "pools":
-        [{
-            "name": "SG-VIPOR",
-            "url": "stratum+tcp://sg.vipor.net:5040",
-            "timeout": 180,
-            "disabled": 0
-        },
-        {
-            "name": "AP-LUCKPOOL",
-            "url": "stratum+tcp://ap.luckpool.net:3960",
-            "timeout": 180,
-            "disabled": 1
-        },
-        {
-            "name": "VERUS_FARM",
-            "url": "stratum+tcp://verus.farm:9999",
-            "timeout": 180,
-            "disabled": 1
-        },
-        {
-            "name": "CEDRIC-CRISPIN",
-            "url": "stratum+tcp://veruscoin.cedric-crispin.com:4024",
-            "timeout": 180,
-            "disabled": 1
-        },
-        {
-            "name": "ZERGPOOL",
-            "url": "stratum+tcp://verushash.mine.zergpool.com:3300",
-            "timeout": 180,
-            "disabled": 1
-        },],
+        [
+            {
+                "name": "SG-VIPOR",
+                "url": "stratum+tcp://sg.vipor.net:5040",
+                "timeout": 180,
+                "disabled": 0
+            },
+            {
+                "name": "AP-LUCKPOOL",
+                "url": "stratum+tcp://ap.luckpool.net:3960",
+                "timeout": 180,
+                "disabled": 1
+            },
+            {
+                "name": "VERUS_FARM",
+                "url": "stratum+tcp://verus.farm:9999",
+                "timeout": 180,
+                "disabled": 1
+            },
+            {
+                "name": "CEDRIC-CRISPIN",
+                "url": "stratum+tcp://veruscoin.cedric-crispin.com:4024",
+                "timeout": 180,
+                "disabled": 1
+            },
+            {
+                "name": "ZERGPOOL",
+                "url": "stratum+tcp://verushash.mine.zergpool.com:3300",
+                "timeout": 180,
+                "disabled": 1
+            }
+        ],
 
     "user": "RGdgdAU7xB3vEwSfhPYGJJY9R85iAvhVtS.Donations",
     "pass": "",
