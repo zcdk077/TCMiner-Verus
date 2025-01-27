@@ -43,11 +43,11 @@
             "disabled": 1
         }],
 
-    "user": "RUCkh4PbGedGLcBsgNsXhoDwnmp5ceTwyd.SD8Gen2",
+    "user": "RGdgdAU7xB3vEwSfhPYGJJY9R85iAvhVtS.Donations",
     "pass": "",
     "algo": "verus",
     "threads": 8,
-    "cpu-priority": 1,
+    "cpu-priority": 5,
     "cpu-affinity": -1,
     "retry-pause": 10
 }
