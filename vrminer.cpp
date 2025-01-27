@@ -894,7 +894,7 @@ int share_result(int result, int pooln, double sharediff, const char *reason)
 	// 		s, solved);
 
 	if (!net_diff || sharediff < net_diff) {
-		flag = use_color ?
+		flag = use_colors ?
 			(result ? CL_GRN YES : CL_RED BOO)
 		:	(result ? "(" YES ")" : "(" BOO ")");
 	} else if (solved) {
@@ -906,7 +906,7 @@ int share_result(int result, int pooln, double sharediff, const char *reason)
 	 		p->solved_count, p->accepted_count, p->rejected_count, flag, s, solved);
 	} else if (rejectss) {
 		p->rejected_count++;
-		flag = use_color ?
+		flag = use_colors ?
 			(result ? CL_GRN YES : CL_RED BOO)
 		:	(result ? "(" YES ")" : "(" BOO ")");
 		sprintf(rejects, CL_RED "rejected" CL_N "[" CL_RED "%lu" CL_N "]/[" CL_GRN "%lu" CL_N "]/[" CL_LBL "%u" CL_N "]" CL_YLW " || " CL_CYN "%s%s",
