@@ -886,9 +886,9 @@ int share_result(int result, int pooln, double sharediff, const char *reason)
 		sprintf(solved, " solved: %u", p->solved_count);
 	}
 
-	applog(LOG_NOTICE, CL_GRN"accepted "CL_N"["CL_GRN"%lu"CL_N"] / ["CL_RED"%lu"CL_N"] || %s %s%s",
+	applog(LOG_NOTICE, CL_GRN "accepted " CL_N "[" CL_GRN "%lu" CL_N "]/[" CL_RED "%lu" CL_N "]" CL_YLW " || %s%s",
 			p->accepted_count, p->rejected_count,
-			suppl, s, flag, solved);
+			suppl, s, solved);
 	if (reason) {
 		applog(LOG_WARNING, "reject reason: %s", reason);
 		if (!check_dups && strncasecmp(reason, "duplicate", 9) == 0) {
@@ -1746,7 +1746,7 @@ static bool stratum_gen_work(struct stratum_ctx *sctx, struct work *work)
 		stratum_diff = sctx->job.diff;
 		if (opt_showdiff && work->targetdiff != stratum_diff)
 			snprintf(sdiff, 32, " (%.5f)", work->targetdiff);
-		applog(LOG_WARNING, "Stratum difficulty set to %g%s", stratum_diff, sdiff);
+		applog(LOG_WARNING, "New stratum difficulty %g%s (%.5f) ", stratum_diff, sdiff, work->targetdiff);
 	}
 
 	return true;
@@ -2339,7 +2339,7 @@ static void *miner_thread(void *userdata)
 
 		
 		case ALGO_EQUIHASH:
-			rc = scanhash_verus(thr_id, &work, max_nonce, &hashes_done);
+			rc = CL_CYN scanhash_verus(thr_id, &work, max_nonce, &hashes_done);
 			break;
 		
 
@@ -3684,31 +3684,31 @@ int main(int argc, char *argv[])
 	// get opt_quiet early
 	parse_single_opt('q', argc, argv);
 
-	printf(CL_LCY"   ###########   #####   ##      ##  ###  ##      #  #####   #### \n");
-    printf(CL_LCY"        #       #       # #    # #   #   # #     #  #      #    #\n");
-    printf(CL_LCY"       #       #       #  #  #  #   #   #  #    #  #      #    #\n");
-    printf(CL_LCY"      #       #       #   ##   #   #   #   #   #  #####  #####\n");
-    printf(CL_LCY"     #       #       #        #   #   #    #  #  #      # #\n");
-    printf(CL_LCY"    #       #       #        #   #   #     # #  #      #  #\n");
-    printf(CL_LCY"   #        #####  #        #  ###  #      ##  ###### #   ##\n");
-    printf(CL_N"######################################################################\n\n");
-    printf(CL_RED"                           ** VERUSHASH **\n");
+	printf(CL_LCY "   ###########   #####   ##      ##  ###  ##      #  #####   #### \n");
+    printf(CL_LCY "        #       #       # #    # #   #   # #     #  #      #    #\n");
+    printf(CL_LCY "       #       #       #  #  #  #   #   #  #    #  #      #    #\n");
+    printf(CL_LCY "      #       #       #   ##   #   #   #   #   #  #####  #####\n");
+    printf(CL_LCY "     #       #       #        #   #   #    #  #  #      # #\n");
+    printf(CL_LCY "    #       #       #        #   #   #     # #  #      #  #\n");
+    printf(CL_LCY "   #        #####  #        #  ###  #      ##  ###### #   ##\n");
+    printf(CL_N "######################################################################\n\n");
+    printf(CL_RED "                           ** VERUSHASH **\n");
     printf("\n");
-    printf(CL_LCY"                     ** "PACKAGE_NAME" " CL_YLW"" PACKAGE_VERSION"" CL_LCY" by zcdk077 **\n");
-    printf(CL_YLW"                 Based Originaly by tpruvot and Darktron\n");
-    printf(CL_N"######################################################################\n");
-    printf(CL_LCY"     Author  "CL_LGR"           : "CL_YLW"zcdk077\n");
-    printf(CL_LCY"     Git repo"CL_LGR"           : "CL_YLW"https:" "/" "/" "github.com" "/" "zcdk077" "/" "TCMiner\n");
-    printf(CL_LCY"     Original git repo"CL_LGR"  : "CL_YLW"https:" "/" "/" "github.com" "/" "tpruvot" "/" "cpuminer-multi\n");
-    printf(CL_LCY"     Original git repo"CL_LGR"  : "CL_YLW"https:" "/" "/" "github.com" "/" "JayDDee" "/" "cpuminer-opt\n\n");
-    printf(CL_N"########################## "CL_LCY"Donation zcdk077"CL_N" ##########################\n");
-    printf(CL_LCY"    DGB donation addr"CL_LGR"  : "CL_YLW"DRz9CYkQDmtUZUCT3YHR4i5giwhBcAAdva\n");
-    printf(CL_LCY"    MBC donation addr"CL_LGR"  : "CL_YLW"mbc1qk3fej00mkksw9g4496ftm98dyg4m0ftegje6r8\n");
-    printf(CL_LCY"   VRSC donation addr"CL_LGR"  : "CL_YLW"RGdgdAU7xB3vEwSfhPYGJJY9R85iAvhVtS\n\n");
-    printf(CL_N"############################## "CL_LCY"Donation"CL_N" ##############################\n");
-    printf(CL_LCY"  BTC donation addr "CL_LGR" : "CL_YLW"1FhDPLPpw18X4srecguG3MxJYe4a1JsZnd ( tpruvot )\n");
-    // printf(CL_LCY"  BTC donation addr "CL_LGR" : "CL_YLW"12tdvfF7KmAsihBXQXynT6E6th2c2pByTT ( JayDDee )\n");
-    printf(CL_N"######################################################################\n");
+    printf(CL_LCY "                     ** " PACKAGE_NAME " " CL_YLW "" PACKAGE_VERSION "" CL_LCY " by zcdk077 **\n");
+    printf(CL_YLW "                 Based Originaly by tpruvot and Darktron\n");
+    printf(CL_N "######################################################################\n");
+    printf(CL_LCY "     Author  " CL_LGR "           : " CL_YLW "zcdk077\n");
+    printf(CL_LCY "     Git repo" CL_LGR "           : " CL_YLW "https:" "/" "/" "github.com" "/" "zcdk077" "/" "TCMiner\n");
+    printf(CL_LCY "     Original git repo" CL_LGR "  : " CL_YLW "https:" "/" "/" "github.com" "/" "tpruvot" "/" "cpuminer-multi\n");
+    printf(CL_LCY "     Original git repo" CL_LGR "  : " CL_YLW "https:" "/" "/" "github.com" "/" "JayDDee" "/" "cpuminer-opt\n\n");
+    printf(CL_N "########################## " CL_LCY "Donation zcdk077" CL_N " ##########################\n");
+    printf(CL_LCY "    DGB donation addr" CL_LGR "  : " CL_YLW "DRz9CYkQDmtUZUCT3YHR4i5giwhBcAAdva\n");
+    printf(CL_LCY "    MBC donation addr" CL_LGR "  : " CL_YLW "mbc1qk3fej00mkksw9g4496ftm98dyg4m0ftegje6r8\n");
+    printf(CL_LCY "   VRSC donation addr" CL_LGR "  : " CL_YLW "RGdgdAU7xB3vEwSfhPYGJJY9R85iAvhVtS\n\n");
+    printf(CL_N "############################## " CL_LCY "Donation" CL_N " ##############################\n");
+    printf(CL_LCY "  BTC donation addr " CL_LGR " : " CL_YLW "1FhDPLPpw18X4srecguG3MxJYe4a1JsZnd ( tpruvot )\n");
+    // printf(CL_LCY "  BTC donation addr " CL_LGR " : " CL_YLW "12tdvfF7KmAsihBXQXynT6E6th2c2pByTT ( JayDDee )\n");
+    printf(CL_N "######################################################################\n");
 
 	rpc_user = strdup("");
 	rpc_pass = strdup("");
@@ -4007,8 +4007,7 @@ int main(int argc, char *argv[])
 		}
 	}
 
-	applog(LOG_INFO, "%d miner thread%s started, "
-		"using '%s' algorithm.",
+	applog(LOG_INFO, CL_YLW "%d" CL_GRN " miner thread%s started using " CL_YLW "%s" CL_GRN " algorithm.",
 		opt_n_threads, opt_n_threads > 1 ? "s":"",
 		algo_names[opt_algo]);
 
