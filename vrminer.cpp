@@ -853,7 +853,6 @@ int share_result(int result, int pooln, double sharediff, const char *reason)
 	char solved[16] = { 0 };
 	char s[32] = { 0 };
 	double hashrate = 0.;
-	bool rejectss = false;
 	struct pool_infos *p = &pools[pooln];
 
 	pthread_mutex_lock(&stats_lock);
@@ -888,7 +887,7 @@ int share_result(int result, int pooln, double sharediff, const char *reason)
 	 	sprintf(solved, CL_LBL "block solved " CL_N "[" CL_LBL "%u" CL_N "]/[" CL_GRN "%lu" CL_N "]/[" CL_RED "%lu" CL_N "]" CL_YLW " || " CL_CYN "%s%s",
 	 		p->solved_count, p->accepted_count, p->rejected_count, s, solved);
 	}
-	if (rejectss) {
+	if (p->rejected_count++) {
 		p->rejected_count++;
 		sprintf(rejects, CL_RED "rejected" CL_N "[" CL_RED "%lu" CL_N "]/[" CL_GRN "%lu" CL_N "]/[" CL_LBL "%u" CL_N "]" CL_YLW " || " CL_CYN "%s%s",
 			p->rejected_count, p->accepted_count, p->solved_count, s, solved);
@@ -3699,23 +3698,23 @@ int main(int argc, char *argv[])
     	printf(CL_LCY "   @   @   @ @       @        @   @   @    @  @  @       @ @\n");
     	printf(CL_LCY "   @  @   @   @     @        @   @   @     @ @  @       @   @\n");
     	printf(CL_LCY "   @@@   @     @@  @        @  @@@  @      @@  @@@@@@  @     @@\n");
-    	printf(CL_N "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n\n");
+    	printf(CL_N "######################################################################\n\n");
     	printf(CL_GRN "                           ** VERUSHASH **\n");
     	printf("\n");
     	printf(CL_LCY "                     ** " PACKAGE_NAME " " CL_YLW "" PACKAGE_VERSION "" CL_LCY " by zcdk077 **\n");
     	printf(CL_YLW "                 Based Originaly by tpruvot and Darktron\n");
-    	printf(CL_N "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n");
+    	printf(CL_N "######################################################################\n");
     	printf(CL_LCY "      Author  " CL_LGR "           : " CL_YLW "zcdk077\n");
     	printf(CL_LCY "      Git repo" CL_LGR "           : " CL_YLW "https:" "/" "/" "github.com" "/" "zcdk077" "/" "vrminer\n");
     	printf(CL_LCY "      Original git repo" CL_LGR "  : " CL_YLW "https:" "/" "/" "github.com" "/" "tpruvot" "/" "ccminer\n");
     	printf(CL_LCY "      Original git repo" CL_LGR "  : " CL_YLW "https:" "/" "/" "github.com" "/" "Darktron" "/" "ccminer\n");
-    	printf(CL_N "++++++++++++++++++++++++++ " CL_LCY "Donation zcdk077" CL_N " ++++++++++++++++++++++++++\n");
+    	printf(CL_N "########################## " CL_LCY "Donation zcdk077" CL_N " ##########################\n");
     	printf(CL_LCY "    DGB donation addr" CL_LGR "  : " CL_YLW "DRz9CYkQDmtUZUCT3YHR4i5giwhBcAAdva\n");
     	printf(CL_LCY "    MBC donation addr" CL_LGR "  : " CL_YLW "mbc1qk3fej00mkksw9g4496ftm98dyg4m0ftegje6r8\n");
     	printf(CL_LCY "   VRSC donation addr" CL_LGR "  : " CL_YLW "RGdgdAU7xB3vEwSfhPYGJJY9R85iAvhVtS\n");
-    	printf(CL_N "++++++++++++++++++++++++++++++ " CL_LCY "Donation" CL_N " ++++++++++++++++++++++++++++++\n");
+    	printf(CL_N "############################## " CL_LCY "Donation" CL_N " ##############################\n");
     	printf(CL_LCY "  BTC donation addr " CL_LGR " : " CL_YLW "1FhDPLPpw18X4srecguG3MxJYe4a1JsZnd ( tpruvot )\n");
-    	printf(CL_N "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n");
+    	printf(CL_N "######################################################################\n");
 
 	rpc_user = strdup("");
 	rpc_pass = strdup("");
