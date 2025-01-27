@@ -887,14 +887,9 @@ int share_result(int result, int pooln, double sharediff, const char *reason)
 	 	sprintf(solved, CL_LBL "block solved " CL_N "[" CL_LBL "%u" CL_N "]/[" CL_GRN "%lu" CL_N "]/[" CL_RED "%lu" CL_N "]" CL_YLW " || " CL_CYN "%s%s",
 	 		p->solved_count, p->accepted_count, p->rejected_count, s, solved);
 	}
-	if (p->rejected_count++) {
-		p->rejected_count++;
-		sprintf(rejects, CL_RED "rejected" CL_N "[" CL_RED "%lu" CL_N "]/[" CL_GRN "%lu" CL_N "]/[" CL_LBL "%u" CL_N "]" CL_YLW " || " CL_CYN "%s%s",
-			p->rejected_count, p->accepted_count, p->solved_count, s, solved);
-	} else {
-		applog(LOG_NOTICE, CL_GRN "accepted " CL_N "[" CL_GRN "%lu" CL_N "]/[" CL_RED "%lu" CL_N "]/[" CL_LBL "%u" CL_N "]" CL_YLW " || " CL_CYN "%s%s",
+	
+	applog(LOG_NOTICE, CL_GRN "accepted " CL_N "[" CL_GRN "%lu" CL_N "]/[" CL_RED "%lu" CL_N "]/[" CL_LBL "%u" CL_N "]" CL_YLW " || " CL_CYN "%s%s",
 			p->accepted_count, p->rejected_count, p->solved_count, s, solved);
-	}
 
 	if (reason) {
 		applog(LOG_WARNING, "reject reason: %s", reason);
@@ -903,6 +898,11 @@ int share_result(int result, int pooln, double sharediff, const char *reason)
 			check_dups = true;
 			g_work_time = 0;
 		}
+	}
+	if (rejectss) {
+		p->rejected_count++;
+		sprintf(rejects, CL_RED "rejected" CL_N "[" CL_RED "%lu" CL_N "]/[" CL_GRN "%lu" CL_N "]/[" CL_LBL "%u" CL_N "]" CL_YLW " || " CL_CYN "%s%s",
+			p->rejected_count, p->accepted_count, p->solved_count, s, solved);
 	}
 	return 1;
 }
@@ -3691,9 +3691,9 @@ int main(int argc, char *argv[])
 	// get opt_quiet early
 	parse_single_opt('q', argc, argv);
 
-	printf(CL_LCY "   @       @    @@@@@    @@      @@  @@@  @@      @  @@@@@@   @@@@@\n");
-    	printf(CL_LCY "   @      @   @     @   @ @    @ @   @   @ @     @  @       @    @\n");
-    	printf(CL_LCY "   @     @   @     @   @  @  @  @   @   @  @    @  @       @    @\n");
+	printf(CL_LCY "   @       @    @@@@@    @@      @@  @@@  @@      @  @@@@@@   @@@@\n");
+    	printf(CL_LCY "   @      @   @     @   @ @    @ @   @   @ @     @  @       @     @\n");
+    	printf(CL_LCY "   @     @   @     @   @  @  @  @   @   @  @    @  @       @     @\n");
     	printf(CL_LCY "   @    @   @@@@@@    @   @@   @   @   @   @   @  @@@@@@  @@@@@@\n");
     	printf(CL_LCY "   @   @   @ @       @        @   @   @    @  @  @       @ @\n");
     	printf(CL_LCY "   @  @   @   @     @        @   @   @     @ @  @       @   @\n");
