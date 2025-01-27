@@ -35,6 +35,20 @@ CXX=clang++ CC=clang ./build.sh
 nano config.json
 ```
 
+## Donations
+Verus (VRSC)
+```
+RGdgdAU7xB3vEwSfhPYGJJY9R85iAvhVtS
+```
+Digibyte (DGB)
+```
+DRz9CYkQDmtUZUCT3YHR4i5giwhBcAAdva
+```
+MicroBitcoin (MBC)
+```
+MqzFecjSEz9dcXdykrfxW7PF5zNnNmpRXp
+```
+
 6. Finally run the miner with:
 ```
 ~/vrminer/start.sh
