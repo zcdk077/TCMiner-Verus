@@ -889,7 +889,7 @@ int share_result(int result, int pooln, double sharediff, const char *reason)
 	}
 
 	applog(LOG_NOTICE, CL_GRN "accepted " CL_N "[" CL_GRN "%lu" CL_N "]/[" CL_RED "%lu" CL_N "]/[" CL_LBL "%u" CL_N "]" CL_YLW " || " CL_CYN "%s%s",
-			p->accepted_count, p->rejected_count,
+			p->accepted_count, p->rejected_count, p->solved_count,
 			s, solved);
 
 	if (reason) {
@@ -899,8 +899,8 @@ int share_result(int result, int pooln, double sharediff, const char *reason)
 			check_dups = true;
 			g_work_time = 0;
 		}
-	}
-	if (p->rejected_count++) {
+	} else {
+		p->rejected_count++
 		sprintf(rejects, CL_RED "rejected" CL_N "[" CL_RED "%lu" CL_N "]/[" CL_GRN "%lu" CL_N "]/[" CL_LBL "%u" CL_N "]" CL_YLW " || " CL_CYN "%s%s",
 			p->rejected_count, p->accepted_count, p->solved_count, s, solved);
 	}
