@@ -853,6 +853,7 @@ int share_result(int result, int pooln, double sharediff, const char *reason)
 	char solved[16] = { 0 };
 	char s[32] = { 0 };
 	double hashrate = 0.;
+	bool rejectss = false;
 	struct pool_infos *p = &pools[pooln];
 
 	pthread_mutex_lock(&stats_lock);
