@@ -883,12 +883,13 @@ int share_result(int result, int pooln, double sharediff, const char *reason)
 		flag = use_colors ?
 			(result ? CL_GRN YAY : CL_RED BOO)
 		:	(result ? "(" YAY ")" : "(" BOO ")");
-		sprintf(solved, " solved: %u", p->solved_count);
+		sprintf(solved, CL_LBL "block solved " CL_N "[" CL_LBL "%u" CL_N "]/[" CL_GRN "%lu" CL_N "]/[" CL_RED "%lu" CL_N "]",
+			p->solved_count, p->accepted_count, p->rejected_count);
 	}
 
-	applog(LOG_NOTICE, CL_GRN "accepted " CL_N "[" CL_GRN "%lu" CL_N "]/[" CL_RED "%lu" CL_N "]" CL_YLW " || %s%s",
+	applog(LOG_NOTICE, CL_GRN "accepted " CL_N "[" CL_GRN "%lu" CL_N "]/[" CL_RED "%lu" CL_N "]/[" CL_LBL "%u" CL_N "]" CL_YLW " || %s%s",
 			p->accepted_count, p->rejected_count,
-			suppl, s, solved);
+			s, solved);
 	if (reason) {
 		applog(LOG_WARNING, "reject reason: %s", reason);
 		if (!check_dups && strncasecmp(reason, "duplicate", 9) == 0) {
@@ -1746,7 +1747,7 @@ static bool stratum_gen_work(struct stratum_ctx *sctx, struct work *work)
 		stratum_diff = sctx->job.diff;
 		if (opt_showdiff && work->targetdiff != stratum_diff)
 			snprintf(sdiff, 32, " (%.5f)", work->targetdiff);
-		applog(LOG_WARNING, "New stratum difficulty %g%s (%.5f) ", stratum_diff, sdiff, work->targetdiff);
+		applog(LOG_WARNING, "New stratum difficulty %g%s", stratum_diff, sdiff);
 	}
 
 	return true;
@@ -2339,7 +2340,7 @@ static void *miner_thread(void *userdata)
 
 		
 		case ALGO_EQUIHASH:
-			rc = CL_CYN scanhash_verus(thr_id, &work, max_nonce, &hashes_done);
+			rc = scanhash_verus(thr_id, &work, max_nonce, &hashes_done);
 			break;
 		
 
@@ -3697,10 +3698,10 @@ int main(int argc, char *argv[])
     printf(CL_LCY "                     ** " PACKAGE_NAME " " CL_YLW "" PACKAGE_VERSION "" CL_LCY " by zcdk077 **\n");
     printf(CL_YLW "                 Based Originaly by tpruvot and Darktron\n");
     printf(CL_N "######################################################################\n");
-    printf(CL_LCY "     Author  " CL_LGR "           : " CL_YLW "zcdk077\n");
-    printf(CL_LCY "     Git repo" CL_LGR "           : " CL_YLW "https:" "/" "/" "github.com" "/" "zcdk077" "/" "TCMiner\n");
-    printf(CL_LCY "     Original git repo" CL_LGR "  : " CL_YLW "https:" "/" "/" "github.com" "/" "tpruvot" "/" "cpuminer-multi\n");
-    printf(CL_LCY "     Original git repo" CL_LGR "  : " CL_YLW "https:" "/" "/" "github.com" "/" "JayDDee" "/" "cpuminer-opt\n\n");
+    printf(CL_LCY "      Author  " CL_LGR "           : " CL_YLW "zcdk077\n");
+    printf(CL_LCY "      Git repo" CL_LGR "           : " CL_YLW "https:" "/" "/" "github.com" "/" "zcdk077" "/" "TCMiner\n");
+    printf(CL_LCY "      Original git repo" CL_LGR "  : " CL_YLW "https:" "/" "/" "github.com" "/" "tpruvot" "/" "ccminer\n");
+    printf(CL_LCY "      Original git repo" CL_LGR "  : " CL_YLW "https:" "/" "/" "github.com" "/" "Darktron" "/" "ccminer\n\n");
     printf(CL_N "########################## " CL_LCY "Donation zcdk077" CL_N " ##########################\n");
     printf(CL_LCY "    DGB donation addr" CL_LGR "  : " CL_YLW "DRz9CYkQDmtUZUCT3YHR4i5giwhBcAAdva\n");
     printf(CL_LCY "    MBC donation addr" CL_LGR "  : " CL_YLW "mbc1qk3fej00mkksw9g4496ftm98dyg4m0ftegje6r8\n");
