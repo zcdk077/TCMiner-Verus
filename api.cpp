@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 TCMiner team
+ * Copyright 2025 vrminer team
  *
  * Implementation by tpruvot (based on cgminer)
  *
@@ -951,7 +951,7 @@ static void mcast()
 	bool addrok;
 	char group;
 
-	char expect[] = "TCMiner-"; // first 8 bytes constant
+	char expect[] = "vrminer-"; // first 8 bytes constant
 	char *expect_code;
 	size_t expect_code_len;
 	char buf[1024];

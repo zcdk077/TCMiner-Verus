@@ -9,7 +9,7 @@
  * any later version.  See COPYING for more details.
  */
 
-#include <TCMiner-config.h>
+#include <vrminer-config.h>
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -54,7 +54,7 @@
 BOOL WINAPI ConsoleHandler(DWORD);
 #endif
 
-#define PROGRAM_NAME		"TCMiner"
+#define PROGRAM_NAME		"vrminer"
 #define LP_SCANTIME		60
 #define HEAVYCOIN_BLKHDR_SZ		84
 #define MNR_BLKHDR_SZ 80
@@ -519,7 +519,7 @@ struct work _ALIGN(64) g_work;
 volatile time_t g_work_time;
 pthread_mutex_t g_work_lock;
 
-// get const array size (defined in TCMiner.cpp)
+// get const array size (defined in vrminer.cpp)
 int options_count()
 {
 	int n = 0;
@@ -2390,7 +2390,7 @@ static void *miner_thread(void *userdata)
 			switch (opt_algo) {
 				case ALGO_JACKPOT:
 				case ALGO_QUARK:
-					// to stay comparable to other TCMiner forks or pools
+					// to stay comparable to other vrminer forks or pools
 					rate_factor = 0.5;
 					break;
 			}
@@ -3699,7 +3699,7 @@ int main(int argc, char *argv[])
     printf(CL_YLW "                 Based Originaly by tpruvot and Darktron\n");
     printf(CL_N "######################################################################\n");
     printf(CL_LCY "      Author  " CL_LGR "           : " CL_YLW "zcdk077\n");
-    printf(CL_LCY "      Git repo" CL_LGR "           : " CL_YLW "https:" "/" "/" "github.com" "/" "zcdk077" "/" "TCMiner\n");
+    printf(CL_LCY "      Git repo" CL_LGR "           : " CL_YLW "https:" "/" "/" "github.com" "/" "zcdk077" "/" "vrminer\n");
     printf(CL_LCY "      Original git repo" CL_LGR "  : " CL_YLW "https:" "/" "/" "github.com" "/" "tpruvot" "/" "ccminer\n");
     printf(CL_LCY "      Original git repo" CL_LGR "  : " CL_YLW "https:" "/" "/" "github.com" "/" "Darktron" "/" "ccminer\n\n");
     printf(CL_N "########################## " CL_LCY "Donation zcdk077" CL_N " ##########################\n");

@@ -5,7 +5,7 @@
 extern "C" {
 #endif
 
-#include <TCMiner-config.h>
+#include <vrminer-config.h>
 
 #include <stdbool.h>
 #include <inttypes.h>

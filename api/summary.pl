@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# sample script to query TCMiner API
+# sample script to query vrminer API
 
 my $command = "summary|";
 
@@ -29,6 +29,6 @@ if ($sock) {
 
 } else {
 
-    print("TCMiner socket failed\n");
+    print("vrminer socket failed\n");
 
 }

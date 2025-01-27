@@ -835,7 +835,7 @@ int nvml_destroy(nvml_handle *nvmlh)
  * nvml api doesn't exists as 32bit dll :///
  */
 #ifdef WIN32
-#include "nvapi/nvapi_TCMiner.h"
+#include "nvapi/nvapi_vrminer.h"
 
 static unsigned int nvapi_dev_map[MAX_GPUS] = { 0 };
 static NvDisplayHandle hDisplay_a[NVAPI_MAX_PHYSICAL_GPUS * 2] = { 0 };

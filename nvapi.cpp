@@ -11,7 +11,7 @@
 #include <memory>
 #include <stdexcept>
 
-#include "compat/nvapi/nvapi_TCMiner.h"
+#include "compat/nvapi/nvapi_vrminer.h"
 
 class NvAPILibraryHandle
 {

@@ -73,10 +73,10 @@ am__make_running_with_option = \
   test $$has_opt = yes
 am__make_dryrun = (target_option=n; $(am__make_running_with_option))
 am__make_keepgoing = (target_option=k; $(am__make_running_with_option))
-pkgdatadir = $(datadir)/TCMiner
-pkgincludedir = $(includedir)/TCMiner
-pkglibdir = $(libdir)/TCMiner
-pkglibexecdir = $(libexecdir)/TCMiner
+pkgdatadir = $(datadir)/vrminer
+pkgincludedir = $(includedir)/vrminer
+pkglibdir = $(libdir)/vrminer
+pkglibexecdir = $(libexecdir)/vrminer
 am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cd
 install_sh_DATA = $(install_sh) -c -m 644
 install_sh_PROGRAM = $(install_sh) -c
@@ -92,7 +92,7 @@ POST_UNINSTALL = :
 build_triplet = aarch64-unknown-linux-gnu
 host_triplet = aarch64-unknown-linux-gnu
 target_triplet = aarch64-unknown-linux-gnu
-bin_PROGRAMS = TCMiner$(EXEEXT)
+bin_PROGRAMS = vrminer$(EXEEXT)
 #am__append_1 = compat/winansi.c
 #am__append_2 = -I/usr/local/llvm/lib/clang/4.0.0/include
 #am__append_3 = -L/usr/local/llvm/lib
@@ -107,34 +107,34 @@ DIST_COMMON = $(srcdir)/Makefile.am $(top_srcdir)/configure \
 am__CONFIG_DISTCLEAN_FILES = config.status config.cache config.log \
  configure.lineno config.status.lineno
 mkinstalldirs = $(install_sh) -d
-CONFIG_HEADER = TCMiner-config.h
+CONFIG_HEADER = vrminer-config.h
 CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
-am__TCMiner_SOURCES_DIST = elist.h miner.h compat.h compat/inttypes.h \
+am__vrminer_SOURCES_DIST = elist.h miner.h compat.h compat/inttypes.h \
 	compat/stdbool.h compat/unistd.h bignum.cpp bignum.hpp \
-	compat/sys/time.h compat/getopt/getopt.h crc32.c TCMiner.cpp \
+	compat/sys/time.h compat/getopt/getopt.h crc32.c vrminer.cpp \
 	pools.cpp util.cpp bench.cpp api.cpp hashlog.cpp stats.cpp \
 	sysinfos.cpp equi/equi-stratum.cpp verus/verusscan.cpp \
 	verus/haraka_portable.c verus/haraka.c \
 	verus/verus_clhash_portable.cpp compat/winansi.c
 am__dirstamp = $(am__leading_dot)dirstamp
-#am__objects_1 = compat/TCMiner-winansi.$(OBJEXT)
-am_TCMiner_OBJECTS = TCMiner-bignum.$(OBJEXT) TCMiner-crc32.$(OBJEXT) \
-	TCMiner-TCMiner.$(OBJEXT) TCMiner-pools.$(OBJEXT) \
-	TCMiner-util.$(OBJEXT) TCMiner-bench.$(OBJEXT) \
-	TCMiner-api.$(OBJEXT) TCMiner-hashlog.$(OBJEXT) \
-	TCMiner-stats.$(OBJEXT) TCMiner-sysinfos.$(OBJEXT) \
-	equi/TCMiner-equi-stratum.$(OBJEXT) \
-	verus/TCMiner-verusscan.$(OBJEXT) \
-	verus/TCMiner-haraka_portable.$(OBJEXT) \
-	verus/TCMiner-haraka.$(OBJEXT) \
-	verus/TCMiner-verus_clhash_portable.$(OBJEXT) $(am__objects_1)
-TCMiner_OBJECTS = $(am_TCMiner_OBJECTS)
+#am__objects_1 = compat/vrminer-winansi.$(OBJEXT)
+am_vrminer_OBJECTS = vrminer-bignum.$(OBJEXT) vrminer-crc32.$(OBJEXT) \
+	vrminer-vrminer.$(OBJEXT) vrminer-pools.$(OBJEXT) \
+	vrminer-util.$(OBJEXT) vrminer-bench.$(OBJEXT) \
+	vrminer-api.$(OBJEXT) vrminer-hashlog.$(OBJEXT) \
+	vrminer-stats.$(OBJEXT) vrminer-sysinfos.$(OBJEXT) \
+	equi/vrminer-equi-stratum.$(OBJEXT) \
+	verus/vrminer-verusscan.$(OBJEXT) \
+	verus/vrminer-haraka_portable.$(OBJEXT) \
+	verus/vrminer-haraka.$(OBJEXT) \
+	verus/vrminer-verus_clhash_portable.$(OBJEXT) $(am__objects_1)
+vrminer_OBJECTS = $(am_vrminer_OBJECTS)
 am__DEPENDENCIES_1 =
-TCMiner_DEPENDENCIES = $(am__DEPENDENCIES_1)
-TCMiner_LINK = $(CXXLD) $(AM_CXXFLAGS) $(CXXFLAGS) $(TCMiner_LDFLAGS) \
+vrminer_DEPENDENCIES = $(am__DEPENDENCIES_1)
+vrminer_LINK = $(CXXLD) $(AM_CXXFLAGS) $(CXXFLAGS) $(vrminer_LDFLAGS) \
 	$(LDFLAGS) -o $@
 AM_V_P = $(am__v_P_$(V))
 am__v_P_ = $(am__v_P_$(AM_DEFAULT_VERBOSITY))
@@ -151,18 +151,18 @@ am__v_at_1 =
 DEFAULT_INCLUDES = -I.
 depcomp = $(SHELL) $(top_srcdir)/depcomp
 am__maybe_remake_depfiles = depfiles
-am__depfiles_remade = ./$(DEPDIR)/TCMiner-api.Po \
-	./$(DEPDIR)/TCMiner-bench.Po ./$(DEPDIR)/TCMiner-bignum.Po \
-	./$(DEPDIR)/TCMiner-TCMiner.Po ./$(DEPDIR)/TCMiner-crc32.Po \
-	./$(DEPDIR)/TCMiner-hashlog.Po ./$(DEPDIR)/TCMiner-pools.Po \
-	./$(DEPDIR)/TCMiner-stats.Po ./$(DEPDIR)/TCMiner-sysinfos.Po \
-	./$(DEPDIR)/TCMiner-util.Po \
-	compat/$(DEPDIR)/TCMiner-winansi.Po \
-	equi/$(DEPDIR)/TCMiner-equi-stratum.Po \
-	verus/$(DEPDIR)/TCMiner-haraka.Po \
-	verus/$(DEPDIR)/TCMiner-haraka_portable.Po \
-	verus/$(DEPDIR)/TCMiner-verus_clhash_portable.Po \
-	verus/$(DEPDIR)/TCMiner-verusscan.Po
+am__depfiles_remade = ./$(DEPDIR)/vrminer-api.Po \
+	./$(DEPDIR)/vrminer-bench.Po ./$(DEPDIR)/vrminer-bignum.Po \
+	./$(DEPDIR)/vrminer-vrminer.Po ./$(DEPDIR)/vrminer-crc32.Po \
+	./$(DEPDIR)/vrminer-hashlog.Po ./$(DEPDIR)/vrminer-pools.Po \
+	./$(DEPDIR)/vrminer-stats.Po ./$(DEPDIR)/vrminer-sysinfos.Po \
+	./$(DEPDIR)/vrminer-util.Po \
+	compat/$(DEPDIR)/vrminer-winansi.Po \
+	equi/$(DEPDIR)/vrminer-equi-stratum.Po \
+	verus/$(DEPDIR)/vrminer-haraka.Po \
+	verus/$(DEPDIR)/vrminer-haraka_portable.Po \
+	verus/$(DEPDIR)/vrminer-verus_clhash_portable.Po \
+	verus/$(DEPDIR)/vrminer-verusscan.Po
 am__mv = mv -f
 AM_V_lt = $(am__v_lt_$(V))
 am__v_lt_ = $(am__v_lt_$(AM_DEFAULT_VERBOSITY))
@@ -193,8 +193,8 @@ AM_V_CXXLD = $(am__v_CXXLD_$(V))
 am__v_CXXLD_ = $(am__v_CXXLD_$(AM_DEFAULT_VERBOSITY))
 am__v_CXXLD_0 = @echo "  CXXLD   " $@;
 am__v_CXXLD_1 = 
-SOURCES = $(TCMiner_SOURCES)
-DIST_SOURCES = $(am__TCMiner_SOURCES_DIST)
+SOURCES = $(vrminer_SOURCES)
+DIST_SOURCES = $(am__vrminer_SOURCES_DIST)
 RECURSIVE_TARGETS = all-recursive check-recursive cscopelist-recursive \
 	ctags-recursive dvi-recursive html-recursive info-recursive \
 	install-data-recursive install-dvi-recursive \
@@ -217,7 +217,7 @@ am__recursive_targets = \
 AM_RECURSIVE_TARGETS = $(am__recursive_targets:-recursive=) TAGS CTAGS \
 	cscope distdir distdir-am dist dist-all distcheck
 am__tagged_files = $(HEADERS) $(SOURCES) $(TAGS_FILES) \
-	$(LISP)TCMiner-config.h.in
+	$(LISP)vrminer-config.h.in
 # Read a list of newline-separated strings from the standard input,
 # and print each of them once, without duplicates.  Input order is
 # *not* preserved.
@@ -238,7 +238,7 @@ ETAGS = etags
 CTAGS = ctags
 CSCOPE = cscope
 DIST_SUBDIRS = $(SUBDIRS)
-am__DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/TCMiner-config.h.in \
+am__DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/vrminer-config.h.in \
 	compile config.guess config.sub depcomp install-sh missing
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 distdir = $(PACKAGE)-$(VERSION)
@@ -282,13 +282,13 @@ distuninstallcheck_listfiles = find . -type f -print
 am__distuninstallcheck_listfiles = $(distuninstallcheck_listfiles) \
   | sed 's|^\./|$(prefix)/|' | grep -v '$(infodir)/dir$$'
 distcleancheck_listfiles = find . -type f -print
-ACLOCAL = ${SHELL} /root/TCMiner.mixed-nuts/TCMiner-test/missing aclocal-1.16
+ACLOCAL = ${SHELL} /root/vrminer.mixed-nuts/vrminer-test/missing aclocal-1.16
 ALLOCA = 
 AMTAR = $${TAR-tar}
 AM_DEFAULT_VERBOSITY = 1
-AUTOCONF = ${SHELL} /root/TCMiner.mixed-nuts/TCMiner-test/missing autoconf
-AUTOHEADER = ${SHELL} /root/TCMiner.mixed-nuts/TCMiner-test/missing autoheader
-AUTOMAKE = ${SHELL} /root/TCMiner.mixed-nuts/TCMiner-test/missing automake-1.16
+AUTOCONF = ${SHELL} /root/vrminer.mixed-nuts/vrminer-test/missing autoconf
+AUTOHEADER = ${SHELL} /root/vrminer.mixed-nuts/vrminer-test/missing autoheader
+AUTOMAKE = ${SHELL} /root/vrminer.mixed-nuts/vrminer-test/missing automake-1.16
 AWK = gawk
 CC = clang
 CCAS = clang
@@ -327,18 +327,18 @@ LIBOBJS =
 LIBS = -lcrypto -lssl -lz 
 LTLIBOBJS = 
 MAINT = #
-MAKEINFO = ${SHELL} /root/TCMiner.mixed-nuts/TCMiner-test/missing makeinfo
+MAKEINFO = ${SHELL} /root/vrminer.mixed-nuts/vrminer-test/missing makeinfo
 MKDIR_P = /bin/mkdir -p
 NVCC = nvcc
 NVML_LIBPATH = 
 OBJEXT = o
 OPENMP_CFLAGS = -fopenmp
-PACKAGE = TCMiner
+PACKAGE = vrminer
 PACKAGE_BUGREPORT = 
-PACKAGE_NAME = TCMiner
-PACKAGE_STRING = TCMiner 1.0
-PACKAGE_TARNAME = TCMiner
-PACKAGE_URL = http://github.com/zcdk077/TCMiner
+PACKAGE_NAME = vrminer
+PACKAGE_STRING = vrminer 1.0
+PACKAGE_TARNAME = vrminer
+PACKAGE_URL = http://github.com/zcdk077/vrminer
 PACKAGE_VERSION = 1.0
 PATH_SEPARATOR = :
 PTHREAD_FLAGS = -pthread
@@ -350,10 +350,10 @@ STRIP =
 VERSION = 1.0
 WS2_LIBS = 
 _libcurl_config = 
-abs_builddir = /root/TCMiner.mixed-nuts/TCMiner-test
-abs_srcdir = /root/TCMiner.mixed-nuts/TCMiner-test
-abs_top_builddir = /root/TCMiner.mixed-nuts/TCMiner-test
-abs_top_srcdir = /root/TCMiner.mixed-nuts/TCMiner-test
+abs_builddir = /root/vrminer.mixed-nuts/vrminer-test
+abs_srcdir = /root/vrminer.mixed-nuts/vrminer-test
+abs_top_builddir = /root/vrminer.mixed-nuts/vrminer-test
+abs_top_srcdir = /root/vrminer.mixed-nuts/vrminer-test
 ac_ct_CC = clang
 ac_ct_CXX = 
 am__include = include
@@ -381,7 +381,7 @@ host_vendor = unknown
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /root/TCMiner.mixed-nuts/TCMiner-test/install-sh
+install_sh = ${SHELL} /root/vrminer.mixed-nuts/vrminer-test/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
@@ -409,25 +409,25 @@ top_srcdir = .
 JANSSON_INCLUDES = 
 #JANSSON_INCLUDES = -I$(top_srcdir)/compat/jansson
 EXTRA_DIST = autogen.sh README.md README.txt LICENSE.txt \
-			  TCMiner.sln TCMiner.vcxproj TCMiner.vcxproj.filters \
+			  vrminer.sln vrminer.vcxproj vrminer.vcxproj.filters \
 			  compat/gettimeofday.c compat/getopt/getopt_long.c
 
 SUBDIRS = compat
-TCMiner_SOURCES = elist.h miner.h compat.h compat/inttypes.h \
+vrminer_SOURCES = elist.h miner.h compat.h compat/inttypes.h \
 	compat/stdbool.h compat/unistd.h bignum.cpp bignum.hpp \
-	compat/sys/time.h compat/getopt/getopt.h crc32.c TCMiner.cpp \
+	compat/sys/time.h compat/getopt/getopt.h crc32.c vrminer.cpp \
 	pools.cpp util.cpp bench.cpp api.cpp hashlog.cpp stats.cpp \
 	sysinfos.cpp equi/equi-stratum.cpp verus/verusscan.cpp \
 	verus/haraka_portable.c verus/haraka.c \
 	verus/verus_clhash_portable.cpp $(am__append_1)
-TCMiner_LDFLAGS = $(PTHREAD_FLAGS) $(am__append_3)
-TCMiner_LDADD = -lcurl -ljansson -lpthread  \
+vrminer_LDFLAGS = $(PTHREAD_FLAGS) $(am__append_3)
+vrminer_LDADD = -lcurl -ljansson -lpthread  \
 	-fopenmp -lcrypto -lssl -lz  $(am__append_4)
-TCMiner_CPPFLAGS =  -fopenmp $(CPPFLAGS) \
+vrminer_CPPFLAGS =  -fopenmp $(CPPFLAGS) \
 	$(PTHREAD_FLAGS) -march=armv8-a+crypto \
 	-flax-vector-conversions -fno-strict-aliasing \
 	$(JANSSON_INCLUDES) $(DEF_INCLUDES) -O3 $(am__append_2)
-all: TCMiner-config.h
+all: vrminer-config.h
 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
 
 .SUFFIXES:
@@ -466,20 +466,20 @@ $(ACLOCAL_M4): # $(am__aclocal_m4_deps)
 	$(am__cd) $(srcdir) && $(ACLOCAL) $(ACLOCAL_AMFLAGS)
 $(am__aclocal_m4_deps):
 
-TCMiner-config.h: stamp-h1
+vrminer-config.h: stamp-h1
 	@test -f $@ || rm -f stamp-h1
 	@test -f $@ || $(MAKE) $(AM_MAKEFLAGS) stamp-h1
 
-stamp-h1: $(srcdir)/TCMiner-config.h.in $(top_builddir)/config.status
+stamp-h1: $(srcdir)/vrminer-config.h.in $(top_builddir)/config.status
 	@rm -f stamp-h1
-	cd $(top_builddir) && $(SHELL) ./config.status TCMiner-config.h
-$(srcdir)/TCMiner-config.h.in: # $(am__configure_deps) 
+	cd $(top_builddir) && $(SHELL) ./config.status vrminer-config.h
+$(srcdir)/vrminer-config.h.in: # $(am__configure_deps) 
 	($(am__cd) $(top_srcdir) && $(AUTOHEADER))
 	rm -f stamp-h1
 	touch $@
 
 distclean-hdr:
-	-rm -f TCMiner-config.h stamp-h1
+	-rm -f vrminer-config.h stamp-h1
 install-binPROGRAMS: $(bin_PROGRAMS)
 	@$(NORMAL_INSTALL)
 	@list='$(bin_PROGRAMS)'; test -n "$(bindir)" || list=; \
@@ -528,7 +528,7 @@ equi/$(am__dirstamp):
 equi/$(DEPDIR)/$(am__dirstamp):
 	@$(MKDIR_P) equi/$(DEPDIR)
 	@: > equi/$(DEPDIR)/$(am__dirstamp)
-equi/TCMiner-equi-stratum.$(OBJEXT): equi/$(am__dirstamp) \
+equi/vrminer-equi-stratum.$(OBJEXT): equi/$(am__dirstamp) \
 	equi/$(DEPDIR)/$(am__dirstamp)
 verus/$(am__dirstamp):
 	@$(MKDIR_P) verus
@@ -536,13 +536,13 @@ verus/$(am__dirstamp):
 verus/$(DEPDIR)/$(am__dirstamp):
 	@$(MKDIR_P) verus/$(DEPDIR)
 	@: > verus/$(DEPDIR)/$(am__dirstamp)
-verus/TCMiner-verusscan.$(OBJEXT): verus/$(am__dirstamp) \
+verus/vrminer-verusscan.$(OBJEXT): verus/$(am__dirstamp) \
 	verus/$(DEPDIR)/$(am__dirstamp)
-verus/TCMiner-haraka_portable.$(OBJEXT): verus/$(am__dirstamp) \
+verus/vrminer-haraka_portable.$(OBJEXT): verus/$(am__dirstamp) \
 	verus/$(DEPDIR)/$(am__dirstamp)
-verus/TCMiner-haraka.$(OBJEXT): verus/$(am__dirstamp) \
+verus/vrminer-haraka.$(OBJEXT): verus/$(am__dirstamp) \
 	verus/$(DEPDIR)/$(am__dirstamp)
-verus/TCMiner-verus_clhash_portable.$(OBJEXT): verus/$(am__dirstamp) \
+verus/vrminer-verus_clhash_portable.$(OBJEXT): verus/$(am__dirstamp) \
 	verus/$(DEPDIR)/$(am__dirstamp)
 compat/$(am__dirstamp):
 	@$(MKDIR_P) compat
@@ -550,12 +550,12 @@ compat/$(am__dirstamp):
 compat/$(DEPDIR)/$(am__dirstamp):
 	@$(MKDIR_P) compat/$(DEPDIR)
 	@: > compat/$(DEPDIR)/$(am__dirstamp)
-compat/TCMiner-winansi.$(OBJEXT): compat/$(am__dirstamp) \
+compat/vrminer-winansi.$(OBJEXT): compat/$(am__dirstamp) \
 	compat/$(DEPDIR)/$(am__dirstamp)
 
-TCMiner$(EXEEXT): $(TCMiner_OBJECTS) $(TCMiner_DEPENDENCIES) $(EXTRA_TCMiner_DEPENDENCIES) 
-	@rm -f TCMiner$(EXEEXT)
-	$(AM_V_CXXLD)$(TCMiner_LINK) $(TCMiner_OBJECTS) $(TCMiner_LDADD) $(LIBS)
+vrminer$(EXEEXT): $(vrminer_OBJECTS) $(vrminer_DEPENDENCIES) $(EXTRA_vrminer_DEPENDENCIES) 
+	@rm -f vrminer$(EXEEXT)
+	$(AM_V_CXXLD)$(vrminer_LINK) $(vrminer_OBJECTS) $(vrminer_LDADD) $(LIBS)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
@@ -566,22 +566,22 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
-include ./$(DEPDIR)/TCMiner-api.Po # am--include-marker
-include ./$(DEPDIR)/TCMiner-bench.Po # am--include-marker
-include ./$(DEPDIR)/TCMiner-bignum.Po # am--include-marker
-include ./$(DEPDIR)/TCMiner-TCMiner.Po # am--include-marker
-include ./$(DEPDIR)/TCMiner-crc32.Po # am--include-marker
-include ./$(DEPDIR)/TCMiner-hashlog.Po # am--include-marker
-include ./$(DEPDIR)/TCMiner-pools.Po # am--include-marker
-include ./$(DEPDIR)/TCMiner-stats.Po # am--include-marker
-include ./$(DEPDIR)/TCMiner-sysinfos.Po # am--include-marker
-include ./$(DEPDIR)/TCMiner-util.Po # am--include-marker
-include compat/$(DEPDIR)/TCMiner-winansi.Po # am--include-marker
-include equi/$(DEPDIR)/TCMiner-equi-stratum.Po # am--include-marker
-include verus/$(DEPDIR)/TCMiner-haraka.Po # am--include-marker
-include verus/$(DEPDIR)/TCMiner-haraka_portable.Po # am--include-marker
-include verus/$(DEPDIR)/TCMiner-verus_clhash_portable.Po # am--include-marker
-include verus/$(DEPDIR)/TCMiner-verusscan.Po # am--include-marker
+include ./$(DEPDIR)/vrminer-api.Po # am--include-marker
+include ./$(DEPDIR)/vrminer-bench.Po # am--include-marker
+include ./$(DEPDIR)/vrminer-bignum.Po # am--include-marker
+include ./$(DEPDIR)/vrminer-vrminer.Po # am--include-marker
+include ./$(DEPDIR)/vrminer-crc32.Po # am--include-marker
+include ./$(DEPDIR)/vrminer-hashlog.Po # am--include-marker
+include ./$(DEPDIR)/vrminer-pools.Po # am--include-marker
+include ./$(DEPDIR)/vrminer-stats.Po # am--include-marker
+include ./$(DEPDIR)/vrminer-sysinfos.Po # am--include-marker
+include ./$(DEPDIR)/vrminer-util.Po # am--include-marker
+include compat/$(DEPDIR)/vrminer-winansi.Po # am--include-marker
+include equi/$(DEPDIR)/vrminer-equi-stratum.Po # am--include-marker
+include verus/$(DEPDIR)/vrminer-haraka.Po # am--include-marker
+include verus/$(DEPDIR)/vrminer-haraka_portable.Po # am--include-marker
+include verus/$(DEPDIR)/vrminer-verus_clhash_portable.Po # am--include-marker
+include verus/$(DEPDIR)/vrminer-verusscan.Po # am--include-marker
 
 $(am__depfiles_remade):
 	@$(MKDIR_P) $(@D)
@@ -605,61 +605,61 @@ am--depfiles: $(am__depfiles_remade)
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
 #	$(AM_V_CC_no)$(COMPILE) -c -o $@ `$(CYGPATH_W) '$<'`
 
-TCMiner-crc32.o: crc32.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT TCMiner-crc32.o -MD -MP -MF $(DEPDIR)/TCMiner-crc32.Tpo -c -o TCMiner-crc32.o `test -f 'crc32.c' || echo '$(srcdir)/'`crc32.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/TCMiner-crc32.Tpo $(DEPDIR)/TCMiner-crc32.Po
-#	$(AM_V_CC)source='crc32.c' object='TCMiner-crc32.o' libtool=no \
+vrminer-crc32.o: crc32.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vrminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT vrminer-crc32.o -MD -MP -MF $(DEPDIR)/vrminer-crc32.Tpo -c -o vrminer-crc32.o `test -f 'crc32.c' || echo '$(srcdir)/'`crc32.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/vrminer-crc32.Tpo $(DEPDIR)/vrminer-crc32.Po
+#	$(AM_V_CC)source='crc32.c' object='vrminer-crc32.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o TCMiner-crc32.o `test -f 'crc32.c' || echo '$(srcdir)/'`crc32.c
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vrminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o vrminer-crc32.o `test -f 'crc32.c' || echo '$(srcdir)/'`crc32.c
 
-TCMiner-crc32.obj: crc32.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT TCMiner-crc32.obj -MD -MP -MF $(DEPDIR)/TCMiner-crc32.Tpo -c -o TCMiner-crc32.obj `if test -f 'crc32.c'; then $(CYGPATH_W) 'crc32.c'; else $(CYGPATH_W) '$(srcdir)/crc32.c'; fi`
-	$(AM_V_at)$(am__mv) $(DEPDIR)/TCMiner-crc32.Tpo $(DEPDIR)/TCMiner-crc32.Po
-#	$(AM_V_CC)source='crc32.c' object='TCMiner-crc32.obj' libtool=no \
+vrminer-crc32.obj: crc32.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vrminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT vrminer-crc32.obj -MD -MP -MF $(DEPDIR)/vrminer-crc32.Tpo -c -o vrminer-crc32.obj `if test -f 'crc32.c'; then $(CYGPATH_W) 'crc32.c'; else $(CYGPATH_W) '$(srcdir)/crc32.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/vrminer-crc32.Tpo $(DEPDIR)/vrminer-crc32.Po
+#	$(AM_V_CC)source='crc32.c' object='vrminer-crc32.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o TCMiner-crc32.obj `if test -f 'crc32.c'; then $(CYGPATH_W) 'crc32.c'; else $(CYGPATH_W) '$(srcdir)/crc32.c'; fi`
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vrminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o vrminer-crc32.obj `if test -f 'crc32.c'; then $(CYGPATH_W) 'crc32.c'; else $(CYGPATH_W) '$(srcdir)/crc32.c'; fi`
 
-verus/TCMiner-haraka_portable.o: verus/haraka_portable.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT verus/TCMiner-haraka_portable.o -MD -MP -MF verus/$(DEPDIR)/TCMiner-haraka_portable.Tpo -c -o verus/TCMiner-haraka_portable.o `test -f 'verus/haraka_portable.c' || echo '$(srcdir)/'`verus/haraka_portable.c
-	$(AM_V_at)$(am__mv) verus/$(DEPDIR)/TCMiner-haraka_portable.Tpo verus/$(DEPDIR)/TCMiner-haraka_portable.Po
-#	$(AM_V_CC)source='verus/haraka_portable.c' object='verus/TCMiner-haraka_portable.o' libtool=no \
+verus/vrminer-haraka_portable.o: verus/haraka_portable.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vrminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT verus/vrminer-haraka_portable.o -MD -MP -MF verus/$(DEPDIR)/vrminer-haraka_portable.Tpo -c -o verus/vrminer-haraka_portable.o `test -f 'verus/haraka_portable.c' || echo '$(srcdir)/'`verus/haraka_portable.c
+	$(AM_V_at)$(am__mv) verus/$(DEPDIR)/vrminer-haraka_portable.Tpo verus/$(DEPDIR)/vrminer-haraka_portable.Po
+#	$(AM_V_CC)source='verus/haraka_portable.c' object='verus/vrminer-haraka_portable.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o verus/TCMiner-haraka_portable.o `test -f 'verus/haraka_portable.c' || echo '$(srcdir)/'`verus/haraka_portable.c
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vrminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o verus/vrminer-haraka_portable.o `test -f 'verus/haraka_portable.c' || echo '$(srcdir)/'`verus/haraka_portable.c
 
-verus/TCMiner-haraka_portable.obj: verus/haraka_portable.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT verus/TCMiner-haraka_portable.obj -MD -MP -MF verus/$(DEPDIR)/TCMiner-haraka_portable.Tpo -c -o verus/TCMiner-haraka_portable.obj `if test -f 'verus/haraka_portable.c'; then $(CYGPATH_W) 'verus/haraka_portable.c'; else $(CYGPATH_W) '$(srcdir)/verus/haraka_portable.c'; fi`
-	$(AM_V_at)$(am__mv) verus/$(DEPDIR)/TCMiner-haraka_portable.Tpo verus/$(DEPDIR)/TCMiner-haraka_portable.Po
-#	$(AM_V_CC)source='verus/haraka_portable.c' object='verus/TCMiner-haraka_portable.obj' libtool=no \
+verus/vrminer-haraka_portable.obj: verus/haraka_portable.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vrminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT verus/vrminer-haraka_portable.obj -MD -MP -MF verus/$(DEPDIR)/vrminer-haraka_portable.Tpo -c -o verus/vrminer-haraka_portable.obj `if test -f 'verus/haraka_portable.c'; then $(CYGPATH_W) 'verus/haraka_portable.c'; else $(CYGPATH_W) '$(srcdir)/verus/haraka_portable.c'; fi`
+	$(AM_V_at)$(am__mv) verus/$(DEPDIR)/vrminer-haraka_portable.Tpo verus/$(DEPDIR)/vrminer-haraka_portable.Po
+#	$(AM_V_CC)source='verus/haraka_portable.c' object='verus/vrminer-haraka_portable.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o verus/TCMiner-haraka_portable.obj `if test -f 'verus/haraka_portable.c'; then $(CYGPATH_W) 'verus/haraka_portable.c'; else $(CYGPATH_W) '$(srcdir)/verus/haraka_portable.c'; fi`
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vrminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o verus/vrminer-haraka_portable.obj `if test -f 'verus/haraka_portable.c'; then $(CYGPATH_W) 'verus/haraka_portable.c'; else $(CYGPATH_W) '$(srcdir)/verus/haraka_portable.c'; fi`
 
-verus/TCMiner-haraka.o: verus/haraka.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT verus/TCMiner-haraka.o -MD -MP -MF verus/$(DEPDIR)/TCMiner-haraka.Tpo -c -o verus/TCMiner-haraka.o `test -f 'verus/haraka.c' || echo '$(srcdir)/'`verus/haraka.c
-	$(AM_V_at)$(am__mv) verus/$(DEPDIR)/TCMiner-haraka.Tpo verus/$(DEPDIR)/TCMiner-haraka.Po
-#	$(AM_V_CC)source='verus/haraka.c' object='verus/TCMiner-haraka.o' libtool=no \
+verus/vrminer-haraka.o: verus/haraka.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vrminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT verus/vrminer-haraka.o -MD -MP -MF verus/$(DEPDIR)/vrminer-haraka.Tpo -c -o verus/vrminer-haraka.o `test -f 'verus/haraka.c' || echo '$(srcdir)/'`verus/haraka.c
+	$(AM_V_at)$(am__mv) verus/$(DEPDIR)/vrminer-haraka.Tpo verus/$(DEPDIR)/vrminer-haraka.Po
+#	$(AM_V_CC)source='verus/haraka.c' object='verus/vrminer-haraka.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o verus/TCMiner-haraka.o `test -f 'verus/haraka.c' || echo '$(srcdir)/'`verus/haraka.c
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vrminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o verus/vrminer-haraka.o `test -f 'verus/haraka.c' || echo '$(srcdir)/'`verus/haraka.c
 
-verus/TCMiner-haraka.obj: verus/haraka.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT verus/TCMiner-haraka.obj -MD -MP -MF verus/$(DEPDIR)/TCMiner-haraka.Tpo -c -o verus/TCMiner-haraka.obj `if test -f 'verus/haraka.c'; then $(CYGPATH_W) 'verus/haraka.c'; else $(CYGPATH_W) '$(srcdir)/verus/haraka.c'; fi`
-	$(AM_V_at)$(am__mv) verus/$(DEPDIR)/TCMiner-haraka.Tpo verus/$(DEPDIR)/TCMiner-haraka.Po
-#	$(AM_V_CC)source='verus/haraka.c' object='verus/TCMiner-haraka.obj' libtool=no \
+verus/vrminer-haraka.obj: verus/haraka.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vrminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT verus/vrminer-haraka.obj -MD -MP -MF verus/$(DEPDIR)/vrminer-haraka.Tpo -c -o verus/vrminer-haraka.obj `if test -f 'verus/haraka.c'; then $(CYGPATH_W) 'verus/haraka.c'; else $(CYGPATH_W) '$(srcdir)/verus/haraka.c'; fi`
+	$(AM_V_at)$(am__mv) verus/$(DEPDIR)/vrminer-haraka.Tpo verus/$(DEPDIR)/vrminer-haraka.Po
+#	$(AM_V_CC)source='verus/haraka.c' object='verus/vrminer-haraka.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o verus/TCMiner-haraka.obj `if test -f 'verus/haraka.c'; then $(CYGPATH_W) 'verus/haraka.c'; else $(CYGPATH_W) '$(srcdir)/verus/haraka.c'; fi`
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vrminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o verus/vrminer-haraka.obj `if test -f 'verus/haraka.c'; then $(CYGPATH_W) 'verus/haraka.c'; else $(CYGPATH_W) '$(srcdir)/verus/haraka.c'; fi`
 
-compat/TCMiner-winansi.o: compat/winansi.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT compat/TCMiner-winansi.o -MD -MP -MF compat/$(DEPDIR)/TCMiner-winansi.Tpo -c -o compat/TCMiner-winansi.o `test -f 'compat/winansi.c' || echo '$(srcdir)/'`compat/winansi.c
-	$(AM_V_at)$(am__mv) compat/$(DEPDIR)/TCMiner-winansi.Tpo compat/$(DEPDIR)/TCMiner-winansi.Po
-#	$(AM_V_CC)source='compat/winansi.c' object='compat/TCMiner-winansi.o' libtool=no \
+compat/vrminer-winansi.o: compat/winansi.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vrminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT compat/vrminer-winansi.o -MD -MP -MF compat/$(DEPDIR)/vrminer-winansi.Tpo -c -o compat/vrminer-winansi.o `test -f 'compat/winansi.c' || echo '$(srcdir)/'`compat/winansi.c
+	$(AM_V_at)$(am__mv) compat/$(DEPDIR)/vrminer-winansi.Tpo compat/$(DEPDIR)/vrminer-winansi.Po
+#	$(AM_V_CC)source='compat/winansi.c' object='compat/vrminer-winansi.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o compat/TCMiner-winansi.o `test -f 'compat/winansi.c' || echo '$(srcdir)/'`compat/winansi.c
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vrminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o compat/vrminer-winansi.o `test -f 'compat/winansi.c' || echo '$(srcdir)/'`compat/winansi.c
 
-compat/TCMiner-winansi.obj: compat/winansi.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT compat/TCMiner-winansi.obj -MD -MP -MF compat/$(DEPDIR)/TCMiner-winansi.Tpo -c -o compat/TCMiner-winansi.obj `if test -f 'compat/winansi.c'; then $(CYGPATH_W) 'compat/winansi.c'; else $(CYGPATH_W) '$(srcdir)/compat/winansi.c'; fi`
-	$(AM_V_at)$(am__mv) compat/$(DEPDIR)/TCMiner-winansi.Tpo compat/$(DEPDIR)/TCMiner-winansi.Po
-#	$(AM_V_CC)source='compat/winansi.c' object='compat/TCMiner-winansi.obj' libtool=no \
+compat/vrminer-winansi.obj: compat/winansi.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vrminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT compat/vrminer-winansi.obj -MD -MP -MF compat/$(DEPDIR)/vrminer-winansi.Tpo -c -o compat/vrminer-winansi.obj `if test -f 'compat/winansi.c'; then $(CYGPATH_W) 'compat/winansi.c'; else $(CYGPATH_W) '$(srcdir)/compat/winansi.c'; fi`
+	$(AM_V_at)$(am__mv) compat/$(DEPDIR)/vrminer-winansi.Tpo compat/$(DEPDIR)/vrminer-winansi.Po
+#	$(AM_V_CC)source='compat/winansi.c' object='compat/vrminer-winansi.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o compat/TCMiner-winansi.obj `if test -f 'compat/winansi.c'; then $(CYGPATH_W) 'compat/winansi.c'; else $(CYGPATH_W) '$(srcdir)/compat/winansi.c'; fi`
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vrminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o compat/vrminer-winansi.obj `if test -f 'compat/winansi.c'; then $(CYGPATH_W) 'compat/winansi.c'; else $(CYGPATH_W) '$(srcdir)/compat/winansi.c'; fi`
 
 .cpp.o:
 	$(AM_V_CXX)depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.o$$||'`;\
@@ -677,173 +677,173 @@ compat/TCMiner-winansi.obj: compat/winansi.c
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
 #	$(AM_V_CXX_no)$(CXXCOMPILE) -c -o $@ `$(CYGPATH_W) '$<'`
 
-TCMiner-bignum.o: bignum.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT TCMiner-bignum.o -MD -MP -MF $(DEPDIR)/TCMiner-bignum.Tpo -c -o TCMiner-bignum.o `test -f 'bignum.cpp' || echo '$(srcdir)/'`bignum.cpp
-	$(AM_V_at)$(am__mv) $(DEPDIR)/TCMiner-bignum.Tpo $(DEPDIR)/TCMiner-bignum.Po
-#	$(AM_V_CXX)source='bignum.cpp' object='TCMiner-bignum.o' libtool=no \
+vrminer-bignum.o: bignum.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vrminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT vrminer-bignum.o -MD -MP -MF $(DEPDIR)/vrminer-bignum.Tpo -c -o vrminer-bignum.o `test -f 'bignum.cpp' || echo '$(srcdir)/'`bignum.cpp
+	$(AM_V_at)$(am__mv) $(DEPDIR)/vrminer-bignum.Tpo $(DEPDIR)/vrminer-bignum.Po
+#	$(AM_V_CXX)source='bignum.cpp' object='vrminer-bignum.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o TCMiner-bignum.o `test -f 'bignum.cpp' || echo '$(srcdir)/'`bignum.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vrminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o vrminer-bignum.o `test -f 'bignum.cpp' || echo '$(srcdir)/'`bignum.cpp
 
-TCMiner-bignum.obj: bignum.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT TCMiner-bignum.obj -MD -MP -MF $(DEPDIR)/TCMiner-bignum.Tpo -c -o TCMiner-bignum.obj `if test -f 'bignum.cpp'; then $(CYGPATH_W) 'bignum.cpp'; else $(CYGPATH_W) '$(srcdir)/bignum.cpp'; fi`
-	$(AM_V_at)$(am__mv) $(DEPDIR)/TCMiner-bignum.Tpo $(DEPDIR)/TCMiner-bignum.Po
-#	$(AM_V_CXX)source='bignum.cpp' object='TCMiner-bignum.obj' libtool=no \
+vrminer-bignum.obj: bignum.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vrminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT vrminer-bignum.obj -MD -MP -MF $(DEPDIR)/vrminer-bignum.Tpo -c -o vrminer-bignum.obj `if test -f 'bignum.cpp'; then $(CYGPATH_W) 'bignum.cpp'; else $(CYGPATH_W) '$(srcdir)/bignum.cpp'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/vrminer-bignum.Tpo $(DEPDIR)/vrminer-bignum.Po
+#	$(AM_V_CXX)source='bignum.cpp' object='vrminer-bignum.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o TCMiner-bignum.obj `if test -f 'bignum.cpp'; then $(CYGPATH_W) 'bignum.cpp'; else $(CYGPATH_W) '$(srcdir)/bignum.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vrminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o vrminer-bignum.obj `if test -f 'bignum.cpp'; then $(CYGPATH_W) 'bignum.cpp'; else $(CYGPATH_W) '$(srcdir)/bignum.cpp'; fi`
 
-TCMiner-TCMiner.o: TCMiner.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT TCMiner-TCMiner.o -MD -MP -MF $(DEPDIR)/TCMiner-TCMiner.Tpo -c -o TCMiner-TCMiner.o `test -f 'TCMiner.cpp' || echo '$(srcdir)/'`TCMiner.cpp
-	$(AM_V_at)$(am__mv) $(DEPDIR)/TCMiner-TCMiner.Tpo $(DEPDIR)/TCMiner-TCMiner.Po
-#	$(AM_V_CXX)source='TCMiner.cpp' object='TCMiner-TCMiner.o' libtool=no \
+vrminer-vrminer.o: vrminer.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vrminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT vrminer-vrminer.o -MD -MP -MF $(DEPDIR)/vrminer-vrminer.Tpo -c -o vrminer-vrminer.o `test -f 'vrminer.cpp' || echo '$(srcdir)/'`vrminer.cpp
+	$(AM_V_at)$(am__mv) $(DEPDIR)/vrminer-vrminer.Tpo $(DEPDIR)/vrminer-vrminer.Po
+#	$(AM_V_CXX)source='vrminer.cpp' object='vrminer-vrminer.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o TCMiner-TCMiner.o `test -f 'TCMiner.cpp' || echo '$(srcdir)/'`TCMiner.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vrminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o vrminer-vrminer.o `test -f 'vrminer.cpp' || echo '$(srcdir)/'`vrminer.cpp
 
-TCMiner-TCMiner.obj: TCMiner.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT TCMiner-TCMiner.obj -MD -MP -MF $(DEPDIR)/TCMiner-TCMiner.Tpo -c -o TCMiner-TCMiner.obj `if test -f 'TCMiner.cpp'; then $(CYGPATH_W) 'TCMiner.cpp'; else $(CYGPATH_W) '$(srcdir)/TCMiner.cpp'; fi`
-	$(AM_V_at)$(am__mv) $(DEPDIR)/TCMiner-TCMiner.Tpo $(DEPDIR)/TCMiner-TCMiner.Po
-#	$(AM_V_CXX)source='TCMiner.cpp' object='TCMiner-TCMiner.obj' libtool=no \
+vrminer-vrminer.obj: vrminer.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vrminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT vrminer-vrminer.obj -MD -MP -MF $(DEPDIR)/vrminer-vrminer.Tpo -c -o vrminer-vrminer.obj `if test -f 'vrminer.cpp'; then $(CYGPATH_W) 'vrminer.cpp'; else $(CYGPATH_W) '$(srcdir)/vrminer.cpp'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/vrminer-vrminer.Tpo $(DEPDIR)/vrminer-vrminer.Po
+#	$(AM_V_CXX)source='vrminer.cpp' object='vrminer-vrminer.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o TCMiner-TCMiner.obj `if test -f 'TCMiner.cpp'; then $(CYGPATH_W) 'TCMiner.cpp'; else $(CYGPATH_W) '$(srcdir)/TCMiner.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vrminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o vrminer-vrminer.obj `if test -f 'vrminer.cpp'; then $(CYGPATH_W) 'vrminer.cpp'; else $(CYGPATH_W) '$(srcdir)/vrminer.cpp'; fi`
 
-TCMiner-pools.o: pools.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT TCMiner-pools.o -MD -MP -MF $(DEPDIR)/TCMiner-pools.Tpo -c -o TCMiner-pools.o `test -f 'pools.cpp' || echo '$(srcdir)/'`pools.cpp
-	$(AM_V_at)$(am__mv) $(DEPDIR)/TCMiner-pools.Tpo $(DEPDIR)/TCMiner-pools.Po
-#	$(AM_V_CXX)source='pools.cpp' object='TCMiner-pools.o' libtool=no \
+vrminer-pools.o: pools.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vrminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT vrminer-pools.o -MD -MP -MF $(DEPDIR)/vrminer-pools.Tpo -c -o vrminer-pools.o `test -f 'pools.cpp' || echo '$(srcdir)/'`pools.cpp
+	$(AM_V_at)$(am__mv) $(DEPDIR)/vrminer-pools.Tpo $(DEPDIR)/vrminer-pools.Po
+#	$(AM_V_CXX)source='pools.cpp' object='vrminer-pools.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o TCMiner-pools.o `test -f 'pools.cpp' || echo '$(srcdir)/'`pools.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vrminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o vrminer-pools.o `test -f 'pools.cpp' || echo '$(srcdir)/'`pools.cpp
 
-TCMiner-pools.obj: pools.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT TCMiner-pools.obj -MD -MP -MF $(DEPDIR)/TCMiner-pools.Tpo -c -o TCMiner-pools.obj `if test -f 'pools.cpp'; then $(CYGPATH_W) 'pools.cpp'; else $(CYGPATH_W) '$(srcdir)/pools.cpp'; fi`
-	$(AM_V_at)$(am__mv) $(DEPDIR)/TCMiner-pools.Tpo $(DEPDIR)/TCMiner-pools.Po
-#	$(AM_V_CXX)source='pools.cpp' object='TCMiner-pools.obj' libtool=no \
+vrminer-pools.obj: pools.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vrminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT vrminer-pools.obj -MD -MP -MF $(DEPDIR)/vrminer-pools.Tpo -c -o vrminer-pools.obj `if test -f 'pools.cpp'; then $(CYGPATH_W) 'pools.cpp'; else $(CYGPATH_W) '$(srcdir)/pools.cpp'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/vrminer-pools.Tpo $(DEPDIR)/vrminer-pools.Po
+#	$(AM_V_CXX)source='pools.cpp' object='vrminer-pools.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o TCMiner-pools.obj `if test -f 'pools.cpp'; then $(CYGPATH_W) 'pools.cpp'; else $(CYGPATH_W) '$(srcdir)/pools.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vrminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o vrminer-pools.obj `if test -f 'pools.cpp'; then $(CYGPATH_W) 'pools.cpp'; else $(CYGPATH_W) '$(srcdir)/pools.cpp'; fi`
 
-TCMiner-util.o: util.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT TCMiner-util.o -MD -MP -MF $(DEPDIR)/TCMiner-util.Tpo -c -o TCMiner-util.o `test -f 'util.cpp' || echo '$(srcdir)/'`util.cpp
-	$(AM_V_at)$(am__mv) $(DEPDIR)/TCMiner-util.Tpo $(DEPDIR)/TCMiner-util.Po
-#	$(AM_V_CXX)source='util.cpp' object='TCMiner-util.o' libtool=no \
+vrminer-util.o: util.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vrminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT vrminer-util.o -MD -MP -MF $(DEPDIR)/vrminer-util.Tpo -c -o vrminer-util.o `test -f 'util.cpp' || echo '$(srcdir)/'`util.cpp
+	$(AM_V_at)$(am__mv) $(DEPDIR)/vrminer-util.Tpo $(DEPDIR)/vrminer-util.Po
+#	$(AM_V_CXX)source='util.cpp' object='vrminer-util.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o TCMiner-util.o `test -f 'util.cpp' || echo '$(srcdir)/'`util.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vrminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o vrminer-util.o `test -f 'util.cpp' || echo '$(srcdir)/'`util.cpp
 
-TCMiner-util.obj: util.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT TCMiner-util.obj -MD -MP -MF $(DEPDIR)/TCMiner-util.Tpo -c -o TCMiner-util.obj `if test -f 'util.cpp'; then $(CYGPATH_W) 'util.cpp'; else $(CYGPATH_W) '$(srcdir)/util.cpp'; fi`
-	$(AM_V_at)$(am__mv) $(DEPDIR)/TCMiner-util.Tpo $(DEPDIR)/TCMiner-util.Po
-#	$(AM_V_CXX)source='util.cpp' object='TCMiner-util.obj' libtool=no \
+vrminer-util.obj: util.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vrminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT vrminer-util.obj -MD -MP -MF $(DEPDIR)/vrminer-util.Tpo -c -o vrminer-util.obj `if test -f 'util.cpp'; then $(CYGPATH_W) 'util.cpp'; else $(CYGPATH_W) '$(srcdir)/util.cpp'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/vrminer-util.Tpo $(DEPDIR)/vrminer-util.Po
+#	$(AM_V_CXX)source='util.cpp' object='vrminer-util.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o TCMiner-util.obj `if test -f 'util.cpp'; then $(CYGPATH_W) 'util.cpp'; else $(CYGPATH_W) '$(srcdir)/util.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vrminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o vrminer-util.obj `if test -f 'util.cpp'; then $(CYGPATH_W) 'util.cpp'; else $(CYGPATH_W) '$(srcdir)/util.cpp'; fi`
 
-TCMiner-bench.o: bench.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT TCMiner-bench.o -MD -MP -MF $(DEPDIR)/TCMiner-bench.Tpo -c -o TCMiner-bench.o `test -f 'bench.cpp' || echo '$(srcdir)/'`bench.cpp
-	$(AM_V_at)$(am__mv) $(DEPDIR)/TCMiner-bench.Tpo $(DEPDIR)/TCMiner-bench.Po
-#	$(AM_V_CXX)source='bench.cpp' object='TCMiner-bench.o' libtool=no \
+vrminer-bench.o: bench.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vrminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT vrminer-bench.o -MD -MP -MF $(DEPDIR)/vrminer-bench.Tpo -c -o vrminer-bench.o `test -f 'bench.cpp' || echo '$(srcdir)/'`bench.cpp
+	$(AM_V_at)$(am__mv) $(DEPDIR)/vrminer-bench.Tpo $(DEPDIR)/vrminer-bench.Po
+#	$(AM_V_CXX)source='bench.cpp' object='vrminer-bench.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o TCMiner-bench.o `test -f 'bench.cpp' || echo '$(srcdir)/'`bench.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vrminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o vrminer-bench.o `test -f 'bench.cpp' || echo '$(srcdir)/'`bench.cpp
 
-TCMiner-bench.obj: bench.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT TCMiner-bench.obj -MD -MP -MF $(DEPDIR)/TCMiner-bench.Tpo -c -o TCMiner-bench.obj `if test -f 'bench.cpp'; then $(CYGPATH_W) 'bench.cpp'; else $(CYGPATH_W) '$(srcdir)/bench.cpp'; fi`
-	$(AM_V_at)$(am__mv) $(DEPDIR)/TCMiner-bench.Tpo $(DEPDIR)/TCMiner-bench.Po
-#	$(AM_V_CXX)source='bench.cpp' object='TCMiner-bench.obj' libtool=no \
+vrminer-bench.obj: bench.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vrminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT vrminer-bench.obj -MD -MP -MF $(DEPDIR)/vrminer-bench.Tpo -c -o vrminer-bench.obj `if test -f 'bench.cpp'; then $(CYGPATH_W) 'bench.cpp'; else $(CYGPATH_W) '$(srcdir)/bench.cpp'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/vrminer-bench.Tpo $(DEPDIR)/vrminer-bench.Po
+#	$(AM_V_CXX)source='bench.cpp' object='vrminer-bench.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o TCMiner-bench.obj `if test -f 'bench.cpp'; then $(CYGPATH_W) 'bench.cpp'; else $(CYGPATH_W) '$(srcdir)/bench.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vrminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o vrminer-bench.obj `if test -f 'bench.cpp'; then $(CYGPATH_W) 'bench.cpp'; else $(CYGPATH_W) '$(srcdir)/bench.cpp'; fi`
 
-TCMiner-api.o: api.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT TCMiner-api.o -MD -MP -MF $(DEPDIR)/TCMiner-api.Tpo -c -o TCMiner-api.o `test -f 'api.cpp' || echo '$(srcdir)/'`api.cpp
-	$(AM_V_at)$(am__mv) $(DEPDIR)/TCMiner-api.Tpo $(DEPDIR)/TCMiner-api.Po
-#	$(AM_V_CXX)source='api.cpp' object='TCMiner-api.o' libtool=no \
+vrminer-api.o: api.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vrminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT vrminer-api.o -MD -MP -MF $(DEPDIR)/vrminer-api.Tpo -c -o vrminer-api.o `test -f 'api.cpp' || echo '$(srcdir)/'`api.cpp
+	$(AM_V_at)$(am__mv) $(DEPDIR)/vrminer-api.Tpo $(DEPDIR)/vrminer-api.Po
+#	$(AM_V_CXX)source='api.cpp' object='vrminer-api.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o TCMiner-api.o `test -f 'api.cpp' || echo '$(srcdir)/'`api.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vrminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o vrminer-api.o `test -f 'api.cpp' || echo '$(srcdir)/'`api.cpp
 
-TCMiner-api.obj: api.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT TCMiner-api.obj -MD -MP -MF $(DEPDIR)/TCMiner-api.Tpo -c -o TCMiner-api.obj `if test -f 'api.cpp'; then $(CYGPATH_W) 'api.cpp'; else $(CYGPATH_W) '$(srcdir)/api.cpp'; fi`
-	$(AM_V_at)$(am__mv) $(DEPDIR)/TCMiner-api.Tpo $(DEPDIR)/TCMiner-api.Po
-#	$(AM_V_CXX)source='api.cpp' object='TCMiner-api.obj' libtool=no \
+vrminer-api.obj: api.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vrminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT vrminer-api.obj -MD -MP -MF $(DEPDIR)/vrminer-api.Tpo -c -o vrminer-api.obj `if test -f 'api.cpp'; then $(CYGPATH_W) 'api.cpp'; else $(CYGPATH_W) '$(srcdir)/api.cpp'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/vrminer-api.Tpo $(DEPDIR)/vrminer-api.Po
+#	$(AM_V_CXX)source='api.cpp' object='vrminer-api.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o TCMiner-api.obj `if test -f 'api.cpp'; then $(CYGPATH_W) 'api.cpp'; else $(CYGPATH_W) '$(srcdir)/api.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vrminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o vrminer-api.obj `if test -f 'api.cpp'; then $(CYGPATH_W) 'api.cpp'; else $(CYGPATH_W) '$(srcdir)/api.cpp'; fi`
 
-TCMiner-hashlog.o: hashlog.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT TCMiner-hashlog.o -MD -MP -MF $(DEPDIR)/TCMiner-hashlog.Tpo -c -o TCMiner-hashlog.o `test -f 'hashlog.cpp' || echo '$(srcdir)/'`hashlog.cpp
-	$(AM_V_at)$(am__mv) $(DEPDIR)/TCMiner-hashlog.Tpo $(DEPDIR)/TCMiner-hashlog.Po
-#	$(AM_V_CXX)source='hashlog.cpp' object='TCMiner-hashlog.o' libtool=no \
+vrminer-hashlog.o: hashlog.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vrminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT vrminer-hashlog.o -MD -MP -MF $(DEPDIR)/vrminer-hashlog.Tpo -c -o vrminer-hashlog.o `test -f 'hashlog.cpp' || echo '$(srcdir)/'`hashlog.cpp
+	$(AM_V_at)$(am__mv) $(DEPDIR)/vrminer-hashlog.Tpo $(DEPDIR)/vrminer-hashlog.Po
+#	$(AM_V_CXX)source='hashlog.cpp' object='vrminer-hashlog.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o TCMiner-hashlog.o `test -f 'hashlog.cpp' || echo '$(srcdir)/'`hashlog.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vrminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o vrminer-hashlog.o `test -f 'hashlog.cpp' || echo '$(srcdir)/'`hashlog.cpp
 
-TCMiner-hashlog.obj: hashlog.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT TCMiner-hashlog.obj -MD -MP -MF $(DEPDIR)/TCMiner-hashlog.Tpo -c -o TCMiner-hashlog.obj `if test -f 'hashlog.cpp'; then $(CYGPATH_W) 'hashlog.cpp'; else $(CYGPATH_W) '$(srcdir)/hashlog.cpp'; fi`
-	$(AM_V_at)$(am__mv) $(DEPDIR)/TCMiner-hashlog.Tpo $(DEPDIR)/TCMiner-hashlog.Po
-#	$(AM_V_CXX)source='hashlog.cpp' object='TCMiner-hashlog.obj' libtool=no \
+vrminer-hashlog.obj: hashlog.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vrminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT vrminer-hashlog.obj -MD -MP -MF $(DEPDIR)/vrminer-hashlog.Tpo -c -o vrminer-hashlog.obj `if test -f 'hashlog.cpp'; then $(CYGPATH_W) 'hashlog.cpp'; else $(CYGPATH_W) '$(srcdir)/hashlog.cpp'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/vrminer-hashlog.Tpo $(DEPDIR)/vrminer-hashlog.Po
+#	$(AM_V_CXX)source='hashlog.cpp' object='vrminer-hashlog.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o TCMiner-hashlog.obj `if test -f 'hashlog.cpp'; then $(CYGPATH_W) 'hashlog.cpp'; else $(CYGPATH_W) '$(srcdir)/hashlog.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vrminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o vrminer-hashlog.obj `if test -f 'hashlog.cpp'; then $(CYGPATH_W) 'hashlog.cpp'; else $(CYGPATH_W) '$(srcdir)/hashlog.cpp'; fi`
 
-TCMiner-stats.o: stats.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT TCMiner-stats.o -MD -MP -MF $(DEPDIR)/TCMiner-stats.Tpo -c -o TCMiner-stats.o `test -f 'stats.cpp' || echo '$(srcdir)/'`stats.cpp
-	$(AM_V_at)$(am__mv) $(DEPDIR)/TCMiner-stats.Tpo $(DEPDIR)/TCMiner-stats.Po
-#	$(AM_V_CXX)source='stats.cpp' object='TCMiner-stats.o' libtool=no \
+vrminer-stats.o: stats.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vrminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT vrminer-stats.o -MD -MP -MF $(DEPDIR)/vrminer-stats.Tpo -c -o vrminer-stats.o `test -f 'stats.cpp' || echo '$(srcdir)/'`stats.cpp
+	$(AM_V_at)$(am__mv) $(DEPDIR)/vrminer-stats.Tpo $(DEPDIR)/vrminer-stats.Po
+#	$(AM_V_CXX)source='stats.cpp' object='vrminer-stats.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o TCMiner-stats.o `test -f 'stats.cpp' || echo '$(srcdir)/'`stats.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vrminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o vrminer-stats.o `test -f 'stats.cpp' || echo '$(srcdir)/'`stats.cpp
 
-TCMiner-stats.obj: stats.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT TCMiner-stats.obj -MD -MP -MF $(DEPDIR)/TCMiner-stats.Tpo -c -o TCMiner-stats.obj `if test -f 'stats.cpp'; then $(CYGPATH_W) 'stats.cpp'; else $(CYGPATH_W) '$(srcdir)/stats.cpp'; fi`
-	$(AM_V_at)$(am__mv) $(DEPDIR)/TCMiner-stats.Tpo $(DEPDIR)/TCMiner-stats.Po
-#	$(AM_V_CXX)source='stats.cpp' object='TCMiner-stats.obj' libtool=no \
+vrminer-stats.obj: stats.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vrminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT vrminer-stats.obj -MD -MP -MF $(DEPDIR)/vrminer-stats.Tpo -c -o vrminer-stats.obj `if test -f 'stats.cpp'; then $(CYGPATH_W) 'stats.cpp'; else $(CYGPATH_W) '$(srcdir)/stats.cpp'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/vrminer-stats.Tpo $(DEPDIR)/vrminer-stats.Po
+#	$(AM_V_CXX)source='stats.cpp' object='vrminer-stats.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o TCMiner-stats.obj `if test -f 'stats.cpp'; then $(CYGPATH_W) 'stats.cpp'; else $(CYGPATH_W) '$(srcdir)/stats.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vrminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o vrminer-stats.obj `if test -f 'stats.cpp'; then $(CYGPATH_W) 'stats.cpp'; else $(CYGPATH_W) '$(srcdir)/stats.cpp'; fi`
 
-TCMiner-sysinfos.o: sysinfos.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT TCMiner-sysinfos.o -MD -MP -MF $(DEPDIR)/TCMiner-sysinfos.Tpo -c -o TCMiner-sysinfos.o `test -f 'sysinfos.cpp' || echo '$(srcdir)/'`sysinfos.cpp
-	$(AM_V_at)$(am__mv) $(DEPDIR)/TCMiner-sysinfos.Tpo $(DEPDIR)/TCMiner-sysinfos.Po
-#	$(AM_V_CXX)source='sysinfos.cpp' object='TCMiner-sysinfos.o' libtool=no \
+vrminer-sysinfos.o: sysinfos.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vrminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT vrminer-sysinfos.o -MD -MP -MF $(DEPDIR)/vrminer-sysinfos.Tpo -c -o vrminer-sysinfos.o `test -f 'sysinfos.cpp' || echo '$(srcdir)/'`sysinfos.cpp
+	$(AM_V_at)$(am__mv) $(DEPDIR)/vrminer-sysinfos.Tpo $(DEPDIR)/vrminer-sysinfos.Po
+#	$(AM_V_CXX)source='sysinfos.cpp' object='vrminer-sysinfos.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o TCMiner-sysinfos.o `test -f 'sysinfos.cpp' || echo '$(srcdir)/'`sysinfos.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vrminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o vrminer-sysinfos.o `test -f 'sysinfos.cpp' || echo '$(srcdir)/'`sysinfos.cpp
 
-TCMiner-sysinfos.obj: sysinfos.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT TCMiner-sysinfos.obj -MD -MP -MF $(DEPDIR)/TCMiner-sysinfos.Tpo -c -o TCMiner-sysinfos.obj `if test -f 'sysinfos.cpp'; then $(CYGPATH_W) 'sysinfos.cpp'; else $(CYGPATH_W) '$(srcdir)/sysinfos.cpp'; fi`
-	$(AM_V_at)$(am__mv) $(DEPDIR)/TCMiner-sysinfos.Tpo $(DEPDIR)/TCMiner-sysinfos.Po
-#	$(AM_V_CXX)source='sysinfos.cpp' object='TCMiner-sysinfos.obj' libtool=no \
+vrminer-sysinfos.obj: sysinfos.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vrminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT vrminer-sysinfos.obj -MD -MP -MF $(DEPDIR)/vrminer-sysinfos.Tpo -c -o vrminer-sysinfos.obj `if test -f 'sysinfos.cpp'; then $(CYGPATH_W) 'sysinfos.cpp'; else $(CYGPATH_W) '$(srcdir)/sysinfos.cpp'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/vrminer-sysinfos.Tpo $(DEPDIR)/vrminer-sysinfos.Po
+#	$(AM_V_CXX)source='sysinfos.cpp' object='vrminer-sysinfos.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o TCMiner-sysinfos.obj `if test -f 'sysinfos.cpp'; then $(CYGPATH_W) 'sysinfos.cpp'; else $(CYGPATH_W) '$(srcdir)/sysinfos.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vrminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o vrminer-sysinfos.obj `if test -f 'sysinfos.cpp'; then $(CYGPATH_W) 'sysinfos.cpp'; else $(CYGPATH_W) '$(srcdir)/sysinfos.cpp'; fi`
 
-equi/TCMiner-equi-stratum.o: equi/equi-stratum.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT equi/TCMiner-equi-stratum.o -MD -MP -MF equi/$(DEPDIR)/TCMiner-equi-stratum.Tpo -c -o equi/TCMiner-equi-stratum.o `test -f 'equi/equi-stratum.cpp' || echo '$(srcdir)/'`equi/equi-stratum.cpp
-	$(AM_V_at)$(am__mv) equi/$(DEPDIR)/TCMiner-equi-stratum.Tpo equi/$(DEPDIR)/TCMiner-equi-stratum.Po
-#	$(AM_V_CXX)source='equi/equi-stratum.cpp' object='equi/TCMiner-equi-stratum.o' libtool=no \
+equi/vrminer-equi-stratum.o: equi/equi-stratum.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vrminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT equi/vrminer-equi-stratum.o -MD -MP -MF equi/$(DEPDIR)/vrminer-equi-stratum.Tpo -c -o equi/vrminer-equi-stratum.o `test -f 'equi/equi-stratum.cpp' || echo '$(srcdir)/'`equi/equi-stratum.cpp
+	$(AM_V_at)$(am__mv) equi/$(DEPDIR)/vrminer-equi-stratum.Tpo equi/$(DEPDIR)/vrminer-equi-stratum.Po
+#	$(AM_V_CXX)source='equi/equi-stratum.cpp' object='equi/vrminer-equi-stratum.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o equi/TCMiner-equi-stratum.o `test -f 'equi/equi-stratum.cpp' || echo '$(srcdir)/'`equi/equi-stratum.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vrminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o equi/vrminer-equi-stratum.o `test -f 'equi/equi-stratum.cpp' || echo '$(srcdir)/'`equi/equi-stratum.cpp
 
-equi/TCMiner-equi-stratum.obj: equi/equi-stratum.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT equi/TCMiner-equi-stratum.obj -MD -MP -MF equi/$(DEPDIR)/TCMiner-equi-stratum.Tpo -c -o equi/TCMiner-equi-stratum.obj `if test -f 'equi/equi-stratum.cpp'; then $(CYGPATH_W) 'equi/equi-stratum.cpp'; else $(CYGPATH_W) '$(srcdir)/equi/equi-stratum.cpp'; fi`
-	$(AM_V_at)$(am__mv) equi/$(DEPDIR)/TCMiner-equi-stratum.Tpo equi/$(DEPDIR)/TCMiner-equi-stratum.Po
-#	$(AM_V_CXX)source='equi/equi-stratum.cpp' object='equi/TCMiner-equi-stratum.obj' libtool=no \
+equi/vrminer-equi-stratum.obj: equi/equi-stratum.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vrminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT equi/vrminer-equi-stratum.obj -MD -MP -MF equi/$(DEPDIR)/vrminer-equi-stratum.Tpo -c -o equi/vrminer-equi-stratum.obj `if test -f 'equi/equi-stratum.cpp'; then $(CYGPATH_W) 'equi/equi-stratum.cpp'; else $(CYGPATH_W) '$(srcdir)/equi/equi-stratum.cpp'; fi`
+	$(AM_V_at)$(am__mv) equi/$(DEPDIR)/vrminer-equi-stratum.Tpo equi/$(DEPDIR)/vrminer-equi-stratum.Po
+#	$(AM_V_CXX)source='equi/equi-stratum.cpp' object='equi/vrminer-equi-stratum.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o equi/TCMiner-equi-stratum.obj `if test -f 'equi/equi-stratum.cpp'; then $(CYGPATH_W) 'equi/equi-stratum.cpp'; else $(CYGPATH_W) '$(srcdir)/equi/equi-stratum.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vrminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o equi/vrminer-equi-stratum.obj `if test -f 'equi/equi-stratum.cpp'; then $(CYGPATH_W) 'equi/equi-stratum.cpp'; else $(CYGPATH_W) '$(srcdir)/equi/equi-stratum.cpp'; fi`
 
-verus/TCMiner-verusscan.o: verus/verusscan.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT verus/TCMiner-verusscan.o -MD -MP -MF verus/$(DEPDIR)/TCMiner-verusscan.Tpo -c -o verus/TCMiner-verusscan.o `test -f 'verus/verusscan.cpp' || echo '$(srcdir)/'`verus/verusscan.cpp
-	$(AM_V_at)$(am__mv) verus/$(DEPDIR)/TCMiner-verusscan.Tpo verus/$(DEPDIR)/TCMiner-verusscan.Po
-#	$(AM_V_CXX)source='verus/verusscan.cpp' object='verus/TCMiner-verusscan.o' libtool=no \
+verus/vrminer-verusscan.o: verus/verusscan.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vrminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT verus/vrminer-verusscan.o -MD -MP -MF verus/$(DEPDIR)/vrminer-verusscan.Tpo -c -o verus/vrminer-verusscan.o `test -f 'verus/verusscan.cpp' || echo '$(srcdir)/'`verus/verusscan.cpp
+	$(AM_V_at)$(am__mv) verus/$(DEPDIR)/vrminer-verusscan.Tpo verus/$(DEPDIR)/vrminer-verusscan.Po
+#	$(AM_V_CXX)source='verus/verusscan.cpp' object='verus/vrminer-verusscan.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o verus/TCMiner-verusscan.o `test -f 'verus/verusscan.cpp' || echo '$(srcdir)/'`verus/verusscan.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vrminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o verus/vrminer-verusscan.o `test -f 'verus/verusscan.cpp' || echo '$(srcdir)/'`verus/verusscan.cpp
 
-verus/TCMiner-verusscan.obj: verus/verusscan.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT verus/TCMiner-verusscan.obj -MD -MP -MF verus/$(DEPDIR)/TCMiner-verusscan.Tpo -c -o verus/TCMiner-verusscan.obj `if test -f 'verus/verusscan.cpp'; then $(CYGPATH_W) 'verus/verusscan.cpp'; else $(CYGPATH_W) '$(srcdir)/verus/verusscan.cpp'; fi`
-	$(AM_V_at)$(am__mv) verus/$(DEPDIR)/TCMiner-verusscan.Tpo verus/$(DEPDIR)/TCMiner-verusscan.Po
-#	$(AM_V_CXX)source='verus/verusscan.cpp' object='verus/TCMiner-verusscan.obj' libtool=no \
+verus/vrminer-verusscan.obj: verus/verusscan.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vrminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT verus/vrminer-verusscan.obj -MD -MP -MF verus/$(DEPDIR)/vrminer-verusscan.Tpo -c -o verus/vrminer-verusscan.obj `if test -f 'verus/verusscan.cpp'; then $(CYGPATH_W) 'verus/verusscan.cpp'; else $(CYGPATH_W) '$(srcdir)/verus/verusscan.cpp'; fi`
+	$(AM_V_at)$(am__mv) verus/$(DEPDIR)/vrminer-verusscan.Tpo verus/$(DEPDIR)/vrminer-verusscan.Po
+#	$(AM_V_CXX)source='verus/verusscan.cpp' object='verus/vrminer-verusscan.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o verus/TCMiner-verusscan.obj `if test -f 'verus/verusscan.cpp'; then $(CYGPATH_W) 'verus/verusscan.cpp'; else $(CYGPATH_W) '$(srcdir)/verus/verusscan.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vrminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o verus/vrminer-verusscan.obj `if test -f 'verus/verusscan.cpp'; then $(CYGPATH_W) 'verus/verusscan.cpp'; else $(CYGPATH_W) '$(srcdir)/verus/verusscan.cpp'; fi`
 
-verus/TCMiner-verus_clhash_portable.o: verus/verus_clhash_portable.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT verus/TCMiner-verus_clhash_portable.o -MD -MP -MF verus/$(DEPDIR)/TCMiner-verus_clhash_portable.Tpo -c -o verus/TCMiner-verus_clhash_portable.o `test -f 'verus/verus_clhash_portable.cpp' || echo '$(srcdir)/'`verus/verus_clhash_portable.cpp
-	$(AM_V_at)$(am__mv) verus/$(DEPDIR)/TCMiner-verus_clhash_portable.Tpo verus/$(DEPDIR)/TCMiner-verus_clhash_portable.Po
-#	$(AM_V_CXX)source='verus/verus_clhash_portable.cpp' object='verus/TCMiner-verus_clhash_portable.o' libtool=no \
+verus/vrminer-verus_clhash_portable.o: verus/verus_clhash_portable.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vrminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT verus/vrminer-verus_clhash_portable.o -MD -MP -MF verus/$(DEPDIR)/vrminer-verus_clhash_portable.Tpo -c -o verus/vrminer-verus_clhash_portable.o `test -f 'verus/verus_clhash_portable.cpp' || echo '$(srcdir)/'`verus/verus_clhash_portable.cpp
+	$(AM_V_at)$(am__mv) verus/$(DEPDIR)/vrminer-verus_clhash_portable.Tpo verus/$(DEPDIR)/vrminer-verus_clhash_portable.Po
+#	$(AM_V_CXX)source='verus/verus_clhash_portable.cpp' object='verus/vrminer-verus_clhash_portable.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o verus/TCMiner-verus_clhash_portable.o `test -f 'verus/verus_clhash_portable.cpp' || echo '$(srcdir)/'`verus/verus_clhash_portable.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vrminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o verus/vrminer-verus_clhash_portable.o `test -f 'verus/verus_clhash_portable.cpp' || echo '$(srcdir)/'`verus/verus_clhash_portable.cpp
 
-verus/TCMiner-verus_clhash_portable.obj: verus/verus_clhash_portable.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT verus/TCMiner-verus_clhash_portable.obj -MD -MP -MF verus/$(DEPDIR)/TCMiner-verus_clhash_portable.Tpo -c -o verus/TCMiner-verus_clhash_portable.obj `if test -f 'verus/verus_clhash_portable.cpp'; then $(CYGPATH_W) 'verus/verus_clhash_portable.cpp'; else $(CYGPATH_W) '$(srcdir)/verus/verus_clhash_portable.cpp'; fi`
-	$(AM_V_at)$(am__mv) verus/$(DEPDIR)/TCMiner-verus_clhash_portable.Tpo verus/$(DEPDIR)/TCMiner-verus_clhash_portable.Po
-#	$(AM_V_CXX)source='verus/verus_clhash_portable.cpp' object='verus/TCMiner-verus_clhash_portable.obj' libtool=no \
+verus/vrminer-verus_clhash_portable.obj: verus/verus_clhash_portable.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vrminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT verus/vrminer-verus_clhash_portable.obj -MD -MP -MF verus/$(DEPDIR)/vrminer-verus_clhash_portable.Tpo -c -o verus/vrminer-verus_clhash_portable.obj `if test -f 'verus/verus_clhash_portable.cpp'; then $(CYGPATH_W) 'verus/verus_clhash_portable.cpp'; else $(CYGPATH_W) '$(srcdir)/verus/verus_clhash_portable.cpp'; fi`
+	$(AM_V_at)$(am__mv) verus/$(DEPDIR)/vrminer-verus_clhash_portable.Tpo verus/$(DEPDIR)/vrminer-verus_clhash_portable.Po
+#	$(AM_V_CXX)source='verus/verus_clhash_portable.cpp' object='verus/vrminer-verus_clhash_portable.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o verus/TCMiner-verus_clhash_portable.obj `if test -f 'verus/verus_clhash_portable.cpp'; then $(CYGPATH_W) 'verus/verus_clhash_portable.cpp'; else $(CYGPATH_W) '$(srcdir)/verus/verus_clhash_portable.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vrminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o verus/vrminer-verus_clhash_portable.obj `if test -f 'verus/verus_clhash_portable.cpp'; then $(CYGPATH_W) 'verus/verus_clhash_portable.cpp'; else $(CYGPATH_W) '$(srcdir)/verus/verus_clhash_portable.cpp'; fi`
 
 # This directory's subdirectories are mostly independent; you can cd
 # into them and run 'make' without going through this Makefile.
@@ -1144,7 +1144,7 @@ distcleancheck: distclean
 	       exit 1; } >&2
 check-am: all-am
 check: check-recursive
-all-am: Makefile $(PROGRAMS) TCMiner-config.h
+all-am: Makefile $(PROGRAMS) vrminer-config.h
 installdirs: installdirs-recursive
 installdirs-am:
 	for dir in "$(DESTDIR)$(bindir)"; do \
@@ -1192,22 +1192,22 @@ clean-am: clean-binPROGRAMS clean-generic mostlyclean-am
 
 distclean: distclean-recursive
 	-rm -f $(am__CONFIG_DISTCLEAN_FILES)
-		-rm -f ./$(DEPDIR)/TCMiner-api.Po
-	-rm -f ./$(DEPDIR)/TCMiner-bench.Po
-	-rm -f ./$(DEPDIR)/TCMiner-bignum.Po
-	-rm -f ./$(DEPDIR)/TCMiner-TCMiner.Po
-	-rm -f ./$(DEPDIR)/TCMiner-crc32.Po
-	-rm -f ./$(DEPDIR)/TCMiner-hashlog.Po
-	-rm -f ./$(DEPDIR)/TCMiner-pools.Po
-	-rm -f ./$(DEPDIR)/TCMiner-stats.Po
-	-rm -f ./$(DEPDIR)/TCMiner-sysinfos.Po
-	-rm -f ./$(DEPDIR)/TCMiner-util.Po
-	-rm -f compat/$(DEPDIR)/TCMiner-winansi.Po
-	-rm -f equi/$(DEPDIR)/TCMiner-equi-stratum.Po
-	-rm -f verus/$(DEPDIR)/TCMiner-haraka.Po
-	-rm -f verus/$(DEPDIR)/TCMiner-haraka_portable.Po
-	-rm -f verus/$(DEPDIR)/TCMiner-verus_clhash_portable.Po
-	-rm -f verus/$(DEPDIR)/TCMiner-verusscan.Po
+		-rm -f ./$(DEPDIR)/vrminer-api.Po
+	-rm -f ./$(DEPDIR)/vrminer-bench.Po
+	-rm -f ./$(DEPDIR)/vrminer-bignum.Po
+	-rm -f ./$(DEPDIR)/vrminer-vrminer.Po
+	-rm -f ./$(DEPDIR)/vrminer-crc32.Po
+	-rm -f ./$(DEPDIR)/vrminer-hashlog.Po
+	-rm -f ./$(DEPDIR)/vrminer-pools.Po
+	-rm -f ./$(DEPDIR)/vrminer-stats.Po
+	-rm -f ./$(DEPDIR)/vrminer-sysinfos.Po
+	-rm -f ./$(DEPDIR)/vrminer-util.Po
+	-rm -f compat/$(DEPDIR)/vrminer-winansi.Po
+	-rm -f equi/$(DEPDIR)/vrminer-equi-stratum.Po
+	-rm -f verus/$(DEPDIR)/vrminer-haraka.Po
+	-rm -f verus/$(DEPDIR)/vrminer-haraka_portable.Po
+	-rm -f verus/$(DEPDIR)/vrminer-verus_clhash_portable.Po
+	-rm -f verus/$(DEPDIR)/vrminer-verusscan.Po
 	-rm -f Makefile
 distclean-am: clean-am distclean-compile distclean-generic \
 	distclean-hdr distclean-tags
@@ -1255,22 +1255,22 @@ installcheck-am:
 maintainer-clean: maintainer-clean-recursive
 	-rm -f $(am__CONFIG_DISTCLEAN_FILES)
 	-rm -rf $(top_srcdir)/autom4te.cache
-		-rm -f ./$(DEPDIR)/TCMiner-api.Po
-	-rm -f ./$(DEPDIR)/TCMiner-bench.Po
-	-rm -f ./$(DEPDIR)/TCMiner-bignum.Po
-	-rm -f ./$(DEPDIR)/TCMiner-TCMiner.Po
-	-rm -f ./$(DEPDIR)/TCMiner-crc32.Po
-	-rm -f ./$(DEPDIR)/TCMiner-hashlog.Po
-	-rm -f ./$(DEPDIR)/TCMiner-pools.Po
-	-rm -f ./$(DEPDIR)/TCMiner-stats.Po
-	-rm -f ./$(DEPDIR)/TCMiner-sysinfos.Po
-	-rm -f ./$(DEPDIR)/TCMiner-util.Po
-	-rm -f compat/$(DEPDIR)/TCMiner-winansi.Po
-	-rm -f equi/$(DEPDIR)/TCMiner-equi-stratum.Po
-	-rm -f verus/$(DEPDIR)/TCMiner-haraka.Po
-	-rm -f verus/$(DEPDIR)/TCMiner-haraka_portable.Po
-	-rm -f verus/$(DEPDIR)/TCMiner-verus_clhash_portable.Po
-	-rm -f verus/$(DEPDIR)/TCMiner-verusscan.Po
+		-rm -f ./$(DEPDIR)/vrminer-api.Po
+	-rm -f ./$(DEPDIR)/vrminer-bench.Po
+	-rm -f ./$(DEPDIR)/vrminer-bignum.Po
+	-rm -f ./$(DEPDIR)/vrminer-vrminer.Po
+	-rm -f ./$(DEPDIR)/vrminer-crc32.Po
+	-rm -f ./$(DEPDIR)/vrminer-hashlog.Po
+	-rm -f ./$(DEPDIR)/vrminer-pools.Po
+	-rm -f ./$(DEPDIR)/vrminer-stats.Po
+	-rm -f ./$(DEPDIR)/vrminer-sysinfos.Po
+	-rm -f ./$(DEPDIR)/vrminer-util.Po
+	-rm -f compat/$(DEPDIR)/vrminer-winansi.Po
+	-rm -f equi/$(DEPDIR)/vrminer-equi-stratum.Po
+	-rm -f verus/$(DEPDIR)/vrminer-haraka.Po
+	-rm -f verus/$(DEPDIR)/vrminer-haraka_portable.Po
+	-rm -f verus/$(DEPDIR)/vrminer-verus_clhash_portable.Po
+	-rm -f verus/$(DEPDIR)/vrminer-verusscan.Po
 	-rm -f Makefile
 maintainer-clean-am: distclean-am maintainer-clean-generic
 

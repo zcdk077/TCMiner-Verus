@@ -20,7 +20,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{36DC07F9-A4A6-4877-A146-1B960083CF6F}</ProjectGuid>
-    <RootNamespace>TCMiner</RootNamespace>
+    <RootNamespace>vrminer</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -231,7 +231,7 @@
     <ClCompile Include="verus\verus_clhash_portable.cpp" />
     <ClInclude Include="compat\pthreads\pthread.h" />
     <ClCompile Include="compat\winansi.c" />
-    <ClCompile Include="TCMiner.cpp">
+    <ClCompile Include="vrminer.cpp">
       <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
       <Optimization Condition="'$(Configuration)'=='Release'">Full</Optimization>
     </ClCompile>
@@ -259,7 +259,7 @@
     <ClInclude Include="compat\inttypes.h" />
     <ClInclude Include="compat\jansson\jansson_config.h" />
     <ClInclude Include="compat\nvapi\nvapi.h" />
-    <ClInclude Include="compat\nvapi\nvapi_TCMiner.h" />
+    <ClInclude Include="compat\nvapi\nvapi_vrminer.h" />
     <ClInclude Include="compat\nvapi\nvapi_lite_common.h" />
     <ClInclude Include="compat\nvapi\nvapi_lite_d3dext.h" />
     <ClInclude Include="compat\nvapi\nvapi_lite_salend.h" />
@@ -271,7 +271,7 @@
     <ClInclude Include="compat\sys\time.h" />
     <ClInclude Include="compat\unistd.h" />
     <ClInclude Include="compat\winansi.h" />
-    <ClInclude Include="compat\TCMiner-config.h" />
+    <ClInclude Include="compat\vrminer-config.h" />
     <ClInclude Include="elist.h" />
     <ClInclude Include="algos.h" />
     <ClInclude Include="miner.h" />
@@ -280,10 +280,10 @@
     <ClInclude Include="uint256.h" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="res\TCMiner.ico" />
+    <Image Include="res\vrminer.ico" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="res\TCMiner.rc" />
+    <ResourceCompile Include="res\vrminer.rc" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="README.txt" />

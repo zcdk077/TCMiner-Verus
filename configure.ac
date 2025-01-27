@@ -1,10 +1,10 @@
-AC_INIT([TCMiner], [1.0], [], [TCMiner], [http://github.com/zcdk077/TCMiner])
+AC_INIT([vrminer], [1.0], [], [vrminer], [http://github.com/zcdk077/vrminer])
 
 AC_PREREQ([2.59c])
 AC_CANONICAL_SYSTEM
-AC_CONFIG_SRCDIR([TCMiner.cpp])
+AC_CONFIG_SRCDIR([vrminer.cpp])
 AM_INIT_AUTOMAKE([foreign subdir-objects])
-AC_CONFIG_HEADERS([TCMiner-config.h])
+AC_CONFIG_HEADERS([vrminer-config.h])
 
 dnl Make sure anyone changing configure.ac/Makefile.am has a clue
 AM_MAINTAINER_MODE
