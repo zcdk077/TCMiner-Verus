@@ -92,7 +92,7 @@ POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
 target_triplet = @target@
-bin_PROGRAMS = ccminer$(EXEEXT)
+bin_PROGRAMS = TCMiner$(EXEEXT)
 @HAVE_WINDOWS_TRUE@am__append_1 = compat/winansi.c
 @HAVE_OSX_TRUE@am__append_2 = -I/usr/local/llvm/lib/clang/4.0.0/include
 @HAVE_OSX_TRUE@am__append_3 = -L/usr/local/llvm/lib
@@ -107,34 +107,34 @@ DIST_COMMON = $(srcdir)/Makefile.am $(top_srcdir)/configure \
 am__CONFIG_DISTCLEAN_FILES = config.status config.cache config.log \
  configure.lineno config.status.lineno
 mkinstalldirs = $(install_sh) -d
-CONFIG_HEADER = ccminer-config.h
+CONFIG_HEADER = TCMiner-config.h
 CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
-am__ccminer_SOURCES_DIST = elist.h miner.h compat.h compat/inttypes.h \
+am__TCMiner_SOURCES_DIST = elist.h miner.h compat.h compat/inttypes.h \
 	compat/stdbool.h compat/unistd.h bignum.cpp bignum.hpp \
-	compat/sys/time.h compat/getopt/getopt.h crc32.c ccminer.cpp \
+	compat/sys/time.h compat/getopt/getopt.h crc32.c TCMiner.cpp \
 	pools.cpp util.cpp bench.cpp api.cpp hashlog.cpp stats.cpp \
 	sysinfos.cpp equi/equi-stratum.cpp verus/verusscan.cpp \
 	verus/haraka_portable.c verus/haraka.c \
 	verus/verus_clhash_portable.cpp compat/winansi.c
 am__dirstamp = $(am__leading_dot)dirstamp
-@HAVE_WINDOWS_TRUE@am__objects_1 = compat/ccminer-winansi.$(OBJEXT)
-am_ccminer_OBJECTS = ccminer-bignum.$(OBJEXT) ccminer-crc32.$(OBJEXT) \
-	ccminer-ccminer.$(OBJEXT) ccminer-pools.$(OBJEXT) \
-	ccminer-util.$(OBJEXT) ccminer-bench.$(OBJEXT) \
-	ccminer-api.$(OBJEXT) ccminer-hashlog.$(OBJEXT) \
-	ccminer-stats.$(OBJEXT) ccminer-sysinfos.$(OBJEXT) \
-	equi/ccminer-equi-stratum.$(OBJEXT) \
-	verus/ccminer-verusscan.$(OBJEXT) \
-	verus/ccminer-haraka_portable.$(OBJEXT) \
-	verus/ccminer-haraka.$(OBJEXT) \
-	verus/ccminer-verus_clhash_portable.$(OBJEXT) $(am__objects_1)
-ccminer_OBJECTS = $(am_ccminer_OBJECTS)
+@HAVE_WINDOWS_TRUE@am__objects_1 = compat/TCMiner-winansi.$(OBJEXT)
+am_TCMiner_OBJECTS = TCMiner-bignum.$(OBJEXT) TCMiner-crc32.$(OBJEXT) \
+	TCMiner-TCMiner.$(OBJEXT) TCMiner-pools.$(OBJEXT) \
+	TCMiner-util.$(OBJEXT) TCMiner-bench.$(OBJEXT) \
+	TCMiner-api.$(OBJEXT) TCMiner-hashlog.$(OBJEXT) \
+	TCMiner-stats.$(OBJEXT) TCMiner-sysinfos.$(OBJEXT) \
+	equi/TCMiner-equi-stratum.$(OBJEXT) \
+	verus/TCMiner-verusscan.$(OBJEXT) \
+	verus/TCMiner-haraka_portable.$(OBJEXT) \
+	verus/TCMiner-haraka.$(OBJEXT) \
+	verus/TCMiner-verus_clhash_portable.$(OBJEXT) $(am__objects_1)
+TCMiner_OBJECTS = $(am_TCMiner_OBJECTS)
 am__DEPENDENCIES_1 =
-ccminer_DEPENDENCIES = $(am__DEPENDENCIES_1)
-ccminer_LINK = $(CXXLD) $(AM_CXXFLAGS) $(CXXFLAGS) $(ccminer_LDFLAGS) \
+TCMiner_DEPENDENCIES = $(am__DEPENDENCIES_1)
+TCMiner_LINK = $(CXXLD) $(AM_CXXFLAGS) $(CXXFLAGS) $(TCMiner_LDFLAGS) \
 	$(LDFLAGS) -o $@
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
@@ -151,18 +151,18 @@ am__v_at_1 =
 DEFAULT_INCLUDES = -I.@am__isrc@
 depcomp = $(SHELL) $(top_srcdir)/depcomp
 am__maybe_remake_depfiles = depfiles
-am__depfiles_remade = ./$(DEPDIR)/ccminer-api.Po \
-	./$(DEPDIR)/ccminer-bench.Po ./$(DEPDIR)/ccminer-bignum.Po \
-	./$(DEPDIR)/ccminer-ccminer.Po ./$(DEPDIR)/ccminer-crc32.Po \
-	./$(DEPDIR)/ccminer-hashlog.Po ./$(DEPDIR)/ccminer-pools.Po \
-	./$(DEPDIR)/ccminer-stats.Po ./$(DEPDIR)/ccminer-sysinfos.Po \
-	./$(DEPDIR)/ccminer-util.Po \
-	compat/$(DEPDIR)/ccminer-winansi.Po \
-	equi/$(DEPDIR)/ccminer-equi-stratum.Po \
-	verus/$(DEPDIR)/ccminer-haraka.Po \
-	verus/$(DEPDIR)/ccminer-haraka_portable.Po \
-	verus/$(DEPDIR)/ccminer-verus_clhash_portable.Po \
-	verus/$(DEPDIR)/ccminer-verusscan.Po
+am__depfiles_remade = ./$(DEPDIR)/TCMiner-api.Po \
+	./$(DEPDIR)/TCMiner-bench.Po ./$(DEPDIR)/TCMiner-bignum.Po \
+	./$(DEPDIR)/TCMiner-TCMiner.Po ./$(DEPDIR)/TCMiner-crc32.Po \
+	./$(DEPDIR)/TCMiner-hashlog.Po ./$(DEPDIR)/TCMiner-pools.Po \
+	./$(DEPDIR)/TCMiner-stats.Po ./$(DEPDIR)/TCMiner-sysinfos.Po \
+	./$(DEPDIR)/TCMiner-util.Po \
+	compat/$(DEPDIR)/TCMiner-winansi.Po \
+	equi/$(DEPDIR)/TCMiner-equi-stratum.Po \
+	verus/$(DEPDIR)/TCMiner-haraka.Po \
+	verus/$(DEPDIR)/TCMiner-haraka_portable.Po \
+	verus/$(DEPDIR)/TCMiner-verus_clhash_portable.Po \
+	verus/$(DEPDIR)/TCMiner-verusscan.Po
 am__mv = mv -f
 AM_V_lt = $(am__v_lt_@AM_V@)
 am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
@@ -193,8 +193,8 @@ AM_V_CXXLD = $(am__v_CXXLD_@AM_V@)
 am__v_CXXLD_ = $(am__v_CXXLD_@AM_DEFAULT_V@)
 am__v_CXXLD_0 = @echo "  CXXLD   " $@;
 am__v_CXXLD_1 = 
-SOURCES = $(ccminer_SOURCES)
-DIST_SOURCES = $(am__ccminer_SOURCES_DIST)
+SOURCES = $(TCMiner_SOURCES)
+DIST_SOURCES = $(am__TCMiner_SOURCES_DIST)
 RECURSIVE_TARGETS = all-recursive check-recursive cscopelist-recursive \
 	ctags-recursive dvi-recursive html-recursive info-recursive \
 	install-data-recursive install-dvi-recursive \
@@ -217,7 +217,7 @@ am__recursive_targets = \
 AM_RECURSIVE_TARGETS = $(am__recursive_targets:-recursive=) TAGS CTAGS \
 	cscope distdir distdir-am dist dist-all distcheck
 am__tagged_files = $(HEADERS) $(SOURCES) $(TAGS_FILES) \
-	$(LISP)ccminer-config.h.in
+	$(LISP)TCMiner-config.h.in
 # Read a list of newline-separated strings from the standard input,
 # and print each of them once, without duplicates.  Input order is
 # *not* preserved.
@@ -238,7 +238,7 @@ ETAGS = etags
 CTAGS = ctags
 CSCOPE = cscope
 DIST_SUBDIRS = $(SUBDIRS)
-am__DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/ccminer-config.h.in \
+am__DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/TCMiner-config.h.in \
 	compile config.guess config.sub depcomp install-sh missing
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 distdir = $(PACKAGE)-$(VERSION)
@@ -409,25 +409,25 @@ top_srcdir = @top_srcdir@
 @WANT_JANSSON_FALSE@JANSSON_INCLUDES = 
 @WANT_JANSSON_TRUE@JANSSON_INCLUDES = -I$(top_srcdir)/compat/jansson
 EXTRA_DIST = autogen.sh README.md README.txt LICENSE.txt \
-			  ccminer.sln ccminer.vcxproj ccminer.vcxproj.filters \
+			  TCMiner.sln TCMiner.vcxproj TCMiner.vcxproj.filters \
 			  compat/gettimeofday.c compat/getopt/getopt_long.c
 
 SUBDIRS = compat
-ccminer_SOURCES = elist.h miner.h compat.h compat/inttypes.h \
+TCMiner_SOURCES = elist.h miner.h compat.h compat/inttypes.h \
 	compat/stdbool.h compat/unistd.h bignum.cpp bignum.hpp \
-	compat/sys/time.h compat/getopt/getopt.h crc32.c ccminer.cpp \
+	compat/sys/time.h compat/getopt/getopt.h crc32.c TCMiner.cpp \
 	pools.cpp util.cpp bench.cpp api.cpp hashlog.cpp stats.cpp \
 	sysinfos.cpp equi/equi-stratum.cpp verus/verusscan.cpp \
 	verus/haraka_portable.c verus/haraka.c \
 	verus/verus_clhash_portable.cpp $(am__append_1)
-ccminer_LDFLAGS = $(PTHREAD_FLAGS) $(am__append_3)
-ccminer_LDADD = @LIBCURL@ @JANSSON_LIBS@ @PTHREAD_LIBS@ @WS2_LIBS@ \
+TCMiner_LDFLAGS = $(PTHREAD_FLAGS) $(am__append_3)
+TCMiner_LDADD = @LIBCURL@ @JANSSON_LIBS@ @PTHREAD_LIBS@ @WS2_LIBS@ \
 	@OPENMP_CFLAGS@ @LIBS@ $(am__append_4)
-ccminer_CPPFLAGS = @LIBCURL_CPPFLAGS@ @OPENMP_CFLAGS@ $(CPPFLAGS) \
+TCMiner_CPPFLAGS = @LIBCURL_CPPFLAGS@ @OPENMP_CFLAGS@ $(CPPFLAGS) \
 	$(PTHREAD_FLAGS) -march=armv8-a+crypto \
 	-flax-vector-conversions -fno-strict-aliasing \
 	$(JANSSON_INCLUDES) $(DEF_INCLUDES) -O3 $(am__append_2)
-all: ccminer-config.h
+all: TCMiner-config.h
 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
 
 .SUFFIXES:
@@ -466,20 +466,20 @@ $(ACLOCAL_M4): @MAINTAINER_MODE_TRUE@ $(am__aclocal_m4_deps)
 	$(am__cd) $(srcdir) && $(ACLOCAL) $(ACLOCAL_AMFLAGS)
 $(am__aclocal_m4_deps):
 
-ccminer-config.h: stamp-h1
+TCMiner-config.h: stamp-h1
 	@test -f $@ || rm -f stamp-h1
 	@test -f $@ || $(MAKE) $(AM_MAKEFLAGS) stamp-h1
 
-stamp-h1: $(srcdir)/ccminer-config.h.in $(top_builddir)/config.status
+stamp-h1: $(srcdir)/TCMiner-config.h.in $(top_builddir)/config.status
 	@rm -f stamp-h1
-	cd $(top_builddir) && $(SHELL) ./config.status ccminer-config.h
-$(srcdir)/ccminer-config.h.in: @MAINTAINER_MODE_TRUE@ $(am__configure_deps) 
+	cd $(top_builddir) && $(SHELL) ./config.status TCMiner-config.h
+$(srcdir)/TCMiner-config.h.in: @MAINTAINER_MODE_TRUE@ $(am__configure_deps) 
 	($(am__cd) $(top_srcdir) && $(AUTOHEADER))
 	rm -f stamp-h1
 	touch $@
 
 distclean-hdr:
-	-rm -f ccminer-config.h stamp-h1
+	-rm -f TCMiner-config.h stamp-h1
 install-binPROGRAMS: $(bin_PROGRAMS)
 	@$(NORMAL_INSTALL)
 	@list='$(bin_PROGRAMS)'; test -n "$(bindir)" || list=; \
@@ -528,7 +528,7 @@ equi/$(am__dirstamp):
 equi/$(DEPDIR)/$(am__dirstamp):
 	@$(MKDIR_P) equi/$(DEPDIR)
 	@: > equi/$(DEPDIR)/$(am__dirstamp)
-equi/ccminer-equi-stratum.$(OBJEXT): equi/$(am__dirstamp) \
+equi/TCMiner-equi-stratum.$(OBJEXT): equi/$(am__dirstamp) \
 	equi/$(DEPDIR)/$(am__dirstamp)
 verus/$(am__dirstamp):
 	@$(MKDIR_P) verus
@@ -536,13 +536,13 @@ verus/$(am__dirstamp):
 verus/$(DEPDIR)/$(am__dirstamp):
 	@$(MKDIR_P) verus/$(DEPDIR)
 	@: > verus/$(DEPDIR)/$(am__dirstamp)
-verus/ccminer-verusscan.$(OBJEXT): verus/$(am__dirstamp) \
+verus/TCMiner-verusscan.$(OBJEXT): verus/$(am__dirstamp) \
 	verus/$(DEPDIR)/$(am__dirstamp)
-verus/ccminer-haraka_portable.$(OBJEXT): verus/$(am__dirstamp) \
+verus/TCMiner-haraka_portable.$(OBJEXT): verus/$(am__dirstamp) \
 	verus/$(DEPDIR)/$(am__dirstamp)
-verus/ccminer-haraka.$(OBJEXT): verus/$(am__dirstamp) \
+verus/TCMiner-haraka.$(OBJEXT): verus/$(am__dirstamp) \
 	verus/$(DEPDIR)/$(am__dirstamp)
-verus/ccminer-verus_clhash_portable.$(OBJEXT): verus/$(am__dirstamp) \
+verus/TCMiner-verus_clhash_portable.$(OBJEXT): verus/$(am__dirstamp) \
 	verus/$(DEPDIR)/$(am__dirstamp)
 compat/$(am__dirstamp):
 	@$(MKDIR_P) compat
@@ -550,12 +550,12 @@ compat/$(am__dirstamp):
 compat/$(DEPDIR)/$(am__dirstamp):
 	@$(MKDIR_P) compat/$(DEPDIR)
 	@: > compat/$(DEPDIR)/$(am__dirstamp)
-compat/ccminer-winansi.$(OBJEXT): compat/$(am__dirstamp) \
+compat/TCMiner-winansi.$(OBJEXT): compat/$(am__dirstamp) \
 	compat/$(DEPDIR)/$(am__dirstamp)
 
-ccminer$(EXEEXT): $(ccminer_OBJECTS) $(ccminer_DEPENDENCIES) $(EXTRA_ccminer_DEPENDENCIES) 
-	@rm -f ccminer$(EXEEXT)
-	$(AM_V_CXXLD)$(ccminer_LINK) $(ccminer_OBJECTS) $(ccminer_LDADD) $(LIBS)
+TCMiner$(EXEEXT): $(TCMiner_OBJECTS) $(TCMiner_DEPENDENCIES) $(EXTRA_TCMiner_DEPENDENCIES) 
+	@rm -f TCMiner$(EXEEXT)
+	$(AM_V_CXXLD)$(TCMiner_LINK) $(TCMiner_OBJECTS) $(TCMiner_LDADD) $(LIBS)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
@@ -566,22 +566,22 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ccminer-api.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ccminer-bench.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ccminer-bignum.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ccminer-ccminer.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ccminer-crc32.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ccminer-hashlog.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ccminer-pools.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ccminer-stats.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ccminer-sysinfos.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ccminer-util.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@compat/$(DEPDIR)/ccminer-winansi.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@equi/$(DEPDIR)/ccminer-equi-stratum.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@verus/$(DEPDIR)/ccminer-haraka.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@verus/$(DEPDIR)/ccminer-haraka_portable.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@verus/$(DEPDIR)/ccminer-verus_clhash_portable.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@verus/$(DEPDIR)/ccminer-verusscan.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/TCMiner-api.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/TCMiner-bench.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/TCMiner-bignum.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/TCMiner-TCMiner.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/TCMiner-crc32.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/TCMiner-hashlog.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/TCMiner-pools.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/TCMiner-stats.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/TCMiner-sysinfos.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/TCMiner-util.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@compat/$(DEPDIR)/TCMiner-winansi.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@equi/$(DEPDIR)/TCMiner-equi-stratum.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@verus/$(DEPDIR)/TCMiner-haraka.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@verus/$(DEPDIR)/TCMiner-haraka_portable.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@verus/$(DEPDIR)/TCMiner-verus_clhash_portable.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@verus/$(DEPDIR)/TCMiner-verusscan.Po@am__quote@ # am--include-marker
 
 $(am__depfiles_remade):
 	@$(MKDIR_P) $(@D)
@@ -605,61 +605,61 @@ am--depfiles: $(am__depfiles_remade)
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(COMPILE) -c -o $@ `$(CYGPATH_W) '$<'`
 
-ccminer-crc32.o: crc32.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ccminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT ccminer-crc32.o -MD -MP -MF $(DEPDIR)/ccminer-crc32.Tpo -c -o ccminer-crc32.o `test -f 'crc32.c' || echo '$(srcdir)/'`crc32.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ccminer-crc32.Tpo $(DEPDIR)/ccminer-crc32.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='crc32.c' object='ccminer-crc32.o' libtool=no @AMDEPBACKSLASH@
+TCMiner-crc32.o: crc32.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT TCMiner-crc32.o -MD -MP -MF $(DEPDIR)/TCMiner-crc32.Tpo -c -o TCMiner-crc32.o `test -f 'crc32.c' || echo '$(srcdir)/'`crc32.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/TCMiner-crc32.Tpo $(DEPDIR)/TCMiner-crc32.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='crc32.c' object='TCMiner-crc32.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ccminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o ccminer-crc32.o `test -f 'crc32.c' || echo '$(srcdir)/'`crc32.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o TCMiner-crc32.o `test -f 'crc32.c' || echo '$(srcdir)/'`crc32.c
 
-ccminer-crc32.obj: crc32.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ccminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT ccminer-crc32.obj -MD -MP -MF $(DEPDIR)/ccminer-crc32.Tpo -c -o ccminer-crc32.obj `if test -f 'crc32.c'; then $(CYGPATH_W) 'crc32.c'; else $(CYGPATH_W) '$(srcdir)/crc32.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ccminer-crc32.Tpo $(DEPDIR)/ccminer-crc32.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='crc32.c' object='ccminer-crc32.obj' libtool=no @AMDEPBACKSLASH@
+TCMiner-crc32.obj: crc32.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT TCMiner-crc32.obj -MD -MP -MF $(DEPDIR)/TCMiner-crc32.Tpo -c -o TCMiner-crc32.obj `if test -f 'crc32.c'; then $(CYGPATH_W) 'crc32.c'; else $(CYGPATH_W) '$(srcdir)/crc32.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/TCMiner-crc32.Tpo $(DEPDIR)/TCMiner-crc32.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='crc32.c' object='TCMiner-crc32.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ccminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o ccminer-crc32.obj `if test -f 'crc32.c'; then $(CYGPATH_W) 'crc32.c'; else $(CYGPATH_W) '$(srcdir)/crc32.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o TCMiner-crc32.obj `if test -f 'crc32.c'; then $(CYGPATH_W) 'crc32.c'; else $(CYGPATH_W) '$(srcdir)/crc32.c'; fi`
 
-verus/ccminer-haraka_portable.o: verus/haraka_portable.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ccminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT verus/ccminer-haraka_portable.o -MD -MP -MF verus/$(DEPDIR)/ccminer-haraka_portable.Tpo -c -o verus/ccminer-haraka_portable.o `test -f 'verus/haraka_portable.c' || echo '$(srcdir)/'`verus/haraka_portable.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) verus/$(DEPDIR)/ccminer-haraka_portable.Tpo verus/$(DEPDIR)/ccminer-haraka_portable.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='verus/haraka_portable.c' object='verus/ccminer-haraka_portable.o' libtool=no @AMDEPBACKSLASH@
+verus/TCMiner-haraka_portable.o: verus/haraka_portable.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT verus/TCMiner-haraka_portable.o -MD -MP -MF verus/$(DEPDIR)/TCMiner-haraka_portable.Tpo -c -o verus/TCMiner-haraka_portable.o `test -f 'verus/haraka_portable.c' || echo '$(srcdir)/'`verus/haraka_portable.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) verus/$(DEPDIR)/TCMiner-haraka_portable.Tpo verus/$(DEPDIR)/TCMiner-haraka_portable.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='verus/haraka_portable.c' object='verus/TCMiner-haraka_portable.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ccminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o verus/ccminer-haraka_portable.o `test -f 'verus/haraka_portable.c' || echo '$(srcdir)/'`verus/haraka_portable.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o verus/TCMiner-haraka_portable.o `test -f 'verus/haraka_portable.c' || echo '$(srcdir)/'`verus/haraka_portable.c
 
-verus/ccminer-haraka_portable.obj: verus/haraka_portable.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ccminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT verus/ccminer-haraka_portable.obj -MD -MP -MF verus/$(DEPDIR)/ccminer-haraka_portable.Tpo -c -o verus/ccminer-haraka_portable.obj `if test -f 'verus/haraka_portable.c'; then $(CYGPATH_W) 'verus/haraka_portable.c'; else $(CYGPATH_W) '$(srcdir)/verus/haraka_portable.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) verus/$(DEPDIR)/ccminer-haraka_portable.Tpo verus/$(DEPDIR)/ccminer-haraka_portable.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='verus/haraka_portable.c' object='verus/ccminer-haraka_portable.obj' libtool=no @AMDEPBACKSLASH@
+verus/TCMiner-haraka_portable.obj: verus/haraka_portable.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT verus/TCMiner-haraka_portable.obj -MD -MP -MF verus/$(DEPDIR)/TCMiner-haraka_portable.Tpo -c -o verus/TCMiner-haraka_portable.obj `if test -f 'verus/haraka_portable.c'; then $(CYGPATH_W) 'verus/haraka_portable.c'; else $(CYGPATH_W) '$(srcdir)/verus/haraka_portable.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) verus/$(DEPDIR)/TCMiner-haraka_portable.Tpo verus/$(DEPDIR)/TCMiner-haraka_portable.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='verus/haraka_portable.c' object='verus/TCMiner-haraka_portable.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ccminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o verus/ccminer-haraka_portable.obj `if test -f 'verus/haraka_portable.c'; then $(CYGPATH_W) 'verus/haraka_portable.c'; else $(CYGPATH_W) '$(srcdir)/verus/haraka_portable.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o verus/TCMiner-haraka_portable.obj `if test -f 'verus/haraka_portable.c'; then $(CYGPATH_W) 'verus/haraka_portable.c'; else $(CYGPATH_W) '$(srcdir)/verus/haraka_portable.c'; fi`
 
-verus/ccminer-haraka.o: verus/haraka.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ccminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT verus/ccminer-haraka.o -MD -MP -MF verus/$(DEPDIR)/ccminer-haraka.Tpo -c -o verus/ccminer-haraka.o `test -f 'verus/haraka.c' || echo '$(srcdir)/'`verus/haraka.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) verus/$(DEPDIR)/ccminer-haraka.Tpo verus/$(DEPDIR)/ccminer-haraka.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='verus/haraka.c' object='verus/ccminer-haraka.o' libtool=no @AMDEPBACKSLASH@
+verus/TCMiner-haraka.o: verus/haraka.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT verus/TCMiner-haraka.o -MD -MP -MF verus/$(DEPDIR)/TCMiner-haraka.Tpo -c -o verus/TCMiner-haraka.o `test -f 'verus/haraka.c' || echo '$(srcdir)/'`verus/haraka.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) verus/$(DEPDIR)/TCMiner-haraka.Tpo verus/$(DEPDIR)/TCMiner-haraka.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='verus/haraka.c' object='verus/TCMiner-haraka.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ccminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o verus/ccminer-haraka.o `test -f 'verus/haraka.c' || echo '$(srcdir)/'`verus/haraka.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o verus/TCMiner-haraka.o `test -f 'verus/haraka.c' || echo '$(srcdir)/'`verus/haraka.c
 
-verus/ccminer-haraka.obj: verus/haraka.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ccminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT verus/ccminer-haraka.obj -MD -MP -MF verus/$(DEPDIR)/ccminer-haraka.Tpo -c -o verus/ccminer-haraka.obj `if test -f 'verus/haraka.c'; then $(CYGPATH_W) 'verus/haraka.c'; else $(CYGPATH_W) '$(srcdir)/verus/haraka.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) verus/$(DEPDIR)/ccminer-haraka.Tpo verus/$(DEPDIR)/ccminer-haraka.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='verus/haraka.c' object='verus/ccminer-haraka.obj' libtool=no @AMDEPBACKSLASH@
+verus/TCMiner-haraka.obj: verus/haraka.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT verus/TCMiner-haraka.obj -MD -MP -MF verus/$(DEPDIR)/TCMiner-haraka.Tpo -c -o verus/TCMiner-haraka.obj `if test -f 'verus/haraka.c'; then $(CYGPATH_W) 'verus/haraka.c'; else $(CYGPATH_W) '$(srcdir)/verus/haraka.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) verus/$(DEPDIR)/TCMiner-haraka.Tpo verus/$(DEPDIR)/TCMiner-haraka.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='verus/haraka.c' object='verus/TCMiner-haraka.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ccminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o verus/ccminer-haraka.obj `if test -f 'verus/haraka.c'; then $(CYGPATH_W) 'verus/haraka.c'; else $(CYGPATH_W) '$(srcdir)/verus/haraka.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o verus/TCMiner-haraka.obj `if test -f 'verus/haraka.c'; then $(CYGPATH_W) 'verus/haraka.c'; else $(CYGPATH_W) '$(srcdir)/verus/haraka.c'; fi`
 
-compat/ccminer-winansi.o: compat/winansi.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ccminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT compat/ccminer-winansi.o -MD -MP -MF compat/$(DEPDIR)/ccminer-winansi.Tpo -c -o compat/ccminer-winansi.o `test -f 'compat/winansi.c' || echo '$(srcdir)/'`compat/winansi.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) compat/$(DEPDIR)/ccminer-winansi.Tpo compat/$(DEPDIR)/ccminer-winansi.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='compat/winansi.c' object='compat/ccminer-winansi.o' libtool=no @AMDEPBACKSLASH@
+compat/TCMiner-winansi.o: compat/winansi.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT compat/TCMiner-winansi.o -MD -MP -MF compat/$(DEPDIR)/TCMiner-winansi.Tpo -c -o compat/TCMiner-winansi.o `test -f 'compat/winansi.c' || echo '$(srcdir)/'`compat/winansi.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) compat/$(DEPDIR)/TCMiner-winansi.Tpo compat/$(DEPDIR)/TCMiner-winansi.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='compat/winansi.c' object='compat/TCMiner-winansi.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ccminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o compat/ccminer-winansi.o `test -f 'compat/winansi.c' || echo '$(srcdir)/'`compat/winansi.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o compat/TCMiner-winansi.o `test -f 'compat/winansi.c' || echo '$(srcdir)/'`compat/winansi.c
 
-compat/ccminer-winansi.obj: compat/winansi.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ccminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT compat/ccminer-winansi.obj -MD -MP -MF compat/$(DEPDIR)/ccminer-winansi.Tpo -c -o compat/ccminer-winansi.obj `if test -f 'compat/winansi.c'; then $(CYGPATH_W) 'compat/winansi.c'; else $(CYGPATH_W) '$(srcdir)/compat/winansi.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) compat/$(DEPDIR)/ccminer-winansi.Tpo compat/$(DEPDIR)/ccminer-winansi.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='compat/winansi.c' object='compat/ccminer-winansi.obj' libtool=no @AMDEPBACKSLASH@
+compat/TCMiner-winansi.obj: compat/winansi.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT compat/TCMiner-winansi.obj -MD -MP -MF compat/$(DEPDIR)/TCMiner-winansi.Tpo -c -o compat/TCMiner-winansi.obj `if test -f 'compat/winansi.c'; then $(CYGPATH_W) 'compat/winansi.c'; else $(CYGPATH_W) '$(srcdir)/compat/winansi.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) compat/$(DEPDIR)/TCMiner-winansi.Tpo compat/$(DEPDIR)/TCMiner-winansi.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='compat/winansi.c' object='compat/TCMiner-winansi.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ccminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o compat/ccminer-winansi.obj `if test -f 'compat/winansi.c'; then $(CYGPATH_W) 'compat/winansi.c'; else $(CYGPATH_W) '$(srcdir)/compat/winansi.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o compat/TCMiner-winansi.obj `if test -f 'compat/winansi.c'; then $(CYGPATH_W) 'compat/winansi.c'; else $(CYGPATH_W) '$(srcdir)/compat/winansi.c'; fi`
 
 .cpp.o:
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.o$$||'`;\
@@ -677,173 +677,173 @@ compat/ccminer-winansi.obj: compat/winansi.c
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXXCOMPILE) -c -o $@ `$(CYGPATH_W) '$<'`
 
-ccminer-bignum.o: bignum.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ccminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT ccminer-bignum.o -MD -MP -MF $(DEPDIR)/ccminer-bignum.Tpo -c -o ccminer-bignum.o `test -f 'bignum.cpp' || echo '$(srcdir)/'`bignum.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ccminer-bignum.Tpo $(DEPDIR)/ccminer-bignum.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='bignum.cpp' object='ccminer-bignum.o' libtool=no @AMDEPBACKSLASH@
+TCMiner-bignum.o: bignum.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT TCMiner-bignum.o -MD -MP -MF $(DEPDIR)/TCMiner-bignum.Tpo -c -o TCMiner-bignum.o `test -f 'bignum.cpp' || echo '$(srcdir)/'`bignum.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/TCMiner-bignum.Tpo $(DEPDIR)/TCMiner-bignum.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='bignum.cpp' object='TCMiner-bignum.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ccminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o ccminer-bignum.o `test -f 'bignum.cpp' || echo '$(srcdir)/'`bignum.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o TCMiner-bignum.o `test -f 'bignum.cpp' || echo '$(srcdir)/'`bignum.cpp
 
-ccminer-bignum.obj: bignum.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ccminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT ccminer-bignum.obj -MD -MP -MF $(DEPDIR)/ccminer-bignum.Tpo -c -o ccminer-bignum.obj `if test -f 'bignum.cpp'; then $(CYGPATH_W) 'bignum.cpp'; else $(CYGPATH_W) '$(srcdir)/bignum.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ccminer-bignum.Tpo $(DEPDIR)/ccminer-bignum.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='bignum.cpp' object='ccminer-bignum.obj' libtool=no @AMDEPBACKSLASH@
+TCMiner-bignum.obj: bignum.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT TCMiner-bignum.obj -MD -MP -MF $(DEPDIR)/TCMiner-bignum.Tpo -c -o TCMiner-bignum.obj `if test -f 'bignum.cpp'; then $(CYGPATH_W) 'bignum.cpp'; else $(CYGPATH_W) '$(srcdir)/bignum.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/TCMiner-bignum.Tpo $(DEPDIR)/TCMiner-bignum.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='bignum.cpp' object='TCMiner-bignum.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ccminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o ccminer-bignum.obj `if test -f 'bignum.cpp'; then $(CYGPATH_W) 'bignum.cpp'; else $(CYGPATH_W) '$(srcdir)/bignum.cpp'; fi`
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o TCMiner-bignum.obj `if test -f 'bignum.cpp'; then $(CYGPATH_W) 'bignum.cpp'; else $(CYGPATH_W) '$(srcdir)/bignum.cpp'; fi`
 
-ccminer-ccminer.o: ccminer.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ccminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT ccminer-ccminer.o -MD -MP -MF $(DEPDIR)/ccminer-ccminer.Tpo -c -o ccminer-ccminer.o `test -f 'ccminer.cpp' || echo '$(srcdir)/'`ccminer.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ccminer-ccminer.Tpo $(DEPDIR)/ccminer-ccminer.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='ccminer.cpp' object='ccminer-ccminer.o' libtool=no @AMDEPBACKSLASH@
+TCMiner-TCMiner.o: TCMiner.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT TCMiner-TCMiner.o -MD -MP -MF $(DEPDIR)/TCMiner-TCMiner.Tpo -c -o TCMiner-TCMiner.o `test -f 'TCMiner.cpp' || echo '$(srcdir)/'`TCMiner.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/TCMiner-TCMiner.Tpo $(DEPDIR)/TCMiner-TCMiner.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='TCMiner.cpp' object='TCMiner-TCMiner.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ccminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o ccminer-ccminer.o `test -f 'ccminer.cpp' || echo '$(srcdir)/'`ccminer.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o TCMiner-TCMiner.o `test -f 'TCMiner.cpp' || echo '$(srcdir)/'`TCMiner.cpp
 
-ccminer-ccminer.obj: ccminer.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ccminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT ccminer-ccminer.obj -MD -MP -MF $(DEPDIR)/ccminer-ccminer.Tpo -c -o ccminer-ccminer.obj `if test -f 'ccminer.cpp'; then $(CYGPATH_W) 'ccminer.cpp'; else $(CYGPATH_W) '$(srcdir)/ccminer.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ccminer-ccminer.Tpo $(DEPDIR)/ccminer-ccminer.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='ccminer.cpp' object='ccminer-ccminer.obj' libtool=no @AMDEPBACKSLASH@
+TCMiner-TCMiner.obj: TCMiner.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT TCMiner-TCMiner.obj -MD -MP -MF $(DEPDIR)/TCMiner-TCMiner.Tpo -c -o TCMiner-TCMiner.obj `if test -f 'TCMiner.cpp'; then $(CYGPATH_W) 'TCMiner.cpp'; else $(CYGPATH_W) '$(srcdir)/TCMiner.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/TCMiner-TCMiner.Tpo $(DEPDIR)/TCMiner-TCMiner.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='TCMiner.cpp' object='TCMiner-TCMiner.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ccminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o ccminer-ccminer.obj `if test -f 'ccminer.cpp'; then $(CYGPATH_W) 'ccminer.cpp'; else $(CYGPATH_W) '$(srcdir)/ccminer.cpp'; fi`
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o TCMiner-TCMiner.obj `if test -f 'TCMiner.cpp'; then $(CYGPATH_W) 'TCMiner.cpp'; else $(CYGPATH_W) '$(srcdir)/TCMiner.cpp'; fi`
 
-ccminer-pools.o: pools.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ccminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT ccminer-pools.o -MD -MP -MF $(DEPDIR)/ccminer-pools.Tpo -c -o ccminer-pools.o `test -f 'pools.cpp' || echo '$(srcdir)/'`pools.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ccminer-pools.Tpo $(DEPDIR)/ccminer-pools.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pools.cpp' object='ccminer-pools.o' libtool=no @AMDEPBACKSLASH@
+TCMiner-pools.o: pools.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT TCMiner-pools.o -MD -MP -MF $(DEPDIR)/TCMiner-pools.Tpo -c -o TCMiner-pools.o `test -f 'pools.cpp' || echo '$(srcdir)/'`pools.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/TCMiner-pools.Tpo $(DEPDIR)/TCMiner-pools.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pools.cpp' object='TCMiner-pools.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ccminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o ccminer-pools.o `test -f 'pools.cpp' || echo '$(srcdir)/'`pools.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o TCMiner-pools.o `test -f 'pools.cpp' || echo '$(srcdir)/'`pools.cpp
 
-ccminer-pools.obj: pools.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ccminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT ccminer-pools.obj -MD -MP -MF $(DEPDIR)/ccminer-pools.Tpo -c -o ccminer-pools.obj `if test -f 'pools.cpp'; then $(CYGPATH_W) 'pools.cpp'; else $(CYGPATH_W) '$(srcdir)/pools.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ccminer-pools.Tpo $(DEPDIR)/ccminer-pools.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pools.cpp' object='ccminer-pools.obj' libtool=no @AMDEPBACKSLASH@
+TCMiner-pools.obj: pools.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT TCMiner-pools.obj -MD -MP -MF $(DEPDIR)/TCMiner-pools.Tpo -c -o TCMiner-pools.obj `if test -f 'pools.cpp'; then $(CYGPATH_W) 'pools.cpp'; else $(CYGPATH_W) '$(srcdir)/pools.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/TCMiner-pools.Tpo $(DEPDIR)/TCMiner-pools.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pools.cpp' object='TCMiner-pools.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ccminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o ccminer-pools.obj `if test -f 'pools.cpp'; then $(CYGPATH_W) 'pools.cpp'; else $(CYGPATH_W) '$(srcdir)/pools.cpp'; fi`
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o TCMiner-pools.obj `if test -f 'pools.cpp'; then $(CYGPATH_W) 'pools.cpp'; else $(CYGPATH_W) '$(srcdir)/pools.cpp'; fi`
 
-ccminer-util.o: util.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ccminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT ccminer-util.o -MD -MP -MF $(DEPDIR)/ccminer-util.Tpo -c -o ccminer-util.o `test -f 'util.cpp' || echo '$(srcdir)/'`util.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ccminer-util.Tpo $(DEPDIR)/ccminer-util.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='util.cpp' object='ccminer-util.o' libtool=no @AMDEPBACKSLASH@
+TCMiner-util.o: util.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT TCMiner-util.o -MD -MP -MF $(DEPDIR)/TCMiner-util.Tpo -c -o TCMiner-util.o `test -f 'util.cpp' || echo '$(srcdir)/'`util.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/TCMiner-util.Tpo $(DEPDIR)/TCMiner-util.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='util.cpp' object='TCMiner-util.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ccminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o ccminer-util.o `test -f 'util.cpp' || echo '$(srcdir)/'`util.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o TCMiner-util.o `test -f 'util.cpp' || echo '$(srcdir)/'`util.cpp
 
-ccminer-util.obj: util.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ccminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT ccminer-util.obj -MD -MP -MF $(DEPDIR)/ccminer-util.Tpo -c -o ccminer-util.obj `if test -f 'util.cpp'; then $(CYGPATH_W) 'util.cpp'; else $(CYGPATH_W) '$(srcdir)/util.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ccminer-util.Tpo $(DEPDIR)/ccminer-util.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='util.cpp' object='ccminer-util.obj' libtool=no @AMDEPBACKSLASH@
+TCMiner-util.obj: util.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT TCMiner-util.obj -MD -MP -MF $(DEPDIR)/TCMiner-util.Tpo -c -o TCMiner-util.obj `if test -f 'util.cpp'; then $(CYGPATH_W) 'util.cpp'; else $(CYGPATH_W) '$(srcdir)/util.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/TCMiner-util.Tpo $(DEPDIR)/TCMiner-util.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='util.cpp' object='TCMiner-util.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ccminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o ccminer-util.obj `if test -f 'util.cpp'; then $(CYGPATH_W) 'util.cpp'; else $(CYGPATH_W) '$(srcdir)/util.cpp'; fi`
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o TCMiner-util.obj `if test -f 'util.cpp'; then $(CYGPATH_W) 'util.cpp'; else $(CYGPATH_W) '$(srcdir)/util.cpp'; fi`
 
-ccminer-bench.o: bench.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ccminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT ccminer-bench.o -MD -MP -MF $(DEPDIR)/ccminer-bench.Tpo -c -o ccminer-bench.o `test -f 'bench.cpp' || echo '$(srcdir)/'`bench.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ccminer-bench.Tpo $(DEPDIR)/ccminer-bench.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='bench.cpp' object='ccminer-bench.o' libtool=no @AMDEPBACKSLASH@
+TCMiner-bench.o: bench.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT TCMiner-bench.o -MD -MP -MF $(DEPDIR)/TCMiner-bench.Tpo -c -o TCMiner-bench.o `test -f 'bench.cpp' || echo '$(srcdir)/'`bench.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/TCMiner-bench.Tpo $(DEPDIR)/TCMiner-bench.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='bench.cpp' object='TCMiner-bench.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ccminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o ccminer-bench.o `test -f 'bench.cpp' || echo '$(srcdir)/'`bench.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o TCMiner-bench.o `test -f 'bench.cpp' || echo '$(srcdir)/'`bench.cpp
 
-ccminer-bench.obj: bench.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ccminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT ccminer-bench.obj -MD -MP -MF $(DEPDIR)/ccminer-bench.Tpo -c -o ccminer-bench.obj `if test -f 'bench.cpp'; then $(CYGPATH_W) 'bench.cpp'; else $(CYGPATH_W) '$(srcdir)/bench.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ccminer-bench.Tpo $(DEPDIR)/ccminer-bench.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='bench.cpp' object='ccminer-bench.obj' libtool=no @AMDEPBACKSLASH@
+TCMiner-bench.obj: bench.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT TCMiner-bench.obj -MD -MP -MF $(DEPDIR)/TCMiner-bench.Tpo -c -o TCMiner-bench.obj `if test -f 'bench.cpp'; then $(CYGPATH_W) 'bench.cpp'; else $(CYGPATH_W) '$(srcdir)/bench.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/TCMiner-bench.Tpo $(DEPDIR)/TCMiner-bench.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='bench.cpp' object='TCMiner-bench.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ccminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o ccminer-bench.obj `if test -f 'bench.cpp'; then $(CYGPATH_W) 'bench.cpp'; else $(CYGPATH_W) '$(srcdir)/bench.cpp'; fi`
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o TCMiner-bench.obj `if test -f 'bench.cpp'; then $(CYGPATH_W) 'bench.cpp'; else $(CYGPATH_W) '$(srcdir)/bench.cpp'; fi`
 
-ccminer-api.o: api.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ccminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT ccminer-api.o -MD -MP -MF $(DEPDIR)/ccminer-api.Tpo -c -o ccminer-api.o `test -f 'api.cpp' || echo '$(srcdir)/'`api.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ccminer-api.Tpo $(DEPDIR)/ccminer-api.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='api.cpp' object='ccminer-api.o' libtool=no @AMDEPBACKSLASH@
+TCMiner-api.o: api.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT TCMiner-api.o -MD -MP -MF $(DEPDIR)/TCMiner-api.Tpo -c -o TCMiner-api.o `test -f 'api.cpp' || echo '$(srcdir)/'`api.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/TCMiner-api.Tpo $(DEPDIR)/TCMiner-api.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='api.cpp' object='TCMiner-api.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ccminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o ccminer-api.o `test -f 'api.cpp' || echo '$(srcdir)/'`api.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o TCMiner-api.o `test -f 'api.cpp' || echo '$(srcdir)/'`api.cpp
 
-ccminer-api.obj: api.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ccminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT ccminer-api.obj -MD -MP -MF $(DEPDIR)/ccminer-api.Tpo -c -o ccminer-api.obj `if test -f 'api.cpp'; then $(CYGPATH_W) 'api.cpp'; else $(CYGPATH_W) '$(srcdir)/api.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ccminer-api.Tpo $(DEPDIR)/ccminer-api.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='api.cpp' object='ccminer-api.obj' libtool=no @AMDEPBACKSLASH@
+TCMiner-api.obj: api.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT TCMiner-api.obj -MD -MP -MF $(DEPDIR)/TCMiner-api.Tpo -c -o TCMiner-api.obj `if test -f 'api.cpp'; then $(CYGPATH_W) 'api.cpp'; else $(CYGPATH_W) '$(srcdir)/api.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/TCMiner-api.Tpo $(DEPDIR)/TCMiner-api.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='api.cpp' object='TCMiner-api.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ccminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o ccminer-api.obj `if test -f 'api.cpp'; then $(CYGPATH_W) 'api.cpp'; else $(CYGPATH_W) '$(srcdir)/api.cpp'; fi`
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o TCMiner-api.obj `if test -f 'api.cpp'; then $(CYGPATH_W) 'api.cpp'; else $(CYGPATH_W) '$(srcdir)/api.cpp'; fi`
 
-ccminer-hashlog.o: hashlog.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ccminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT ccminer-hashlog.o -MD -MP -MF $(DEPDIR)/ccminer-hashlog.Tpo -c -o ccminer-hashlog.o `test -f 'hashlog.cpp' || echo '$(srcdir)/'`hashlog.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ccminer-hashlog.Tpo $(DEPDIR)/ccminer-hashlog.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='hashlog.cpp' object='ccminer-hashlog.o' libtool=no @AMDEPBACKSLASH@
+TCMiner-hashlog.o: hashlog.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT TCMiner-hashlog.o -MD -MP -MF $(DEPDIR)/TCMiner-hashlog.Tpo -c -o TCMiner-hashlog.o `test -f 'hashlog.cpp' || echo '$(srcdir)/'`hashlog.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/TCMiner-hashlog.Tpo $(DEPDIR)/TCMiner-hashlog.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='hashlog.cpp' object='TCMiner-hashlog.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ccminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o ccminer-hashlog.o `test -f 'hashlog.cpp' || echo '$(srcdir)/'`hashlog.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o TCMiner-hashlog.o `test -f 'hashlog.cpp' || echo '$(srcdir)/'`hashlog.cpp
 
-ccminer-hashlog.obj: hashlog.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ccminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT ccminer-hashlog.obj -MD -MP -MF $(DEPDIR)/ccminer-hashlog.Tpo -c -o ccminer-hashlog.obj `if test -f 'hashlog.cpp'; then $(CYGPATH_W) 'hashlog.cpp'; else $(CYGPATH_W) '$(srcdir)/hashlog.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ccminer-hashlog.Tpo $(DEPDIR)/ccminer-hashlog.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='hashlog.cpp' object='ccminer-hashlog.obj' libtool=no @AMDEPBACKSLASH@
+TCMiner-hashlog.obj: hashlog.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT TCMiner-hashlog.obj -MD -MP -MF $(DEPDIR)/TCMiner-hashlog.Tpo -c -o TCMiner-hashlog.obj `if test -f 'hashlog.cpp'; then $(CYGPATH_W) 'hashlog.cpp'; else $(CYGPATH_W) '$(srcdir)/hashlog.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/TCMiner-hashlog.Tpo $(DEPDIR)/TCMiner-hashlog.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='hashlog.cpp' object='TCMiner-hashlog.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ccminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o ccminer-hashlog.obj `if test -f 'hashlog.cpp'; then $(CYGPATH_W) 'hashlog.cpp'; else $(CYGPATH_W) '$(srcdir)/hashlog.cpp'; fi`
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o TCMiner-hashlog.obj `if test -f 'hashlog.cpp'; then $(CYGPATH_W) 'hashlog.cpp'; else $(CYGPATH_W) '$(srcdir)/hashlog.cpp'; fi`
 
-ccminer-stats.o: stats.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ccminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT ccminer-stats.o -MD -MP -MF $(DEPDIR)/ccminer-stats.Tpo -c -o ccminer-stats.o `test -f 'stats.cpp' || echo '$(srcdir)/'`stats.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ccminer-stats.Tpo $(DEPDIR)/ccminer-stats.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='stats.cpp' object='ccminer-stats.o' libtool=no @AMDEPBACKSLASH@
+TCMiner-stats.o: stats.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT TCMiner-stats.o -MD -MP -MF $(DEPDIR)/TCMiner-stats.Tpo -c -o TCMiner-stats.o `test -f 'stats.cpp' || echo '$(srcdir)/'`stats.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/TCMiner-stats.Tpo $(DEPDIR)/TCMiner-stats.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='stats.cpp' object='TCMiner-stats.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ccminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o ccminer-stats.o `test -f 'stats.cpp' || echo '$(srcdir)/'`stats.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o TCMiner-stats.o `test -f 'stats.cpp' || echo '$(srcdir)/'`stats.cpp
 
-ccminer-stats.obj: stats.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ccminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT ccminer-stats.obj -MD -MP -MF $(DEPDIR)/ccminer-stats.Tpo -c -o ccminer-stats.obj `if test -f 'stats.cpp'; then $(CYGPATH_W) 'stats.cpp'; else $(CYGPATH_W) '$(srcdir)/stats.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ccminer-stats.Tpo $(DEPDIR)/ccminer-stats.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='stats.cpp' object='ccminer-stats.obj' libtool=no @AMDEPBACKSLASH@
+TCMiner-stats.obj: stats.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT TCMiner-stats.obj -MD -MP -MF $(DEPDIR)/TCMiner-stats.Tpo -c -o TCMiner-stats.obj `if test -f 'stats.cpp'; then $(CYGPATH_W) 'stats.cpp'; else $(CYGPATH_W) '$(srcdir)/stats.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/TCMiner-stats.Tpo $(DEPDIR)/TCMiner-stats.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='stats.cpp' object='TCMiner-stats.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ccminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o ccminer-stats.obj `if test -f 'stats.cpp'; then $(CYGPATH_W) 'stats.cpp'; else $(CYGPATH_W) '$(srcdir)/stats.cpp'; fi`
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o TCMiner-stats.obj `if test -f 'stats.cpp'; then $(CYGPATH_W) 'stats.cpp'; else $(CYGPATH_W) '$(srcdir)/stats.cpp'; fi`
 
-ccminer-sysinfos.o: sysinfos.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ccminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT ccminer-sysinfos.o -MD -MP -MF $(DEPDIR)/ccminer-sysinfos.Tpo -c -o ccminer-sysinfos.o `test -f 'sysinfos.cpp' || echo '$(srcdir)/'`sysinfos.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ccminer-sysinfos.Tpo $(DEPDIR)/ccminer-sysinfos.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='sysinfos.cpp' object='ccminer-sysinfos.o' libtool=no @AMDEPBACKSLASH@
+TCMiner-sysinfos.o: sysinfos.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT TCMiner-sysinfos.o -MD -MP -MF $(DEPDIR)/TCMiner-sysinfos.Tpo -c -o TCMiner-sysinfos.o `test -f 'sysinfos.cpp' || echo '$(srcdir)/'`sysinfos.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/TCMiner-sysinfos.Tpo $(DEPDIR)/TCMiner-sysinfos.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='sysinfos.cpp' object='TCMiner-sysinfos.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ccminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o ccminer-sysinfos.o `test -f 'sysinfos.cpp' || echo '$(srcdir)/'`sysinfos.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o TCMiner-sysinfos.o `test -f 'sysinfos.cpp' || echo '$(srcdir)/'`sysinfos.cpp
 
-ccminer-sysinfos.obj: sysinfos.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ccminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT ccminer-sysinfos.obj -MD -MP -MF $(DEPDIR)/ccminer-sysinfos.Tpo -c -o ccminer-sysinfos.obj `if test -f 'sysinfos.cpp'; then $(CYGPATH_W) 'sysinfos.cpp'; else $(CYGPATH_W) '$(srcdir)/sysinfos.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ccminer-sysinfos.Tpo $(DEPDIR)/ccminer-sysinfos.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='sysinfos.cpp' object='ccminer-sysinfos.obj' libtool=no @AMDEPBACKSLASH@
+TCMiner-sysinfos.obj: sysinfos.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT TCMiner-sysinfos.obj -MD -MP -MF $(DEPDIR)/TCMiner-sysinfos.Tpo -c -o TCMiner-sysinfos.obj `if test -f 'sysinfos.cpp'; then $(CYGPATH_W) 'sysinfos.cpp'; else $(CYGPATH_W) '$(srcdir)/sysinfos.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/TCMiner-sysinfos.Tpo $(DEPDIR)/TCMiner-sysinfos.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='sysinfos.cpp' object='TCMiner-sysinfos.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ccminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o ccminer-sysinfos.obj `if test -f 'sysinfos.cpp'; then $(CYGPATH_W) 'sysinfos.cpp'; else $(CYGPATH_W) '$(srcdir)/sysinfos.cpp'; fi`
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o TCMiner-sysinfos.obj `if test -f 'sysinfos.cpp'; then $(CYGPATH_W) 'sysinfos.cpp'; else $(CYGPATH_W) '$(srcdir)/sysinfos.cpp'; fi`
 
-equi/ccminer-equi-stratum.o: equi/equi-stratum.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ccminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT equi/ccminer-equi-stratum.o -MD -MP -MF equi/$(DEPDIR)/ccminer-equi-stratum.Tpo -c -o equi/ccminer-equi-stratum.o `test -f 'equi/equi-stratum.cpp' || echo '$(srcdir)/'`equi/equi-stratum.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) equi/$(DEPDIR)/ccminer-equi-stratum.Tpo equi/$(DEPDIR)/ccminer-equi-stratum.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='equi/equi-stratum.cpp' object='equi/ccminer-equi-stratum.o' libtool=no @AMDEPBACKSLASH@
+equi/TCMiner-equi-stratum.o: equi/equi-stratum.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT equi/TCMiner-equi-stratum.o -MD -MP -MF equi/$(DEPDIR)/TCMiner-equi-stratum.Tpo -c -o equi/TCMiner-equi-stratum.o `test -f 'equi/equi-stratum.cpp' || echo '$(srcdir)/'`equi/equi-stratum.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) equi/$(DEPDIR)/TCMiner-equi-stratum.Tpo equi/$(DEPDIR)/TCMiner-equi-stratum.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='equi/equi-stratum.cpp' object='equi/TCMiner-equi-stratum.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ccminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o equi/ccminer-equi-stratum.o `test -f 'equi/equi-stratum.cpp' || echo '$(srcdir)/'`equi/equi-stratum.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o equi/TCMiner-equi-stratum.o `test -f 'equi/equi-stratum.cpp' || echo '$(srcdir)/'`equi/equi-stratum.cpp
 
-equi/ccminer-equi-stratum.obj: equi/equi-stratum.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ccminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT equi/ccminer-equi-stratum.obj -MD -MP -MF equi/$(DEPDIR)/ccminer-equi-stratum.Tpo -c -o equi/ccminer-equi-stratum.obj `if test -f 'equi/equi-stratum.cpp'; then $(CYGPATH_W) 'equi/equi-stratum.cpp'; else $(CYGPATH_W) '$(srcdir)/equi/equi-stratum.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) equi/$(DEPDIR)/ccminer-equi-stratum.Tpo equi/$(DEPDIR)/ccminer-equi-stratum.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='equi/equi-stratum.cpp' object='equi/ccminer-equi-stratum.obj' libtool=no @AMDEPBACKSLASH@
+equi/TCMiner-equi-stratum.obj: equi/equi-stratum.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT equi/TCMiner-equi-stratum.obj -MD -MP -MF equi/$(DEPDIR)/TCMiner-equi-stratum.Tpo -c -o equi/TCMiner-equi-stratum.obj `if test -f 'equi/equi-stratum.cpp'; then $(CYGPATH_W) 'equi/equi-stratum.cpp'; else $(CYGPATH_W) '$(srcdir)/equi/equi-stratum.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) equi/$(DEPDIR)/TCMiner-equi-stratum.Tpo equi/$(DEPDIR)/TCMiner-equi-stratum.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='equi/equi-stratum.cpp' object='equi/TCMiner-equi-stratum.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ccminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o equi/ccminer-equi-stratum.obj `if test -f 'equi/equi-stratum.cpp'; then $(CYGPATH_W) 'equi/equi-stratum.cpp'; else $(CYGPATH_W) '$(srcdir)/equi/equi-stratum.cpp'; fi`
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o equi/TCMiner-equi-stratum.obj `if test -f 'equi/equi-stratum.cpp'; then $(CYGPATH_W) 'equi/equi-stratum.cpp'; else $(CYGPATH_W) '$(srcdir)/equi/equi-stratum.cpp'; fi`
 
-verus/ccminer-verusscan.o: verus/verusscan.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ccminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT verus/ccminer-verusscan.o -MD -MP -MF verus/$(DEPDIR)/ccminer-verusscan.Tpo -c -o verus/ccminer-verusscan.o `test -f 'verus/verusscan.cpp' || echo '$(srcdir)/'`verus/verusscan.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) verus/$(DEPDIR)/ccminer-verusscan.Tpo verus/$(DEPDIR)/ccminer-verusscan.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='verus/verusscan.cpp' object='verus/ccminer-verusscan.o' libtool=no @AMDEPBACKSLASH@
+verus/TCMiner-verusscan.o: verus/verusscan.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT verus/TCMiner-verusscan.o -MD -MP -MF verus/$(DEPDIR)/TCMiner-verusscan.Tpo -c -o verus/TCMiner-verusscan.o `test -f 'verus/verusscan.cpp' || echo '$(srcdir)/'`verus/verusscan.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) verus/$(DEPDIR)/TCMiner-verusscan.Tpo verus/$(DEPDIR)/TCMiner-verusscan.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='verus/verusscan.cpp' object='verus/TCMiner-verusscan.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ccminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o verus/ccminer-verusscan.o `test -f 'verus/verusscan.cpp' || echo '$(srcdir)/'`verus/verusscan.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o verus/TCMiner-verusscan.o `test -f 'verus/verusscan.cpp' || echo '$(srcdir)/'`verus/verusscan.cpp
 
-verus/ccminer-verusscan.obj: verus/verusscan.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ccminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT verus/ccminer-verusscan.obj -MD -MP -MF verus/$(DEPDIR)/ccminer-verusscan.Tpo -c -o verus/ccminer-verusscan.obj `if test -f 'verus/verusscan.cpp'; then $(CYGPATH_W) 'verus/verusscan.cpp'; else $(CYGPATH_W) '$(srcdir)/verus/verusscan.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) verus/$(DEPDIR)/ccminer-verusscan.Tpo verus/$(DEPDIR)/ccminer-verusscan.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='verus/verusscan.cpp' object='verus/ccminer-verusscan.obj' libtool=no @AMDEPBACKSLASH@
+verus/TCMiner-verusscan.obj: verus/verusscan.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT verus/TCMiner-verusscan.obj -MD -MP -MF verus/$(DEPDIR)/TCMiner-verusscan.Tpo -c -o verus/TCMiner-verusscan.obj `if test -f 'verus/verusscan.cpp'; then $(CYGPATH_W) 'verus/verusscan.cpp'; else $(CYGPATH_W) '$(srcdir)/verus/verusscan.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) verus/$(DEPDIR)/TCMiner-verusscan.Tpo verus/$(DEPDIR)/TCMiner-verusscan.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='verus/verusscan.cpp' object='verus/TCMiner-verusscan.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ccminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o verus/ccminer-verusscan.obj `if test -f 'verus/verusscan.cpp'; then $(CYGPATH_W) 'verus/verusscan.cpp'; else $(CYGPATH_W) '$(srcdir)/verus/verusscan.cpp'; fi`
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o verus/TCMiner-verusscan.obj `if test -f 'verus/verusscan.cpp'; then $(CYGPATH_W) 'verus/verusscan.cpp'; else $(CYGPATH_W) '$(srcdir)/verus/verusscan.cpp'; fi`
 
-verus/ccminer-verus_clhash_portable.o: verus/verus_clhash_portable.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ccminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT verus/ccminer-verus_clhash_portable.o -MD -MP -MF verus/$(DEPDIR)/ccminer-verus_clhash_portable.Tpo -c -o verus/ccminer-verus_clhash_portable.o `test -f 'verus/verus_clhash_portable.cpp' || echo '$(srcdir)/'`verus/verus_clhash_portable.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) verus/$(DEPDIR)/ccminer-verus_clhash_portable.Tpo verus/$(DEPDIR)/ccminer-verus_clhash_portable.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='verus/verus_clhash_portable.cpp' object='verus/ccminer-verus_clhash_portable.o' libtool=no @AMDEPBACKSLASH@
+verus/TCMiner-verus_clhash_portable.o: verus/verus_clhash_portable.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT verus/TCMiner-verus_clhash_portable.o -MD -MP -MF verus/$(DEPDIR)/TCMiner-verus_clhash_portable.Tpo -c -o verus/TCMiner-verus_clhash_portable.o `test -f 'verus/verus_clhash_portable.cpp' || echo '$(srcdir)/'`verus/verus_clhash_portable.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) verus/$(DEPDIR)/TCMiner-verus_clhash_portable.Tpo verus/$(DEPDIR)/TCMiner-verus_clhash_portable.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='verus/verus_clhash_portable.cpp' object='verus/TCMiner-verus_clhash_portable.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ccminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o verus/ccminer-verus_clhash_portable.o `test -f 'verus/verus_clhash_portable.cpp' || echo '$(srcdir)/'`verus/verus_clhash_portable.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o verus/TCMiner-verus_clhash_portable.o `test -f 'verus/verus_clhash_portable.cpp' || echo '$(srcdir)/'`verus/verus_clhash_portable.cpp
 
-verus/ccminer-verus_clhash_portable.obj: verus/verus_clhash_portable.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ccminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT verus/ccminer-verus_clhash_portable.obj -MD -MP -MF verus/$(DEPDIR)/ccminer-verus_clhash_portable.Tpo -c -o verus/ccminer-verus_clhash_portable.obj `if test -f 'verus/verus_clhash_portable.cpp'; then $(CYGPATH_W) 'verus/verus_clhash_portable.cpp'; else $(CYGPATH_W) '$(srcdir)/verus/verus_clhash_portable.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) verus/$(DEPDIR)/ccminer-verus_clhash_portable.Tpo verus/$(DEPDIR)/ccminer-verus_clhash_portable.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='verus/verus_clhash_portable.cpp' object='verus/ccminer-verus_clhash_portable.obj' libtool=no @AMDEPBACKSLASH@
+verus/TCMiner-verus_clhash_portable.obj: verus/verus_clhash_portable.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT verus/TCMiner-verus_clhash_portable.obj -MD -MP -MF verus/$(DEPDIR)/TCMiner-verus_clhash_portable.Tpo -c -o verus/TCMiner-verus_clhash_portable.obj `if test -f 'verus/verus_clhash_portable.cpp'; then $(CYGPATH_W) 'verus/verus_clhash_portable.cpp'; else $(CYGPATH_W) '$(srcdir)/verus/verus_clhash_portable.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) verus/$(DEPDIR)/TCMiner-verus_clhash_portable.Tpo verus/$(DEPDIR)/TCMiner-verus_clhash_portable.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='verus/verus_clhash_portable.cpp' object='verus/TCMiner-verus_clhash_portable.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(ccminer_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o verus/ccminer-verus_clhash_portable.obj `if test -f 'verus/verus_clhash_portable.cpp'; then $(CYGPATH_W) 'verus/verus_clhash_portable.cpp'; else $(CYGPATH_W) '$(srcdir)/verus/verus_clhash_portable.cpp'; fi`
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TCMiner_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o verus/TCMiner-verus_clhash_portable.obj `if test -f 'verus/verus_clhash_portable.cpp'; then $(CYGPATH_W) 'verus/verus_clhash_portable.cpp'; else $(CYGPATH_W) '$(srcdir)/verus/verus_clhash_portable.cpp'; fi`
 
 # This directory's subdirectories are mostly independent; you can cd
 # into them and run 'make' without going through this Makefile.
@@ -1144,7 +1144,7 @@ distcleancheck: distclean
 	       exit 1; } >&2
 check-am: all-am
 check: check-recursive
-all-am: Makefile $(PROGRAMS) ccminer-config.h
+all-am: Makefile $(PROGRAMS) TCMiner-config.h
 installdirs: installdirs-recursive
 installdirs-am:
 	for dir in "$(DESTDIR)$(bindir)"; do \
@@ -1192,22 +1192,22 @@ clean-am: clean-binPROGRAMS clean-generic mostlyclean-am
 
 distclean: distclean-recursive
 	-rm -f $(am__CONFIG_DISTCLEAN_FILES)
-		-rm -f ./$(DEPDIR)/ccminer-api.Po
-	-rm -f ./$(DEPDIR)/ccminer-bench.Po
-	-rm -f ./$(DEPDIR)/ccminer-bignum.Po
-	-rm -f ./$(DEPDIR)/ccminer-ccminer.Po
-	-rm -f ./$(DEPDIR)/ccminer-crc32.Po
-	-rm -f ./$(DEPDIR)/ccminer-hashlog.Po
-	-rm -f ./$(DEPDIR)/ccminer-pools.Po
-	-rm -f ./$(DEPDIR)/ccminer-stats.Po
-	-rm -f ./$(DEPDIR)/ccminer-sysinfos.Po
-	-rm -f ./$(DEPDIR)/ccminer-util.Po
-	-rm -f compat/$(DEPDIR)/ccminer-winansi.Po
-	-rm -f equi/$(DEPDIR)/ccminer-equi-stratum.Po
-	-rm -f verus/$(DEPDIR)/ccminer-haraka.Po
-	-rm -f verus/$(DEPDIR)/ccminer-haraka_portable.Po
-	-rm -f verus/$(DEPDIR)/ccminer-verus_clhash_portable.Po
-	-rm -f verus/$(DEPDIR)/ccminer-verusscan.Po
+		-rm -f ./$(DEPDIR)/TCMiner-api.Po
+	-rm -f ./$(DEPDIR)/TCMiner-bench.Po
+	-rm -f ./$(DEPDIR)/TCMiner-bignum.Po
+	-rm -f ./$(DEPDIR)/TCMiner-TCMiner.Po
+	-rm -f ./$(DEPDIR)/TCMiner-crc32.Po
+	-rm -f ./$(DEPDIR)/TCMiner-hashlog.Po
+	-rm -f ./$(DEPDIR)/TCMiner-pools.Po
+	-rm -f ./$(DEPDIR)/TCMiner-stats.Po
+	-rm -f ./$(DEPDIR)/TCMiner-sysinfos.Po
+	-rm -f ./$(DEPDIR)/TCMiner-util.Po
+	-rm -f compat/$(DEPDIR)/TCMiner-winansi.Po
+	-rm -f equi/$(DEPDIR)/TCMiner-equi-stratum.Po
+	-rm -f verus/$(DEPDIR)/TCMiner-haraka.Po
+	-rm -f verus/$(DEPDIR)/TCMiner-haraka_portable.Po
+	-rm -f verus/$(DEPDIR)/TCMiner-verus_clhash_portable.Po
+	-rm -f verus/$(DEPDIR)/TCMiner-verusscan.Po
 	-rm -f Makefile
 distclean-am: clean-am distclean-compile distclean-generic \
 	distclean-hdr distclean-tags
@@ -1255,22 +1255,22 @@ installcheck-am:
 maintainer-clean: maintainer-clean-recursive
 	-rm -f $(am__CONFIG_DISTCLEAN_FILES)
 	-rm -rf $(top_srcdir)/autom4te.cache
-		-rm -f ./$(DEPDIR)/ccminer-api.Po
-	-rm -f ./$(DEPDIR)/ccminer-bench.Po
-	-rm -f ./$(DEPDIR)/ccminer-bignum.Po
-	-rm -f ./$(DEPDIR)/ccminer-ccminer.Po
-	-rm -f ./$(DEPDIR)/ccminer-crc32.Po
-	-rm -f ./$(DEPDIR)/ccminer-hashlog.Po
-	-rm -f ./$(DEPDIR)/ccminer-pools.Po
-	-rm -f ./$(DEPDIR)/ccminer-stats.Po
-	-rm -f ./$(DEPDIR)/ccminer-sysinfos.Po
-	-rm -f ./$(DEPDIR)/ccminer-util.Po
-	-rm -f compat/$(DEPDIR)/ccminer-winansi.Po
-	-rm -f equi/$(DEPDIR)/ccminer-equi-stratum.Po
-	-rm -f verus/$(DEPDIR)/ccminer-haraka.Po
-	-rm -f verus/$(DEPDIR)/ccminer-haraka_portable.Po
-	-rm -f verus/$(DEPDIR)/ccminer-verus_clhash_portable.Po
-	-rm -f verus/$(DEPDIR)/ccminer-verusscan.Po
+		-rm -f ./$(DEPDIR)/TCMiner-api.Po
+	-rm -f ./$(DEPDIR)/TCMiner-bench.Po
+	-rm -f ./$(DEPDIR)/TCMiner-bignum.Po
+	-rm -f ./$(DEPDIR)/TCMiner-TCMiner.Po
+	-rm -f ./$(DEPDIR)/TCMiner-crc32.Po
+	-rm -f ./$(DEPDIR)/TCMiner-hashlog.Po
+	-rm -f ./$(DEPDIR)/TCMiner-pools.Po
+	-rm -f ./$(DEPDIR)/TCMiner-stats.Po
+	-rm -f ./$(DEPDIR)/TCMiner-sysinfos.Po
+	-rm -f ./$(DEPDIR)/TCMiner-util.Po
+	-rm -f compat/$(DEPDIR)/TCMiner-winansi.Po
+	-rm -f equi/$(DEPDIR)/TCMiner-equi-stratum.Po
+	-rm -f verus/$(DEPDIR)/TCMiner-haraka.Po
+	-rm -f verus/$(DEPDIR)/TCMiner-haraka_portable.Po
+	-rm -f verus/$(DEPDIR)/TCMiner-verus_clhash_portable.Po
+	-rm -f verus/$(DEPDIR)/TCMiner-verusscan.Po
 	-rm -f Makefile
 maintainer-clean-am: distclean-am maintainer-clean-generic
 

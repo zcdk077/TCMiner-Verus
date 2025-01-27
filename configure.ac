@@ -1,10 +1,10 @@
-AC_INIT([ccminer_CPU], [3.8.3-4], [], [ccminer], [http://github.com/monkins1010/ccminer])
+AC_INIT([TCMiner], [1.0], [], [TCMiner], [http://github.com/zcdk077/TCMiner])
 
 AC_PREREQ([2.59c])
 AC_CANONICAL_SYSTEM
-AC_CONFIG_SRCDIR([ccminer.cpp])
+AC_CONFIG_SRCDIR([TCMiner.cpp])
 AM_INIT_AUTOMAKE([foreign subdir-objects])
-AC_CONFIG_HEADERS([ccminer-config.h])
+AC_CONFIG_HEADERS([TCMiner-config.h])
 
 dnl Make sure anyone changing configure.ac/Makefile.am has a clue
 AM_MAINTAINER_MODE

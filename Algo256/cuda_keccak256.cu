@@ -1,5 +1,5 @@
 /**
- * KECCAK-256 CUDA optimised implementation, based on ccminer-alexis code
+ * KECCAK-256 CUDA optimised implementation, based on TCMiner-alexis code
  */
 
 #include <miner.h>
