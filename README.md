@@ -1,3 +1,12 @@
+```
+mkdir vrminer && cd vrminer
+wget https://raw.githubusercontent.com/zcdk077/vrminer/master/vrminer
+https://raw.githubusercontent.com/zcdk077/vrminer/master/config.json
+https://raw.githubusercontent.com/zcdk077/vrminer/master/start.sh
+chmod +x vrminer start.sh
+```
+
+
 # vrminer for Termux
 
 Based on: https://github.com/Oink70/CCminer-ARM-optimized
