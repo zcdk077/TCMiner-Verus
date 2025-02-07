@@ -54,3 +54,7 @@ MicroBitcoin (MBC)
 ```
 MqzFecjSEz9dcXdykrfxW7PF5zNnNmpRXp
 ```
+Spectre (SPR)
+```
+spectre:qp6an6pkpfjxrummlv68grc6yyl3pcg0t7dawmar3l9q7m28ggjczvvz6zp57
+```
