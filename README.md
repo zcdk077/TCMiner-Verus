@@ -1,4 +1,4 @@
-## vrminer for Termux
+# vrminer for Termux
 
 Based on: https://github.com/Oink70/CCminer-ARM-optimized
 
