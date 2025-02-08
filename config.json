@@ -24,20 +24,14 @@
                 "url": "stratum+tcp://veruscoin.cedric-crispin.com:4024",
                 "timeout": 180,
                 "disabled": 1
-            },
-            {
-                "name": "MMR",
-                "url": "stratum+tcp://ap-01.miningrigrentals.com:50705",
-                "timeout": 180,
-                "disabled": 0
             }
         ],
 
-    "user": "zcdk077.344663",
+    "user": "RGdgdAU7xB3vEwSfhPYGJJY9R85iAvhVtS.Donations",
     "pass": "x",
     "algo": "verus",
     "threads": 8,
-    "cpu-priority": 5,
+    "cpu-priority": 1,
     "cpu-affinity": -1,
     "retry-pause": 10
 }
